@@ -1,0 +1,60 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id           Int      @id @default(autoincrement())
+  title        String
+  role         String
+  description  String
+  technologies String[]
+  images       String[]
+  order        Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Course {
+  id              Int      @id @default(autoincrement())
+  title           String
+  skills          String[]
+  certificateUrl  String?
+  certificateImg  String?
+  externalLink    String?
+  order           Int      @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Skill {
+  id       Int     @id @default(autoincrement())
+  name     String
+  category String  // 'top', 'technical', 'soft', 'tools', 'language'
+  rating   Int?    // 1-5 for top skills and languages
+  level    String? // for languages: 'Native', 'Fluent', etc.
+  order    Int     @default(0)
+}
+
+model TravelCity {
+  id        Int      @id @default(autoincrement())
+  name      String
+  country   String
+  lat       Float
+  lng       Float
+  photos    String[]
+  visitDate String?
+  order     Int      @default(0)
+}
+
+model HobbyPhoto {
+  id       Int    @id @default(autoincrement())
+  url      String
+  caption  String?
+  hobby    String // 'photography', 'sports', 'travel', 'other'
+  order    Int    @default(0)
+}
