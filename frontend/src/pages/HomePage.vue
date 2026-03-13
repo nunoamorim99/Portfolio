@@ -117,6 +117,73 @@
       </div>
     </section>
 
+    <!-- Experience -->
+    <section class="bg-dark-50 py-20">
+      <div class="section-container">
+        <SectionHeading title="Experience" subtitle="My professional journey so far" />
+
+        <div class="space-y-10">
+          <!-- Foco Criativo (grouped) -->
+          <div class="card !p-0 overflow-hidden">
+            <!-- Company header -->
+            <div class="flex items-center gap-4 px-6 pt-6 pb-4 border-b border-dark-100">
+              <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <span class="text-red-600 font-bold text-sm">FC</span>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-lg text-dark-900">Foco Criativo</h3>
+                <p class="text-sm text-dark-500">2 yrs 3 mos &middot; Hybrid &middot; Povoa de Lanhoso, Braga, Portugal</p>
+              </div>
+            </div>
+
+            <!-- Roles timeline -->
+            <div class="px-6 py-2">
+              <div v-for="(role, i) in focoCriativoRoles" :key="role.title" class="relative pl-8 py-5" :class="{ 'border-b border-dark-100': i < focoCriativoRoles.length - 1 }">
+                <!-- Timeline dot + line -->
+                <div class="absolute left-0 top-0 bottom-0 flex flex-col items-center">
+                  <div class="mt-6 w-3 h-3 rounded-full border-2 flex-shrink-0" :class="role.current ? 'bg-primary-600 border-primary-600' : 'bg-white border-dark-400'" />
+                  <div v-if="i < focoCriativoRoles.length - 1" class="flex-1 w-0.5 bg-dark-200 mt-1" />
+                </div>
+
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
+                  <div>
+                    <h4 class="font-semibold text-dark-900">{{ role.title }}</h4>
+                    <p class="text-sm text-dark-500">{{ role.type }}</p>
+                  </div>
+                  <span class="text-sm text-dark-400 whitespace-nowrap">{{ role.date }}</span>
+                </div>
+
+                <p v-if="role.description" class="text-sm text-dark-600 mt-2 leading-relaxed">{{ role.description }}</p>
+
+                <div v-if="role.skills.length" class="flex flex-wrap gap-1.5 mt-3">
+                  <span v-for="skill in role.skills" :key="skill" class="px-2 py-0.5 text-xs rounded-md bg-primary-50 text-primary-700 font-medium">{{ skill }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Other experiences -->
+          <div v-for="job in otherExperience" :key="job.title + job.company" class="card">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" :class="job.iconBg">
+                <span class="font-bold text-sm" :class="job.iconColor">{{ job.iconText }}</span>
+              </div>
+              <div class="flex-1">
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
+                  <div>
+                    <h4 class="font-semibold text-dark-900">{{ job.title }}</h4>
+                    <p class="text-sm text-dark-500">{{ job.company }} &middot; {{ job.type }}</p>
+                  </div>
+                  <span class="text-sm text-dark-400 whitespace-nowrap">{{ job.date }}</span>
+                </div>
+                <p class="text-sm text-dark-500 mt-1">{{ job.location }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CV Download -->
     <section class="bg-gradient-to-r from-primary-600 to-primary-700 py-16">
       <div class="section-container text-center">
@@ -202,6 +269,74 @@ import LanguageBar from '@/components/ui/LanguageBar.vue'
 
 const store = usePortfolioStore()
 const skills = computed(() => store.skills)
+
+const focoCriativoRoles = [
+  {
+    title: 'Product Manager',
+    type: 'Full-time',
+    date: 'Nov 2025 – Present',
+    current: true,
+    description: '',
+    skills: ['Product Management', 'Product Strategy', 'Wireframing', 'Jira', 'UX Design', 'Generative AI', 'AI', 'Backlog Management', 'Prototyping', 'UI Design', 'Design Thinking', 'Git', 'Product Road Mapping', 'Cross-functional Collaborations', 'User Stories', 'Stakeholder Management', 'Scrum', 'User Research'],
+  },
+  {
+    title: 'Product Owner',
+    type: 'Full-time',
+    date: 'Nov 2024 – Nov 2025',
+    current: false,
+    description: '',
+    skills: ['Product Strategy', 'Wireframing', 'Jira', 'UX Design', 'Generative AI', 'AI', 'Backlog Management', 'Prototyping', 'UI Design', 'Design Thinking', 'Git', 'Product Road Mapping', 'Cross-functional Collaborations', 'User Stories', 'Product Ownership', 'Stakeholder Management', 'Scrum', 'User Research'],
+  },
+  {
+    title: 'Software Engineer',
+    type: 'Full-time',
+    date: 'Jun 2024 – Nov 2024',
+    current: false,
+    description: '',
+    skills: ['CSS', 'UX Design', 'UI Design', 'Front-End Development', 'HTML5', 'React Native', 'JavaScript', 'Scrum'],
+  },
+  {
+    title: 'Intern',
+    type: 'Internship',
+    date: 'Jan 2024 – Jun 2024',
+    current: false,
+    description: 'The main objective of this internship was to develop my dissertation for my Master\'s degree in Information Systems Engineering and Management. My dissertation, entitled Design and optimization of logistics and production processes, consisted of a survey of the logistics and production processes of the company Foco Criativo and an analysis of them. The aim was to develop an optimization proposal for the respective processes in order to help the company become more efficient and optimize its processes.',
+    skills: [],
+  },
+]
+
+const otherExperience = [
+  {
+    title: 'Nadador Salvador',
+    company: 'Camara Municipal da Povoa de Lanhoso',
+    type: 'Seasonal',
+    date: 'Jun 2023 – Sep 2023',
+    location: 'Povoa de Lanhoso, Braga, Portugal · On-site',
+    iconBg: 'bg-blue-100',
+    iconColor: 'text-blue-600',
+    iconText: 'CM',
+  },
+  {
+    title: 'Nadador Salvador',
+    company: 'Diver Lanhoso',
+    type: 'Seasonal',
+    date: 'Jul 2022 – Sep 2022',
+    location: 'Povoa de Lanhoso, Braga, Portugal · On-site',
+    iconBg: 'bg-cyan-100',
+    iconColor: 'text-cyan-600',
+    iconText: 'DL',
+  },
+  {
+    title: 'Assistente de Caixa',
+    company: 'Zara',
+    type: 'Contract',
+    date: 'Jun 2022 – Jul 2022',
+    location: 'Braga, Portugal · On-site',
+    iconBg: 'bg-dark-100',
+    iconColor: 'text-dark-800',
+    iconText: 'Z',
+  },
+]
 
 const interests = [
   {
