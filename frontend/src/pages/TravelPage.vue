@@ -7,61 +7,9 @@
 
     <SectionHeading title="Travel" subtitle="Places I've explored around the world" />
 
-    <!-- Map + Photo Panel wrapper -->
-    <div class="relative rounded-2xl overflow-hidden border border-dark-200 mb-12" style="height: 450px">
-      <!-- Map (always visible) -->
+    <!-- Map -->
+    <div class="relative rounded-2xl overflow-hidden border border-dark-200 mb-12 z-0" style="height: 450px">
       <div ref="mapContainer" class="w-full h-full" />
-
-      <!-- City photo panel (slides over the map) -->
-      <transition
-        enter-active-class="transition duration-300 ease-out"
-        enter-from-class="opacity-0 translate-y-full"
-        enter-to-class="opacity-100 translate-y-0"
-        leave-active-class="transition duration-200 ease-in"
-        leave-from-class="opacity-100 translate-y-0"
-        leave-to-class="opacity-0 translate-y-full"
-      >
-        <div
-          v-if="selectedCity"
-          class="absolute inset-0 z-[1000] bg-white/95 backdrop-blur-sm flex flex-col"
-        >
-          <!-- Panel header -->
-          <div class="flex items-center justify-between px-6 py-4 border-b border-dark-200">
-            <div>
-              <h3 class="font-display font-semibold text-lg text-dark-900">{{ selectedCity.name }}</h3>
-              <p class="text-sm text-dark-500">{{ selectedCity.country }} · {{ selectedCity.visitDate }}</p>
-            </div>
-            <button
-              class="p-2 rounded-lg hover:bg-dark-100 transition-colors text-dark-500 hover:text-dark-900"
-              aria-label="Close photo panel"
-              @click="selectedCity = null"
-            >
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-
-          <!-- Photo grid -->
-          <div class="flex-1 overflow-auto p-6">
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 h-full">
-              <div
-                v-for="(photo, i) in selectedCity.photos"
-                :key="i"
-                class="rounded-xl overflow-hidden bg-dark-100 cursor-pointer group"
-                @click="openLightbox(i)"
-              >
-                <img
-                  :src="photo"
-                  :alt="`${selectedCity.name} photo ${i + 1}`"
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </transition>
     </div>
 
     <!-- City list -->
@@ -85,7 +33,6 @@
       </div>
     </div>
 
-    <!-- Full-screen lightbox for individual photo viewing -->
     <LightBox
       :visible="lightbox.visible"
       :images="lightbox.images"
@@ -104,19 +51,14 @@ import LightBox from '@/components/ui/LightBox.vue'
 const store = usePortfolioStore()
 const cities = computed(() => store.travelCities)
 const mapContainer = ref(null)
-const selectedCity = ref(null)
 const lightbox = reactive({ visible: false, images: [], startIndex: 0 })
 
 function openCity(city) {
   if (city.photos?.length) {
-    selectedCity.value = city
+    lightbox.images = city.photos
+    lightbox.startIndex = 0
+    lightbox.visible = true
   }
-}
-
-function openLightbox(index) {
-  lightbox.images = selectedCity.value.photos
-  lightbox.startIndex = index
-  lightbox.visible = true
 }
 
 async function initMap() {
