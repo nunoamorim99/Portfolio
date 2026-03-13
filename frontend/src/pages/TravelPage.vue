@@ -2,10 +2,10 @@
   <div class="section-container py-16 md:py-24">
     <router-link to="/personal" class="inline-flex items-center gap-1 text-sm text-dark-500 hover:text-primary-600 transition-colors mb-6">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-      Back to Personal
+      {{ t('common.backToPersonal') }}
     </router-link>
 
-    <SectionHeading title="Travel" subtitle="Places I've explored around the world" />
+    <SectionHeading :title="t('travelPage.title')" :subtitle="t('travelPage.subtitle')" />
 
     <!-- Map -->
     <div class="relative rounded-2xl overflow-hidden border border-dark-200 mb-12 z-0" style="height: 450px">
@@ -13,7 +13,7 @@
     </div>
 
     <!-- City list -->
-    <h3 class="font-display font-semibold text-xl text-dark-800 mb-6">Cities Visited</h3>
+    <h3 class="font-display font-semibold text-xl text-dark-800 mb-6">{{ t('travelPage.citiesVisited') }}</h3>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
       <div
         v-for="city in cities"
@@ -33,22 +33,20 @@
       </div>
     </div>
 
-    <LightBox
-      :visible="lightbox.visible"
-      :images="lightbox.images"
-      :start-index="lightbox.startIndex"
-      @close="lightbox.visible = false"
-    />
+    <LightBox :visible="lightbox.visible" :images="lightbox.images" :start-index="lightbox.startIndex" @close="lightbox.visible = false" />
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, reactive, computed, nextTick } from 'vue'
 import { usePortfolioStore } from '@/stores/portfolio'
+import { useI18n } from '@/stores/i18n'
 import SectionHeading from '@/components/ui/SectionHeading.vue'
 import LightBox from '@/components/ui/LightBox.vue'
 
 const store = usePortfolioStore()
+const i18n = useI18n()
+const t = (key) => i18n.t(key)
 const cities = computed(() => store.travelCities)
 const mapContainer = ref(null)
 const lightbox = reactive({ visible: false, images: [], startIndex: 0 })
@@ -74,9 +72,7 @@ async function initMap() {
   await nextTick()
   await new Promise(r => setTimeout(r, 100))
 
-  const map = L.map(mapContainer.value, {
-    scrollWheelZoom: false,
-  }).setView([45, 10], 4)
+  const map = L.map(mapContainer.value, { scrollWheelZoom: false }).setView([45, 10], 4)
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors',

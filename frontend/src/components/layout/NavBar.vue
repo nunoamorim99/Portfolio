@@ -9,21 +9,33 @@
       </router-link>
 
       <!-- Desktop nav -->
-      <ul class="hidden md:flex items-center gap-8">
-        <li v-for="link in links" :key="link.to">
-          <router-link
-            :to="link.to"
-            class="relative text-sm font-medium text-dark-600 hover:text-dark-900 transition-colors py-2"
-            :class="{ '!text-primary-600': isActive(link.to) }"
-          >
-            {{ link.label }}
-            <span
-              v-if="isActive(link.to)"
-              class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-600 rounded-full"
-            />
-          </router-link>
-        </li>
-      </ul>
+      <div class="hidden md:flex items-center gap-8">
+        <ul class="flex items-center gap-8">
+          <li v-for="link in links" :key="link.to">
+            <router-link
+              :to="link.to"
+              class="relative text-sm font-medium text-dark-600 hover:text-dark-900 transition-colors py-2"
+              :class="{ '!text-primary-600': isActive(link.to) }"
+            >
+              {{ link.label }}
+              <span
+                v-if="isActive(link.to)"
+                class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-600 rounded-full"
+              />
+            </router-link>
+          </li>
+        </ul>
+
+        <!-- Language switcher -->
+        <button
+          class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-dark-500 hover:text-dark-900 hover:bg-dark-100 transition-colors"
+          :aria-label="i18n.locale === 'en' ? 'Switch to Portuguese' : 'Mudar para Ingles'"
+          @click="toggleLocale"
+        >
+          <span class="text-base leading-none">{{ i18n.locale === 'en' ? '🇬🇧' : '🇵🇹' }}</span>
+          <span class="uppercase">{{ i18n.locale === 'en' ? 'EN' : 'PT' }}</span>
+        </button>
+      </div>
 
       <!-- Mobile hamburger -->
       <button
@@ -60,6 +72,15 @@
               {{ link.label }}
             </router-link>
           </li>
+          <li>
+            <button
+              class="w-full flex items-center gap-2 px-4 py-3 rounded-xl text-dark-700 font-medium hover:bg-primary-50 hover:text-primary-700 transition-colors"
+              @click="toggleLocale(); mobileOpen = false"
+            >
+              <span class="text-base leading-none">{{ i18n.locale === 'en' ? '🇵🇹' : '🇬🇧' }}</span>
+              {{ i18n.locale === 'en' ? 'Mudar para Portugues' : 'Switch to English' }}
+            </button>
+          </li>
         </ul>
       </div>
     </transition>
@@ -70,19 +91,25 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
+import { useI18n } from '@/stores/i18n'
 
 const route = useRoute()
+const i18n = useI18n()
 const mobileOpen = ref(false)
 const scrolled = ref(false)
 
-const links = [
-  { to: '/', label: 'Home' },
-  { to: '/projects', label: 'Projects' },
-  { to: '/courses', label: 'Courses' },
-  { to: '/personal', label: 'Personal' },
-]
+const links = computed(() => [
+  { to: '/', label: i18n.t('nav.home') },
+  { to: '/projects', label: i18n.t('nav.projects') },
+  { to: '/courses', label: i18n.t('nav.courses') },
+  { to: '/personal', label: i18n.t('nav.personal') },
+])
+
+function toggleLocale() {
+  i18n.setLocale(i18n.locale === 'en' ? 'pt' : 'en')
+}
 
 function isActive(to) {
   if (to === '/') return route.path === '/'
