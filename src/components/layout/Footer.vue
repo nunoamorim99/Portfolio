@@ -13,7 +13,7 @@ const { t } = useI18n()
           <p class="font-serif text-display-sm text-charcoal dark:text-cream-100">
             {{ profile.name }}<span class="text-vermillion italic">.</span>
           </p>
-          <p class="mt-2 text-sm tracking-wide text-charcoal-400 dark:text-charcoal-300">{{ t('hero.role') }} — {{ profile.location }}</p>
+          <p class="mt-2 text-sm tracking-wide text-charcoal-400 dark:text-charcoal-300">{{ t('hero.role') }} - {{ profile.location }}</p>
         </div>
         <div class="flex items-center gap-6">
           <a :href="profile.linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"

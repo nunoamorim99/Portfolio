@@ -70,7 +70,7 @@ onMounted(async () => {
 </template>
 
 <style>
-/* Marker container — remove default leaflet icon styles */
+/* Marker container - remove default leaflet icon styles */
 .travel-marker {
   background: none !important;
   border: none !important;
@@ -113,7 +113,7 @@ onMounted(async () => {
   opacity: 0.9;
 }
 
-/* Hover — lift and glow */
+/* Hover - lift and glow */
 .marker-wrapper:hover .marker-pin {
   transform: rotate(-45deg) scale(1.2);
   box-shadow:

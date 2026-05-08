@@ -136,7 +136,7 @@
   animation: scrollLine 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-/* Pin spacer z-index control — keep below navbar */
+/* Pin spacer z-index control - keep below navbar */
 .pin-spacer {
   z-index: 1 !important;
 }

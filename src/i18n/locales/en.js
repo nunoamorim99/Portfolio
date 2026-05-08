@@ -12,13 +12,13 @@ export default {
   hero: {
     role: "Product Manager",
     shortBio:
-      "I build products that matter — combining technical expertise with user empathy to deliver meaningful digital experiences.",
+      "I build products that matter - combining technical expertise with user empathy to deliver meaningful digital experiences.",
     viewProjects: "View Projects",
     downloadCv: "Download CV",
   },
   about: {
     title: "About Me",
-    bio: "Engineer turned Product Manager — working at the intersection of strategy, design, and code. I enjoy the kind of challenges where I get to frame the problem, sketch the first wireframe, and shape ideas into products that teams can build and users actually want to use. I follow the evolution of AI closely and, as my expertise in the area deepens, so does my interest in building products where AI genuinely amplifies or creates value.",
+    bio: "Engineer turned Product Manager - working at the intersection of strategy, design, and code. I enjoy the kind of challenges where I get to frame the problem, sketch the first wireframe, and shape ideas into products that teams can build and users actually want to use. I follow the evolution of AI closely and, as my expertise in the area deepens, so does my interest in building products where AI genuinely amplifies or creates value.",
   },
   interests: {
     title: "Professional Interests",
@@ -27,22 +27,22 @@ export default {
       productInnovation: {
         title: "Product Innovation & Discovery",
         description:
-          "Passionate about identifying unmet user needs and transforming them into impactful product opportunities — from early research and ideation through to detailed feature definition and market validation.",
+          "Passionate about identifying unmet user needs and transforming them into impactful product opportunities - from early research and ideation through to detailed feature definition and market validation.",
       },
       uxAndDesign: {
         title: "UX & Interface Design",
         description:
-          "Bridging the gap between product thinking and design execution — from wireframes to high-fidelity mockups — with a front-end engineering background that enables deep collaboration with design and development teams.",
+          "Bridging the gap between product thinking and design execution - from wireframes to high-fidelity mockups - with a front-end engineering background that enables deep collaboration with design and development teams.",
       },
       agileDelivery: {
         title: "Agile Delivery & Team Alignment",
         description:
-          "Committed to keeping teams focused and informed through structured Agile practices, clear documentation, and strong cross-functional communication — ensuring every sprint moves the product forward with purpose.",
+          "Committed to keeping teams focused and informed through structured Agile practices, clear documentation, and strong cross-functional communication - ensuring every sprint moves the product forward with purpose.",
       },
       aiAndEmergingTech: {
         title: "AI & Emerging Technologies",
         description:
-          "Actively exploring how AI tools and emerging technologies can enhance product workflows and unlock new user value — combining hands-on experimentation with a critical mindset to separate real impact from hype.",
+          "Actively exploring how AI tools and emerging technologies can enhance product workflows and unlock new user value - combining hands-on experimentation with a critical mindset to separate real impact from hype.",
       },
     },
   },
@@ -184,7 +184,7 @@ export default {
         title: "Movize Web App",
         role: "Product Manager/Product Owner/Software Engineer",
         description:
-          "Movize Web is the browser-based companion to the Movize mobile app, bringing the core public transportation experience to desktop, tablet, and mobile browsers. The goal was to extend Movize's reach to users who prefer the web — offering quick access to routes, stops, and trip planning across operators and modes — while intentionally keeping a more focused feature set than the native app. I led the product strategy and execution: defining the scope of the web experience, deciding which features to expose and which to reserve for the mobile app, and ensuring the responsive interface worked well across screen sizes. Working closely with designers and developers, I shaped the roadmap to share enough of Movize's value to attract users without competing with the depth of the native experience.",
+          "Movize Web is the browser-based companion to the Movize mobile app, bringing the core public transportation experience to desktop, tablet, and mobile browsers. The goal was to extend Movize's reach to users who prefer the web - offering quick access to routes, stops, and trip planning across operators and modes - while intentionally keeping a more focused feature set than the native app. I led the product strategy and execution: defining the scope of the web experience, deciding which features to expose and which to reserve for the mobile app, and ensuring the responsive interface worked well across screen sizes. Working closely with designers and developers, I shaped the roadmap to share enough of Movize's value to attract users without competing with the depth of the native experience.",
       },
       "web-platform": {
         title: "Movize Connect",
@@ -223,7 +223,7 @@ export default {
     items: {
       "pc-IBMAIProductManager": {
         title: "Professional Certificate: IBM AI Product Manager",
-        provider: "Coursera — IBM",
+        provider: "Coursera - IBM",
         skills: [
           "Product Management: An Introduction",
           "Product Management: Foundations & Stakeholder Collaboration",
@@ -239,7 +239,7 @@ export default {
       },
       "pc-pm-1": {
         title: "Product Management: An Introduction",
-        provider: "Coursera — IBM",
+        provider: "Coursera - IBM",
         skills: [
           "Project Management",
           "Product Strategy",
@@ -256,7 +256,7 @@ export default {
       },
       "pc-pm-2": {
         title: "Product Management: Foundations & Stakeholder Collaboration",
-        provider: "Coursera — SkillUp",
+        provider: "Coursera - SkillUp",
         skills: [
           "Innovation",
           "Business Development",
@@ -274,7 +274,7 @@ export default {
       },
       "pc-pm-3": {
         title: "Product Management: Initial Product Strategy and Plan",
-        provider: "Coursera — SkillUp",
+        provider: "Coursera - SkillUp",
         skills: [
           "Financial Analysis",
           "Marketing Strategies",
@@ -292,7 +292,7 @@ export default {
       },
       "pc-pm-4": {
         title: "Product Management: Developing and Delivering a New Produt",
-        provider: "Coursera — SkillUp",
+        provider: "Coursera - SkillUp",
         skills: [
           "User Acceptance Testing (UAT)",
           "Product Development",
@@ -310,7 +310,7 @@ export default {
       },
       "pc-pm-5": {
         title: "Introduction to Artificial Intelligence (AI)",
-        provider: "Coursera — IBM",
+        provider: "Coursera - IBM",
         skills: [
           "Responsible AI",
           "Risk Mitigation",
@@ -322,7 +322,7 @@ export default {
       },
       "pc-pm-6": {
         title: "Generative AI: Introduction and Applications",
-        provider: "Coursera — IBM",
+        provider: "Coursera - IBM",
         skills: [
           "AI Personalization",
           "Generative AI",
@@ -334,7 +334,7 @@ export default {
       },
       "pc-pm-7": {
         title: "Product Management: Building AI-Powered Products",
-        provider: "Coursera — IBM",
+        provider: "Coursera - IBM",
         skills: [
           "AI Product Management",
           "AI Product Strategy",
@@ -352,7 +352,7 @@ export default {
       },
       "pc-pm-8": {
         title: "Generative AI: Prompt Engineering Basics",
-        provider: "Coursera — IBM",
+        provider: "Coursera - IBM",
         skills: [
           "Prompt Engineering",
           "Generative AI",
@@ -368,7 +368,7 @@ export default {
       },
       "pc-pm-9": {
         title: "Generative AI: Foundation Models and Platforms",
-        provider: "Coursera — IBM",
+        provider: "Coursera - IBM",
         skills: [
           "Generative AI",
           "Foundation Models",
@@ -384,7 +384,7 @@ export default {
       },
       "pc-pm-10": {
         title: "Generative AI: Supercharge Your Product Management Career",
-        provider: "Coursera — IBM",
+        provider: "Coursera - IBM",
         skills: [
           "AI Product Management",
           "Generative AI",
@@ -400,7 +400,7 @@ export default {
       },
       "pc-ibm-product-owner": {
         title: "Professional Certificate: IBM Product Owner",
-        provider: "Coursera — IBM",
+        provider: "Coursera - IBM",
         skills: [
           "The Product Owner Profession: Unleashing the Power of SCRUM",
           "Introduction to Agile Development and SCRUM",
@@ -412,7 +412,7 @@ export default {
       },
       "pc-po-1": {
         title: "The Product Owner Profession: Unleashing the Power of SCRUM",
-        provider: "Coursera — SkillUp",
+        provider: "Coursera - SkillUp",
         skills: [
           "Product Development",
           "Agile Methodology",
@@ -430,7 +430,7 @@ export default {
       },
       "pc-po-2": {
         title: "Introduction to Agile Development and SCRUM",
-        provider: "Coursera — SkillUp",
+        provider: "Coursera - SkillUp",
         skills: [
           "Agile Methodology",
           "Sprint Planning",
@@ -448,7 +448,7 @@ export default {
       },
       "pc-po-3": {
         title: "Information Technology (IT) Fundamentals for Everyone",
-        provider: "Coursera — IBM",
+        provider: "Coursera - IBM",
         skills: [
           "Network Troubleshooting",
           "Database Software",
@@ -466,7 +466,7 @@ export default {
       },
       "pc-po-4": {
         title: "Product Owner: Communication & Stakeholder Management",
-        provider: "Coursera — SkillUp",
+        provider: "Coursera - SkillUp",
         skills: [
           "Conflict Management",
           "Communication",
@@ -484,7 +484,7 @@ export default {
       },
       "pc-po-5": {
         title: "Product Owner: Essential Skilld and Tools for Innovation",
-        provider: "Coursera — SkillUp",
+        provider: "Coursera - SkillUp",
         skills: [
           "Product Lifecycle",
           "Market Research",
@@ -502,7 +502,7 @@ export default {
       },
       "pc-po-6": {
         title: "Practice Exam for Scrum.org PSPO I Certification",
-        provider: "Coursera — SkillUp",
+        provider: "Coursera - SkillUp",
         skills: [
           "Backlogs",
           "Sprint Planning",
@@ -516,7 +516,7 @@ export default {
       },
       "pc-microsoft-ux-design": {
         title: "Professional Certificate: Microsoft UX Design",
-        provider: "Coursera — Microsoft",
+        provider: "Coursera - Microsoft",
         skills: [
           "Fundamentals of UI/UX Design",
           "Design for User Experience",
@@ -526,7 +526,7 @@ export default {
       },
       "pc-microsoft-ux-design-1": {
         title: "Fundamentals of UI/UX Design",
-        provider: "Coursera — Microsoft",
+        provider: "Coursera - Microsoft",
         skills: [
           "Wireframing",
           "User Interface and User Experience (UI/UX) Design",
@@ -541,7 +541,7 @@ export default {
       },
       "pc-microsoft-ux-design-2": {
         title: "Design for User Experience",
-        provider: "Coursera — Microsoft",
+        provider: "Coursera - Microsoft",
         skills: [
           "User Research",
           "Information Architecture",
@@ -557,7 +557,7 @@ export default {
       },
       "pc-microsoft-ux-design-3": {
         title: "User Interface Design and Prototyping",
-        provider: "Coursera — Microsoft",
+        provider: "Coursera - Microsoft",
         skills: [
           "Prototyping",
           "User Experience Design",
@@ -575,7 +575,7 @@ export default {
       },
       "pc-microsoft-ux-design-4": {
         title: "UX Design in Practice: Acessibility and Collaboration",
-        provider: "Coursera — Microsoft",
+        provider: "Coursera - Microsoft",
         skills: [
           "AI Workflows",
           "Web Content Accessibility Guidelines",
@@ -592,7 +592,7 @@ export default {
       },
       "pc-meta-fe-1": {
         title: "Introduction to Front-End Development",
-        provider: "Coursera — Meta",
+        provider: "Coursera - Meta",
         skills: [
           "General Networking",
           "Bootstrap (Front-End Framework)",
@@ -609,7 +609,7 @@ export default {
       },
       "pc-meta-fe-2": {
         title: "Programming with JavaScript",
-        provider: "Coursera — Meta",
+        provider: "Coursera - Meta",
         skills: [
           "Functional Design",
           "Web Applications",
@@ -627,7 +627,7 @@ export default {
       },
       "pc-meta-fe-3": {
         title: "Version Control",
-        provider: "Coursera — Meta",
+        provider: "Coursera - Meta",
         skills: [
           "Collaborative Software",
           "Software Development",
@@ -645,7 +645,7 @@ export default {
       },
       "pc-meta-fe-4": {
         title: "HTML and CSS in depth",
-        provider: "Coursera — Meta",
+        provider: "Coursera - Meta",
         skills: [
           "Data Validation",
           "User Interface (UI)",
@@ -663,7 +663,7 @@ export default {
       },
       "pc-meta-fe-5": {
         title: "React Basics",
-        provider: "Coursera — Meta",
+        provider: "Coursera - Meta",
         skills: [
           "Web Applications",
           "Data Management",
@@ -680,7 +680,7 @@ export default {
       },
       "johnsHopkins-1": {
         title: "HTML, CSS, and Javascript for Web Developers",
-        provider: "Coursera — Johns Hopkins University",
+        provider: "Coursera - Johns Hopkins University",
         skills: [
           "Development Environment",
           "Web Development Tools",
@@ -697,7 +697,7 @@ export default {
       },
       "intro-jira": {
         title: "Introduction to Jira",
-        provider: "Coursera — Atlassian",
+        provider: "Coursera - Atlassian",
         skills: [
           "Project Management Software",
           "Role-Based Access Control (RBAC)",
@@ -709,7 +709,7 @@ export default {
       },
       "maas-adoption-use": {
         title: "MaaS_ Adoption and Use",
-        provider: "Coursera — Eindhoven University of Technology",
+        provider: "Coursera - Eindhoven University of Technology",
         skills: [
           "Sustainable Systems",
           "Sustainable Development",
@@ -752,12 +752,12 @@ export default {
       reading: {
         title: "Reading",
         description:
-          "From product management books to science fiction — reading broadens perspective and fuels creativity.",
+          "From product management books to science fiction - reading broadens perspective and fuels creativity.",
       },
       lego: {
         title: "Lego",
         description:
-          "Building intricate Lego sets piece by piece — a creative and relaxing way to unwind.",
+          "Building intricate Lego sets piece by piece - a creative and relaxing way to unwind.",
       },
       puzzle: {
         title: "Puzzles",
@@ -799,7 +799,7 @@ export default {
         city: "Rome",
         country: "Italy",
         description:
-          "The Eternal City — from the Colosseum to the Trevi Fountain, every street is a walk through thousands of years of history.",
+          "The Eternal City - from the Colosseum to the Trevi Fountain, every street is a walk through thousands of years of history.",
       },
       venice: {
         city: "Venice",
@@ -811,7 +811,7 @@ export default {
         city: "Milan",
         country: "Italy",
         description:
-          "Italy's fashion and design capital — the Duomo, the Galleria, and a city that perfectly balances tradition and innovation.",
+          "Italy's fashion and design capital - the Duomo, the Galleria, and a city that perfectly balances tradition and innovation.",
       },
       como: {
         city: "Como",
@@ -823,7 +823,7 @@ export default {
         city: "Varenna",
         country: "Italy",
         description:
-          "A hidden gem on the eastern shore of Lake Como — colorful houses, peaceful gardens, and breathtaking lake views.",
+          "A hidden gem on the eastern shore of Lake Como - colorful houses, peaceful gardens, and breathtaking lake views.",
       },
       pisa: {
         city: "Pisa",
@@ -835,43 +835,43 @@ export default {
         city: "Luxembourg",
         country: "Luxembourg",
         description:
-          "A small but impressive capital — dramatic gorges, ancient fortifications, and a unique blend of French and German culture.",
+          "A small but impressive capital - dramatic gorges, ancient fortifications, and a unique blend of French and German culture.",
       },
       maastricht: {
         city: "Maastricht",
         country: "Netherlands",
         description:
-          "One of the oldest cities in the Netherlands — cobblestone streets, cozy cafés, and a distinctly southern European feel.",
+          "One of the oldest cities in the Netherlands - cobblestone streets, cozy cafés, and a distinctly southern European feel.",
       },
       vatican: {
         city: "Vatican City",
         country: "Vatican City",
         description:
-          "The heart of the Catholic world — the awe-inspiring St. Peter's Basilica, the Sistine Chapel, and centuries of art and faith.",
+          "The heart of the Catholic world - the awe-inspiring St. Peter's Basilica, the Sistine Chapel, and centuries of art and faith.",
       },
       eindhoven: {
         city: "Eindhoven",
         country: "Netherlands",
         description:
-          "A hub of technology and design — known for its innovative spirit, modern architecture, and creative energy.",
+          "A hub of technology and design - known for its innovative spirit, modern architecture, and creative energy.",
       },
       antwerp: {
         city: "Antwerp",
         country: "Belgium",
         description:
-          "A city of diamonds, fashion, and Baroque art — with a stunning central station and a vibrant cultural scene.",
+          "A city of diamonds, fashion, and Baroque art - with a stunning central station and a vibrant cultural scene.",
       },
       brussels: {
         city: "Brussels",
         country: "Belgium",
         description:
-          "The heart of Europe — from the Grand Place to the quirky Manneken Pis, a city rich in history, chocolate, and character.",
+          "The heart of Europe - from the Grand Place to the quirky Manneken Pis, a city rich in history, chocolate, and character.",
       },
       lisbon: {
         city: "Lisbon",
         country: "Portugal",
         description:
-          "My home country's capital never disappoints — the trams, the pastel de nata, the views from Alfama.",
+          "My home country's capital never disappoints - the trams, the pastel de nata, the views from Alfama.",
       },
       porto: {
         city: "Porto",
@@ -895,7 +895,7 @@ export default {
         city: "Viana do Castelo",
         country: "Portugal",
         description:
-          "A charming northern Portuguese city where the Lima river meets the Atlantic — rich in traditions, stunning views from Santa Luzia.",
+          "A charming northern Portuguese city where the Lima river meets the Atlantic - rich in traditions, stunning views from Santa Luzia.",
       },
       bern: {
         city: "Bern",
@@ -989,7 +989,7 @@ export default {
       reading: {
         title: "Reading",
         description:
-          "From product management books to science fiction — reading broadens perspective and fuels creativity. Currently exploring behavioral economics and design thinking.",
+          "From product management books to science fiction - reading broadens perspective and fuels creativity. Currently exploring behavioral economics and design thinking.",
       },
       cooking: {
         title: "Cooking",
@@ -1005,7 +1005,7 @@ export default {
   },
   contact: {
     title: "Contact Me",
-    subtitle: "Feel free to reach out — I'd love to hear from you",
+    subtitle: "Feel free to reach out - I'd love to hear from you",
     button: "Contact",
     status: "Available",
   },

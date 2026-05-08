@@ -5,7 +5,7 @@ export const useUiStore = defineStore('ui', () => {
   const isMobileMenuOpen = ref(false)
   const lightbox = ref({ open: false, images: [], index: 0 })
 
-  // Dark mode is permanent — applied once at app start.
+  // Dark mode is permanent - applied once at app start.
   const isDark = ref(true)
   document.documentElement.classList.add('dark')
 

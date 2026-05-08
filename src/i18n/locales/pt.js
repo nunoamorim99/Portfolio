@@ -12,13 +12,13 @@ export default {
   hero: {
     role: 'Gestor de Produto',
     shortBio:
-      'Construo produtos que importam — combinando experiência técnica com empatia pelo utilizador para criar experiências digitais significativas.',
+      'Construo produtos que importam - combinando experiência técnica com empatia pelo utilizador para criar experiências digitais significativas.',
     viewProjects: 'Ver Projetos',
     downloadCv: 'Descarregar CV',
   },
   about: {
     title: 'Sobre Mim',
-    bio: 'De engenheiro a Product Manager — a trabalhar no cruzamento entre estratégia, design e código. Gosto de desafios onde enquadro o problema, esboço o primeiro wireframe e moldo ideias em produtos que as equipas conseguem construir e os utilizadores querem usar. Acompanho de perto a evolução da IA e, à medida que aprofundo conhecimento na área, cresce o interesse em construir produtos onde a IA potencia ou agrega valor real.',
+    bio: 'De engenheiro a Product Manager - a trabalhar no cruzamento entre estratégia, design e código. Gosto de desafios onde enquadro o problema, esboço o primeiro wireframe e moldo ideias em produtos que as equipas conseguem construir e os utilizadores querem usar. Acompanho de perto a evolução da IA e, à medida que aprofundo conhecimento na área, cresce o interesse em construir produtos onde a IA potencia ou agrega valor real.',
   },
   interests: {
     title: 'Interesses Profissionais',
@@ -27,22 +27,22 @@ export default {
       productInnovation: {
         title: 'Inovação e Descoberta de Produto',
         description:
-          'Apaixonado por identificar necessidades não satisfeitas dos utilizadores e transformá-las em oportunidades de produto com impacto — desde a pesquisa inicial e ideação até à definição detalhada de funcionalidades e validação de mercado.',
+          'Apaixonado por identificar necessidades não satisfeitas dos utilizadores e transformá-las em oportunidades de produto com impacto - desde a pesquisa inicial e ideação até à definição detalhada de funcionalidades e validação de mercado.',
       },
       uxAndDesign: {
         title: 'UX & Design de Interfaces',
         description:
-          'Fazer a ponte entre o pensamento de produto e a execução de design — desde wireframes a mockups de alta fidelidade — com uma formação em engenharia front-end que permite uma colaboração profunda com equipas de design e desenvolvimento.',
+          'Fazer a ponte entre o pensamento de produto e a execução de design - desde wireframes a mockups de alta fidelidade - com uma formação em engenharia front-end que permite uma colaboração profunda com equipas de design e desenvolvimento.',
       },
       agileDelivery: {
         title: 'Entrega Ágil & Alinhamento de Equipas',
         description:
-          'Comprometido em manter as equipas focadas e informadas através de práticas Agile estruturadas, documentação clara e comunicação cross-funcional forte — garantindo que cada sprint faz o produto avançar com propósito.',
+          'Comprometido em manter as equipas focadas e informadas através de práticas Agile estruturadas, documentação clara e comunicação cross-funcional forte - garantindo que cada sprint faz o produto avançar com propósito.',
       },
       aiAndEmergingTech: {
         title: 'IA & Tecnologias Emergentes',
         description:
-          'A explorar ativamente como ferramentas de IA e tecnologias emergentes podem melhorar os fluxos de trabalho de produto e desbloquear novo valor para os utilizadores — combinando experimentação prática com uma mentalidade crítica para separar impacto real de hype.',
+          'A explorar ativamente como ferramentas de IA e tecnologias emergentes podem melhorar os fluxos de trabalho de produto e desbloquear novo valor para os utilizadores - combinando experimentação prática com uma mentalidade crítica para separar impacto real de hype.',
       },
     },
   },
@@ -184,7 +184,7 @@ export default {
         title: 'Movize Web App',
         role: 'Gestor de Produto/Product Owner/Engenheiro de Software',
         description:
-          'O Movize Web é a versão para browser do Movize, levando a experiência principal de transportes públicos a desktop, tablet e browsers móveis. O objetivo foi alargar o alcance do Movize aos utilizadores que preferem o web — oferecendo acesso rápido a rotas, paragens e planeamento de viagens entre operadores e modos — mantendo intencionalmente um conjunto de funcionalidades mais focado do que a aplicação nativa. Liderei a estratégia e execução do produto: definindo o âmbito da experiência web, decidindo que funcionalidades expor e quais reservar para a aplicação móvel, e garantindo que a interface responsiva funcionasse bem em diferentes tamanhos de ecrã. Em estreita colaboração com designers e programadores, moldei o roadmap para partilhar o suficiente do valor do Movize para atrair utilizadores sem competir com a profundidade da experiência nativa.',
+          'O Movize Web é a versão para browser do Movize, levando a experiência principal de transportes públicos a desktop, tablet e browsers móveis. O objetivo foi alargar o alcance do Movize aos utilizadores que preferem o web - oferecendo acesso rápido a rotas, paragens e planeamento de viagens entre operadores e modos - mantendo intencionalmente um conjunto de funcionalidades mais focado do que a aplicação nativa. Liderei a estratégia e execução do produto: definindo o âmbito da experiência web, decidindo que funcionalidades expor e quais reservar para a aplicação móvel, e garantindo que a interface responsiva funcionasse bem em diferentes tamanhos de ecrã. Em estreita colaboração com designers e programadores, moldei o roadmap para partilhar o suficiente do valor do Movize para atrair utilizadores sem competir com a profundidade da experiência nativa.',
       },
       'web-platform': {
         title: 'Movize Connect',
@@ -223,7 +223,7 @@ export default {
     items: {
       'pc-IBMAIProductManager': {
         title: 'Professional Certificate: IBM AI Product Manager',
-        provider: 'Coursera — IBM',
+        provider: 'Coursera - IBM',
         skills: [
           'Product Management: An Introduction',
           'Product Management: Foundations & Stakeholder Collaboration',
@@ -239,7 +239,7 @@ export default {
       },
       'pc-pm-1': {
         title: 'Product Management: An Introduction',
-        provider: 'Coursera — IBM',
+        provider: 'Coursera - IBM',
         skills: [
           'Gestão de Projetos',
           'Estratégia de Produto',
@@ -256,7 +256,7 @@ export default {
       },
       'pc-pm-2': {
         title: 'Product Management: Foundations & Stakeholder Collaboration',
-        provider: 'Coursera — SkillUp',
+        provider: 'Coursera - SkillUp',
         skills: [
           'Inovação',
           'Desenvolvimento de Negócio',
@@ -274,7 +274,7 @@ export default {
       },
       'pc-pm-3': {
         title: 'Product Management: Initial Product Strategy and Plan',
-        provider: 'Coursera — SkillUp',
+        provider: 'Coursera - SkillUp',
         skills: [
           'Análise Financeira',
           'Estratégias de Marketing',
@@ -292,7 +292,7 @@ export default {
       },
       'pc-pm-4': {
         title: 'Product Management: Developing and Delivering a New Produt',
-        provider: 'Coursera — SkillUp',
+        provider: 'Coursera - SkillUp',
         skills: [
           'Testes de Aceitação do Utilizador (UAT)',
           'Desenvolvimento de Produto',
@@ -310,7 +310,7 @@ export default {
       },
       'pc-pm-5': {
         title: 'Introduction to Artificial Intelligence (AI)',
-        provider: 'Coursera — IBM',
+        provider: 'Coursera - IBM',
         skills: [
           'IA Responsável',
           'Mitigação de Risco',
@@ -322,7 +322,7 @@ export default {
       },
       'pc-pm-6': {
         title: 'Generative AI: Introduction and Applications',
-        provider: 'Coursera — IBM',
+        provider: 'Coursera - IBM',
         skills: [
           'Personalização com IA',
           'IA Generativa',
@@ -334,7 +334,7 @@ export default {
       },
       'pc-pm-7': {
         title: 'Product Management: Building AI-Powered Products',
-        provider: 'Coursera — IBM',
+        provider: 'Coursera - IBM',
         skills: [
           'Gestão de Produto com IA',
           'Estratégia de Produto com IA',
@@ -352,7 +352,7 @@ export default {
       },
       'pc-pm-8': {
         title: 'Generative AI: Prompt Engineering Basics',
-        provider: 'Coursera — IBM',
+        provider: 'Coursera - IBM',
         skills: [
           'Engenharia de Prompts',
           'IA Generativa',
@@ -368,7 +368,7 @@ export default {
       },
       'pc-pm-9': {
         title: 'Generative AI: Foundation Models and Platforms',
-        provider: 'Coursera — IBM',
+        provider: 'Coursera - IBM',
         skills: [
           'IA Generativa',
           'Foundation Models',
@@ -384,7 +384,7 @@ export default {
       },
       'pc-pm-10': {
         title: 'Generative AI: Supercharge Your Product Management Career',
-        provider: 'Coursera — IBM',
+        provider: 'Coursera - IBM',
         skills: [
           'Gestão de Produto com IA',
           'IA Generativa',
@@ -400,7 +400,7 @@ export default {
       },
       'pc-ibm-product-owner': {
         title: 'Professional Certificate: IBM Product Owner',
-        provider: 'Coursera — IBM',
+        provider: 'Coursera - IBM',
         skills: [
           'The Product Owner Profession: Unleashing the Power of SCRUM',
           'Introduction to Agile Development and SCRUM',
@@ -412,7 +412,7 @@ export default {
       },
       'pc-po-1': {
         title: 'The Product Owner Profession: Unleashing the Power of SCRUM',
-        provider: 'Coursera — SkillUp',
+        provider: 'Coursera - SkillUp',
         skills: [
           'Desenvolvimento de Produto',
           'Metodologia Agile',
@@ -430,7 +430,7 @@ export default {
       },
       'pc-po-2': {
         title: 'Introduction to Agile Development and SCRUM',
-        provider: 'Coursera — SkillUp',
+        provider: 'Coursera - SkillUp',
         skills: [
           'Metodologia Agile',
           'Planeamento de Sprints',
@@ -448,7 +448,7 @@ export default {
       },
       'pc-po-3': {
         title: 'Information Technology (IT) Fundamentals for Everyone',
-        provider: 'Coursera — IBM',
+        provider: 'Coursera - IBM',
         skills: [
           'Resolução de Problemas de Rede',
           'Software de Base de Dados',
@@ -466,7 +466,7 @@ export default {
       },
       'pc-po-4': {
         title: 'Product Owner: Communication & Stakeholder Management',
-        provider: 'Coursera — SkillUp',
+        provider: 'Coursera - SkillUp',
         skills: [
           'Gestão de Conflitos',
           'Comunicação',
@@ -484,7 +484,7 @@ export default {
       },
       'pc-po-5': {
         title: 'Product Owner: Essential Skilld and Tools for Innovation',
-        provider: 'Coursera — SkillUp',
+        provider: 'Coursera - SkillUp',
         skills: [
           'Ciclo de Vida do Produto',
           'Pesquisa de Mercado',
@@ -502,7 +502,7 @@ export default {
       },
       'pc-po-6': {
         title: 'Practice Exam for Scrum.org PSPO I Certification',
-        provider: 'Coursera — SkillUp',
+        provider: 'Coursera - SkillUp',
         skills: [
           'Backlogs',
           'Planeamento de Sprints',
@@ -516,7 +516,7 @@ export default {
       },
       'pc-microsoft-ux-design': {
         title: 'Professional Certificate: Microsoft UX Design',
-        provider: 'Coursera — Microsoft',
+        provider: 'Coursera - Microsoft',
         skills: [
           'Fundamentals of UI/UX Design',
           'Design for User Experience',
@@ -526,7 +526,7 @@ export default {
       },
       'pc-microsoft-ux-design-1': {
         title: 'Fundamentals of UI/UX Design',
-        provider: 'Coursera — Microsoft',
+        provider: 'Coursera - Microsoft',
         skills: [
           'Wireframing',
           'Design de Interface e Experiência do Utilizador (UI/UX)',
@@ -541,7 +541,7 @@ export default {
       },
       'pc-microsoft-ux-design-2': {
         title: 'Design for User Experience',
-        provider: 'Coursera — Microsoft',
+        provider: 'Coursera - Microsoft',
         skills: [
           'Pesquisa de Utilizadores',
           'Arquitetura de Informação',
@@ -557,7 +557,7 @@ export default {
       },
       'pc-microsoft-ux-design-3': {
         title: 'User Interface Design and Prototyping',
-        provider: 'Coursera — Microsoft',
+        provider: 'Coursera - Microsoft',
         skills: [
           'Prototipagem',
           'Design de Experiência do Utilizador',
@@ -575,7 +575,7 @@ export default {
       },
       'pc-microsoft-ux-design-4': {
         title: 'UX Design in Practice: Acessibility and Collaboration',
-        provider: 'Coursera — Microsoft',
+        provider: 'Coursera - Microsoft',
         skills: [
           'Fluxos de Trabalho com IA',
           'Diretrizes de Acessibilidade de Conteúdo Web',
@@ -592,7 +592,7 @@ export default {
       },
       'pc-meta-fe-1': {
         title: 'Introduction to Front-End Development',
-        provider: 'Coursera — Meta',
+        provider: 'Coursera - Meta',
         skills: [
           'Redes em Geral',
           'Bootstrap (Framework Front-End)',
@@ -609,7 +609,7 @@ export default {
       },
       'pc-meta-fe-2': {
         title: 'Programming with JavaScript',
-        provider: 'Coursera — Meta',
+        provider: 'Coursera - Meta',
         skills: [
           'Design Funcional',
           'Aplicações Web',
@@ -627,7 +627,7 @@ export default {
       },
       'pc-meta-fe-3': {
         title: 'Version Control',
-        provider: 'Coursera — Meta',
+        provider: 'Coursera - Meta',
         skills: [
           'Software Colaborativo',
           'Desenvolvimento de Software',
@@ -645,7 +645,7 @@ export default {
       },
       'pc-meta-fe-4': {
         title: 'HTML and CSS in depth',
-        provider: 'Coursera — Meta',
+        provider: 'Coursera - Meta',
         skills: [
           'Validação de Dados',
           'Interface do Utilizador (UI)',
@@ -663,7 +663,7 @@ export default {
       },
       'pc-meta-fe-5': {
         title: 'React Basics',
-        provider: 'Coursera — Meta',
+        provider: 'Coursera - Meta',
         skills: [
           'Aplicações Web',
           'Gestão de Dados',
@@ -680,7 +680,7 @@ export default {
       },
       'johnsHopkins-1': {
         title: 'HTML, CSS, and Javascript for Web Developers',
-        provider: 'Coursera — Johns Hopkins University',
+        provider: 'Coursera - Johns Hopkins University',
         skills: [
           'Ambiente de Desenvolvimento',
           'Ferramentas de Desenvolvimento Web',
@@ -697,7 +697,7 @@ export default {
       },
       'intro-jira': {
         title: 'Introduction to Jira',
-        provider: 'Coursera — Atlassian',
+        provider: 'Coursera - Atlassian',
         skills: [
           'Software de Gestão de Projetos',
           'Controlo de Acesso Baseado em Funções (RBAC)',
@@ -709,7 +709,7 @@ export default {
       },
       'maas-adoption-use': {
         title: 'MaaS_ Adoption and Use',
-        provider: 'Coursera — Eindhoven University of Technology',
+        provider: 'Coursera - Eindhoven University of Technology',
         skills: [
           'Sistemas Sustentáveis',
           'Desenvolvimento Sustentável',
@@ -752,12 +752,12 @@ export default {
       reading: {
         title: 'Leitura',
         description:
-          'Desde livros de gestão de produto a ficção científica — a leitura amplia perspetivas e alimenta a criatividade.',
+          'Desde livros de gestão de produto a ficção científica - a leitura amplia perspetivas e alimenta a criatividade.',
       },
       lego: {
         title: 'Lego',
         description:
-          'Construir sets de Lego peça a peça — uma forma criativa e relaxante de descontrair.',
+          'Construir sets de Lego peça a peça - uma forma criativa e relaxante de descontrair.',
       },
       puzzle: {
         title: 'Puzzles',
@@ -799,7 +799,7 @@ export default {
         city: 'Roma',
         country: 'Itália',
         description:
-          'A Cidade Eterna — do Coliseu à Fontana di Trevi, cada rua é um passeio por milhares de anos de história.',
+          'A Cidade Eterna - do Coliseu à Fontana di Trevi, cada rua é um passeio por milhares de anos de história.',
       },
       venice: {
         city: 'Veneza',
@@ -811,7 +811,7 @@ export default {
         city: 'Milão',
         country: 'Itália',
         description:
-          'A capital da moda e do design de Itália — o Duomo, a Galleria, e uma cidade que equilibra perfeitamente tradição e inovação.',
+          'A capital da moda e do design de Itália - o Duomo, a Galleria, e uma cidade que equilibra perfeitamente tradição e inovação.',
       },
       como: {
         city: 'Como',
@@ -823,7 +823,7 @@ export default {
         city: 'Varenna',
         country: 'Itália',
         description:
-          'Uma joia escondida na margem oriental do Lago Como — casas coloridas, jardins tranquilos e vistas de cortar a respiração.',
+          'Uma joia escondida na margem oriental do Lago Como - casas coloridas, jardins tranquilos e vistas de cortar a respiração.',
       },
       pisa: {
         city: 'Pisa',
@@ -835,43 +835,43 @@ export default {
         city: 'Luxemburgo',
         country: 'Luxemburgo',
         description:
-          'Uma capital pequena mas impressionante — desfiladeiros dramáticos, fortificações antigas e uma mistura única de cultura francesa e alemã.',
+          'Uma capital pequena mas impressionante - desfiladeiros dramáticos, fortificações antigas e uma mistura única de cultura francesa e alemã.',
       },
       maastricht: {
         city: 'Maastricht',
         country: 'Países Baixos',
         description:
-          'Uma das cidades mais antigas dos Países Baixos — ruas de calçada, cafés acolhedores e um ambiente distintamente sul-europeu.',
+          'Uma das cidades mais antigas dos Países Baixos - ruas de calçada, cafés acolhedores e um ambiente distintamente sul-europeu.',
       },
       vatican: {
         city: 'Cidade do Vaticano',
         country: 'Cidade do Vaticano',
         description:
-          'O coração do mundo católico — a impressionante Basílica de São Pedro, a Capela Sistina e séculos de arte e fé.',
+          'O coração do mundo católico - a impressionante Basílica de São Pedro, a Capela Sistina e séculos de arte e fé.',
       },
       eindhoven: {
         city: 'Eindhoven',
         country: 'Países Baixos',
         description:
-          'Um polo de tecnologia e design — conhecida pelo seu espírito inovador, arquitetura moderna e energia criativa.',
+          'Um polo de tecnologia e design - conhecida pelo seu espírito inovador, arquitetura moderna e energia criativa.',
       },
       antwerp: {
         city: 'Antuérpia',
         country: 'Bélgica',
         description:
-          'Uma cidade de diamantes, moda e arte barroca — com uma estação central deslumbrante e uma vibrante cena cultural.',
+          'Uma cidade de diamantes, moda e arte barroca - com uma estação central deslumbrante e uma vibrante cena cultural.',
       },
       brussels: {
         city: 'Bruxelas',
         country: 'Bélgica',
         description:
-          'O coração da Europa — da Grand Place ao peculiar Manneken Pis, uma cidade rica em história, chocolate e carácter.',
+          'O coração da Europa - da Grand Place ao peculiar Manneken Pis, uma cidade rica em história, chocolate e carácter.',
       },
       lisbon: {
         city: 'Lisboa',
         country: 'Portugal',
         description:
-          'A capital do meu país nunca desilude — os elétricos, os pastéis de nata, as vistas de Alfama.',
+          'A capital do meu país nunca desilude - os elétricos, os pastéis de nata, as vistas de Alfama.',
       },
       porto: {
         city: 'Porto',
@@ -895,7 +895,7 @@ export default {
         city: 'Viana do Castelo',
         country: 'Portugal',
         description:
-          'Uma encantadora cidade do norte de Portugal onde o rio Lima encontra o Atlântico — rica em tradições, com vistas deslumbrantes de Santa Luzia.',
+          'Uma encantadora cidade do norte de Portugal onde o rio Lima encontra o Atlântico - rica em tradições, com vistas deslumbrantes de Santa Luzia.',
       },
       bern: {
         city: 'Berna',
@@ -990,7 +990,7 @@ export default {
       reading: {
         title: 'Leitura',
         description:
-          'Desde livros de gestão de produto a ficção científica — a leitura amplia perspetivas e alimenta a criatividade. Atualmente a explorar economia comportamental e design thinking.',
+          'Desde livros de gestão de produto a ficção científica - a leitura amplia perspetivas e alimenta a criatividade. Atualmente a explorar economia comportamental e design thinking.',
       },
       cooking: {
         title: 'Cozinha',
@@ -1006,7 +1006,7 @@ export default {
   },
   contact: {
     title: 'Contacte-me',
-    subtitle: 'Não hesite em entrar em contacto — adoraria saber de si',
+    subtitle: 'Não hesite em entrar em contacto - adoraria saber de si',
     button: 'Contactar',
     status: 'Disponível',
   },

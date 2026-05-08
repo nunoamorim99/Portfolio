@@ -45,7 +45,7 @@ function setupAnimations() {
         ease: "power3.out",
       });
 
-      // Bio fades in once on entry — no scroll-driven reveal
+      // Bio fades in once on entry - no scroll-driven reveal
       gsap.from(textRef.value, {
         scrollTrigger: {
           trigger: sectionRef.value,

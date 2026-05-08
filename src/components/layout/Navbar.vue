@@ -194,7 +194,7 @@ onUnmounted(() => {
   </header>
 
   <!-- Mobile menu (teleported out of <header> to escape the scrolled
-       backdrop-filter context — nested backdrop-filters don't compose) -->
+       backdrop-filter context - nested backdrop-filters don't compose) -->
   <Teleport to="body">
     <Transition
       enter-active-class="transition duration-300 ease-out"
