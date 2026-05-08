@@ -168,7 +168,7 @@ onUnmounted(() => {
           <div
             v-for="(pos, i) in focoCriativo.positions"
             :key="pos.id"
-            class="shrink-0 w-[30vw] min-w-[320px] h-[70vh] flex flex-col justify-center p-10 xl:p-12 border-l border-charcoal-100 dark:border-charcoal-700"
+            class="shrink-0 w-[34vw] min-w-[420px] max-w-[560px] h-[80vh] flex flex-col justify-center p-10 xl:p-12 border-l border-charcoal-100 dark:border-charcoal-700"
           >
             <span
               class="text-[4.5rem] font-serif text-vermillion/15 leading-none mb-2 select-none"
@@ -191,7 +191,7 @@ onUnmounted(() => {
             </div>
             <p
               v-if="te(`experience.positions.${pos.id}.description`)"
-              class="mt-4 text-sm leading-relaxed text-charcoal-400 dark:text-charcoal-300 line-clamp-5"
+              class="mt-4 text-sm leading-relaxed text-charcoal-400 dark:text-charcoal-300"
             >
               {{ t(`experience.positions.${pos.id}.description`) }}
             </p>

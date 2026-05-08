@@ -71,7 +71,6 @@ onUnmounted(() => {
                 </div>
                 <span class="flex-shrink-0 text-xs font-bold uppercase tracking-widest text-charcoal-300 dark:text-charcoal-400 mt-2">{{ profile.educationPeriods[id] }}</span>
               </div>
-              <p class="mt-4 text-sm leading-relaxed text-charcoal-400 dark:text-charcoal-300">{{ t(`education.items.${id}.description`) }}</p>
             </div>
           </div>
         </div>

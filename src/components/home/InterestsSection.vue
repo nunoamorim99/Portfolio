@@ -34,9 +34,9 @@ onMounted(() => {
         scrollTrigger: {
           trigger: sectionRef.value,
           start: "top top",
-          end: () => `+=${scrollAmount}`,
+          end: () => `+=${scrollAmount * 2.5}`,
           pin: true,
-          scrub: 1,
+          scrub: 1.5,
           invalidateOnRefresh: true,
           anticipatePin: 1,
         },
@@ -48,8 +48,8 @@ onMounted(() => {
         gsap.from(card, {
           y: 40,
           opacity: 0,
-          duration: 0.6,
-          ease: "power2.out",
+          duration: 0.8,
+          ease: "power3.out",
           scrollTrigger: {
             trigger: card,
             start: "left 85%",

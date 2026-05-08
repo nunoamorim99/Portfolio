@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 
 export default defineConfig({
-  base: '/SinglePageApplicationPortfolio/',
+  base: '/Portfolio/',
   assetsInclude: ['**/*.JPG'],
   plugins: [vue()],
   resolve: {

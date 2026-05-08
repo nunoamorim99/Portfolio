@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watch, nextTick } from "vue";
+import { ref, onMounted, onUnmounted, watch, nextTick } from "vue";
 import { useI18n } from "vue-i18n";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,8 +12,6 @@ const titleRef = ref(null);
 const lineRef = ref(null);
 const textRef = ref(null);
 let ctx;
-
-const bioWords = computed(() => t("about.bio").split(/\s+/));
 
 function setupAnimations() {
   ctx?.revert();
@@ -47,22 +45,19 @@ function setupAnimations() {
         ease: "power3.out",
       });
 
-      // Word-by-word opacity reveal on scroll
-      const words = textRef.value?.querySelectorAll(".scroll-word");
-      if (words?.length) {
-        gsap.set(words, { opacity: 0.12 });
-        gsap.to(words, {
-          scrollTrigger: {
-            trigger: textRef.value,
-            start: "top 70%",
-            end: "bottom 40%",
-            scrub: true,
-          },
-          opacity: 1,
-          stagger: 0.05,
-          ease: "none",
-        });
-      }
+      // Bio fades in once on entry — no scroll-driven reveal
+      gsap.from(textRef.value, {
+        scrollTrigger: {
+          trigger: sectionRef.value,
+          start: "top 70%",
+          toggleActions: "play none none none",
+        },
+        y: 30,
+        opacity: 0,
+        duration: 0.9,
+        delay: 0.15,
+        ease: "power3.out",
+      });
     }, sectionRef.value);
   });
 }
@@ -83,14 +78,9 @@ onUnmounted(() => ctx?.revert());
         <div class="lg:col-span-8 min-w-0">
           <p
             ref="textRef"
-            class="text-lg sm:text-xl lg:text-2xl leading-relaxed sm:leading-relaxed lg:leading-[1.8] text-charcoal-500 dark:text-charcoal-300 font-serif italic break-words overflow-wrap-anywhere"
+            class="text-lg sm:text-xl lg:text-[1.6rem] leading-relaxed lg:leading-[1.55] text-charcoal-600 dark:text-charcoal-200 font-serif hyphens-none"
           >
-            <span
-              v-for="(word, i) in bioWords"
-              :key="`${locale}-${i}`"
-              class="scroll-word"
-              >{{ word }}
-            </span>
+            {{ t("about.bio") }}
           </p>
         </div>
       </div>
@@ -98,9 +88,3 @@ onUnmounted(() => ctx?.revert());
   </section>
 </template>
 
-<style scoped>
-.overflow-wrap-anywhere {
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-</style>
