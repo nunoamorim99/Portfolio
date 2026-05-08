@@ -1,63 +1,25 @@
-# Personal Portfolio SPA
+# Portfolio — Nuno Amorim
 
-A modern, responsive single-page portfolio application built with Vue.js 3, Tailwind CSS, and Leaflet.js.
+> Engineer turned Product Manager — working at the intersection of strategy, design, and code.
 
-## Tech Stack
+**Live site:** [nunoamorim99.github.io/Portfolio](https://nunoamorim99.github.io/Portfolio/)
 
-- **Framework:** Vue.js 3 (Composition API)
-- **Routing:** Vue Router 4 (client-side)
-- **Styling:** Tailwind CSS 3
-- **State:** Pinia
-- **Map:** Leaflet.js
-- **Build:** Vite 5
+## What this is
 
-## Setup
+The source for my personal portfolio — a bilingual (EN / PT) single-page application that brings together:
 
-```bash
-# Install dependencies
-npm install
+- **Experience** — Product Manager → Product Owner → Software Engineer → Intern at Foco Criativo, plus earlier seasonal work.
+- **Projects** — Movize and the Movize Connect ecosystem: a mobile app, a web platform, and the modules I've shaped (Events, GTFS, Street Furniture & Sensors).
+- **Courses & Certifications** — IBM AI Product Manager, IBM Product Owner, Microsoft UX Design, Meta Front-End Developer, and more.
+- **About** — who I am, what I care about, and where I'm focused right now: AI products that create real value, not just ride a trend.
 
-# Start development server
-npm run dev
+The site is dark by default and designed to read like an editorial piece, not a CV dump.
 
-# Build for production
-npm run build
+## Stack
 
-# Preview production build
-npm run preview
-```
+Vue 3 + Vite, Tailwind CSS, Pinia, Vue Router, GSAP for motion, Leaflet for the travel map. Deployed via GitHub Actions to GitHub Pages.
 
-## Project Structure
+## Contact
 
-```
-src/
-├── assets/          # Global CSS
-├── components/
-│   ├── home/        # Home page sections
-│   ├── courses/     # Course card component
-│   ├── layout/      # Navbar, Footer
-│   ├── personal/    # Hobby card, Travel map
-│   ├── projects/    # Project card component
-│   └── shared/      # Lightbox, PhotoGallery
-├── data/            # All content (edit these to customize)
-├── pages/           # Route page components
-├── router/          # Vue Router config
-└── stores/          # Pinia stores
-```
-
-## Customization
-
-All content lives in `src/data/`. Edit these files to personalize:
-
-| File | Content |
-|------|---------|
-| `profile.js` | Name, title, bio, photo, interests, education |
-| `skills.js` | Top skills, other skills, languages |
-| `projects.js` | Project list with details and images |
-| `courses.js` | Courses and certifications |
-| `travel.js` | Visited cities with coordinates and photos |
-| `sports.js` | Sports and achievements |
-| `photos.js` | Photography gallery |
-| `hobbies.js` | Other hobbies |
-
-Place your CV at `public/cv.pdf` to enable the download button.
+- [nuno.amorim@fococriativo.pt](mailto:nuno.amorim@fococriativo.pt)
+- [Live portfolio](https://nunoamorim99.github.io/Portfolio/)
