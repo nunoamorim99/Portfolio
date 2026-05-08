@@ -17,9 +17,9 @@ The site is dark by default and designed to read like an editorial piece, not a 
 
 ## Stack
 
-Vue 3 + Vite, Tailwind CSS, Pinia, Vue Router, GSAP for motion, Leaflet for the travel map. Deployed via GitHub Actions to GitHub Pages.
+Vue 3 + Vite, Tailwind CSS, Pinia, Vue Router, GSAP for motion. Deployed via GitHub Actions to GitHub Pages.
 
 ## Contact
 
-- [nuno.amorim@fococriativo.pt](mailto:nuno.amorim@fococriativo.pt)
+- [nunomamorim99@gmail.com](mailto:nunomamorim99@gmail.com)
 - [Live portfolio](https://nunoamorim99.github.io/Portfolio/)
