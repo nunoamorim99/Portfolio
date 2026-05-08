@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="NA monogram">
+  <rect width="64" height="64" rx="10" fill="#ff4d00"/>
+  <g stroke="#fdfcfa" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- N: left stem -->
+    <path d="M 10 11 V 53"/>
+    <!-- N: diagonal -->
+    <path d="M 10 11 L 28 53"/>
+    <!-- Shared stem: right of N + left of A -->
+    <path d="M 28 11 V 53"/>
+    <!-- A: right leg splaying from shared apex -->
+    <path d="M 28 11 L 54 53"/>
+    <!-- A: crossbar -->
+    <path d="M 31 36 H 51"/>
+  </g>
+</svg>

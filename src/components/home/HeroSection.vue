@@ -16,7 +16,25 @@ const sectionRef = ref(null)
 const contentRef = ref(null)
 const bgRef = ref(null)
 const scrollHintRef = ref(null)
+const cvOpen = ref(false)
 let ctx
+
+const cvOptions = [
+  { code: 'en', flag: 'gb', file: 'Nuno_Amorim_CV_EN.pdf' },
+  { code: 'pt', flag: 'pt', file: 'Nuno_Amorim_CV_PT.pdf' },
+]
+
+function flagUrl(countryCode) {
+  return `https://flagcdn.com/w40/${countryCode}.png`
+}
+
+function cvHref(file) {
+  return `${import.meta.env.BASE_URL}${file}`
+}
+
+function onCvClickOutside(e) {
+  if (!e.target.closest('.cv-switcher')) cvOpen.value = false
+}
 
 const ballpitColors = computed(() =>
   ui.isDark
@@ -25,6 +43,7 @@ const ballpitColors = computed(() =>
 )
 
 onMounted(() => {
+  document.addEventListener('click', onCvClickOutside)
   ctx = gsap.context(() => {
     // Hero content fades out + parallax as user scrolls past
     gsap.to(contentRef.value, {
@@ -69,6 +88,7 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
+  document.removeEventListener('click', onCvClickOutside)
   ctx?.revert()
 })
 </script>
@@ -116,12 +136,55 @@ onUnmounted(() => {
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
             </router-link>
-            <a href="/cv.pdf" download class="btn-secondary">
-              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-              </svg>
-              {{ t('hero.downloadCv') }}
-            </a>
+            <div class="cv-switcher relative">
+              <button
+                type="button"
+                class="btn-secondary"
+                :aria-expanded="cvOpen"
+                aria-haspopup="menu"
+                @click="cvOpen = !cvOpen"
+              >
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                </svg>
+                {{ t('hero.downloadCv') }}
+              </button>
+              <Transition
+                enter-active-class="transition duration-150 ease-out"
+                enter-from-class="scale-95 opacity-0"
+                enter-to-class="scale-100 opacity-100"
+                leave-active-class="transition duration-100 ease-in"
+                leave-from-class="scale-100 opacity-100"
+                leave-to-class="scale-95 opacity-0"
+              >
+                <ul
+                  v-if="cvOpen"
+                  role="menu"
+                  class="absolute left-0 top-full mt-2 z-20 min-w-[200px] origin-top-left overflow-hidden border border-charcoal-100 bg-cream-50 py-1 shadow-lg dark:border-charcoal-700 dark:bg-charcoal-800"
+                >
+                  <li
+                    v-for="opt in cvOptions"
+                    :key="opt.code"
+                    role="none"
+                  >
+                    <a
+                      :href="cvHref(opt.file)"
+                      :download="opt.file"
+                      role="menuitem"
+                      class="flex w-full items-center gap-3 px-4 py-3 text-xs font-bold uppercase tracking-wider text-charcoal-500 transition-colors hover:bg-charcoal-50 hover:text-charcoal dark:text-charcoal-300 dark:hover:bg-charcoal-700 dark:hover:text-cream-100"
+                      @click="cvOpen = false"
+                    >
+                      <img
+                        :src="flagUrl(opt.flag)"
+                        :alt="opt.code"
+                        class="h-3.5 w-5 rounded-sm object-cover"
+                      />
+                      {{ t(`lang.${opt.code}`) }}
+                    </a>
+                  </li>
+                </ul>
+              </Transition>
+            </div>
           </div>
         </div>
 
@@ -135,7 +198,6 @@ onUnmounted(() => {
               class="relative h-72 w-72 sm:h-80 sm:w-80 lg:h-96 lg:w-96 object-cover grayscale hover:grayscale-0 transition-all duration-700"
               loading="eager"
             />
-            <div class="absolute -bottom-3 -right-3 w-24 h-24 border-2 border-vermillion" aria-hidden="true" />
           </div>
         </div>
       </div>

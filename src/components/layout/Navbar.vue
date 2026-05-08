@@ -10,6 +10,7 @@ const route = useRoute();
 const ui = useUiStore();
 const scrolled = ref(false);
 const langOpen = ref(false);
+const baseUrl = import.meta.env.BASE_URL;
 
 const navLinks = [
   { key: "home", to: "/" },
@@ -75,10 +76,16 @@ onUnmounted(() => {
       <!-- Logo -->
       <router-link
         to="/"
-        class="font-serif text-2xl text-charcoal transition-colors hover:text-vermillion dark:text-cream-100 dark:hover:text-vermillion"
+        class="group flex items-center gap-2.5 font-serif text-2xl text-charcoal transition-colors hover:text-vermillion dark:text-cream-100 dark:hover:text-vermillion"
         @click="ui.closeMobileMenu()"
       >
-        Nuno<span class="text-vermillion italic">.</span>
+        <img
+          :src="`${baseUrl}favicon.svg`"
+          alt=""
+          aria-hidden="true"
+          class="h-7 w-7 transition-transform duration-300 group-hover:rotate-3"
+        />
+        <span>Nuno<span class="text-vermillion italic">.</span></span>
       </router-link>
 
       <div class="flex items-center gap-1">
@@ -184,7 +191,11 @@ onUnmounted(() => {
       </div>
     </nav>
 
-    <!-- Mobile menu -->
+  </header>
+
+  <!-- Mobile menu (teleported out of <header> to escape the scrolled
+       backdrop-filter context — nested backdrop-filters don't compose) -->
+  <Teleport to="body">
     <Transition
       enter-active-class="transition duration-300 ease-out"
       enter-from-class="opacity-0 -translate-y-2"
@@ -195,7 +206,7 @@ onUnmounted(() => {
     >
       <div
         v-if="ui.isMobileMenuOpen"
-        class="absolute inset-x-0 top-20 border-b border-charcoal-100 bg-cream-50/98 px-6 pb-8 pt-4 backdrop-blur-md dark:border-charcoal-700 dark:bg-charcoal-900/98 md:hidden"
+        class="fixed inset-x-0 top-20 z-40 border-b border-charcoal-100 bg-cream-50/80 px-6 pb-8 pt-4 backdrop-blur-md dark:border-charcoal-700 dark:bg-charcoal-900/80 md:hidden"
       >
         <ul class="flex flex-col gap-1">
           <li v-for="link in navLinks" :key="link.key">
@@ -215,5 +226,5 @@ onUnmounted(() => {
         </ul>
       </div>
     </Transition>
-  </header>
+  </Teleport>
 </template>
