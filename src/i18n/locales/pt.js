@@ -164,13 +164,27 @@ export default {
     title: 'Projetos',
     subtitle:
       'Uma seleção de projetos e produtos nos quais estive envolvido em diferentes funções e que ajudei a desenvolver e lançar',
-    toolsLabel: 'Ferramentas & Tecnologias',
+    platformsLabel: 'Disponível em',
+    visitSite: 'Visitar site',
+    platforms: {
+      android: 'Android',
+      ios: 'iOS',
+      desktop: 'Desktop',
+      tablet: 'Tablet',
+      phone: 'Telemóvel',
+    },
     items: {
       'mobile-app': {
-        title: 'Movize',
-        role: 'Gestor de Produto/Product Owner',
+        title: 'Movize Mobile App',
+        role: 'Gestor de Produto/Product Owner/Engenheiro de Software',
         description:
           'O Movize é uma aplicação móvel concebida para centralizar toda a informação de transportes públicos. O objetivo era desenvolver uma aplicação capaz de ajudar os utilizadores de transportes públicos a aceder a toda a informação que precisam para se deslocarem por todo o país, permitindo a ligação entre vários modos de transporte público e operadores. Fui responsável pelo desenvolvimento e evolução do Movize, gerindo o backlog do produto e garantindo o alinhamento entre objetivos de negócio, necessidades dos utilizadores e implementação técnica. A minha função envolveu definir requisitos de produto, priorizar funcionalidades e traduzir objetivos estratégicos em histórias de utilizador claras para a equipa de desenvolvimento. Trabalhei em estreita colaboração com designers, programadores e stakeholders para garantir que o produto entregasse valor, mantendo sempre um forte foco na experiência do utilizador e na qualidade do produto. Através da gestão do backlog, planeamento de sprints e ciclos contínuos de feedback, ajudei a orientar o roadmap do produto e assegurei que a equipa entregasse funcionalidades significativas e impactantes para o Movize.',
+      },
+      'web-app': {
+        title: 'Movize Web App',
+        role: 'Gestor de Produto/Product Owner/Engenheiro de Software',
+        description:
+          'O Movize Web é a versão para browser do Movize, levando a experiência principal de transportes públicos a desktop, tablet e browsers móveis. O objetivo foi alargar o alcance do Movize aos utilizadores que preferem o web — oferecendo acesso rápido a rotas, paragens e planeamento de viagens entre operadores e modos — mantendo intencionalmente um conjunto de funcionalidades mais focado do que a aplicação nativa. Liderei a estratégia e execução do produto: definindo o âmbito da experiência web, decidindo que funcionalidades expor e quais reservar para a aplicação móvel, e garantindo que a interface responsiva funcionasse bem em diferentes tamanhos de ecrã. Em estreita colaboração com designers e programadores, moldei o roadmap para partilhar o suficiente do valor do Movize para atrair utilizadores sem competir com a profundidade da experiência nativa.',
       },
       'web-platform': {
         title: 'Movize Connect',
@@ -180,19 +194,19 @@ export default {
       },
       'events-module': {
         title: 'Movize Connect - Módulo de Eventos',
-        role: 'Gestor de Produto/Product Owner',
+        role: 'Gestor de Produto/Product Owner/Engenheiro de Software',
         description:
           'O Módulo de Eventos é um módulo desenvolvido dentro da plataforma Movize Connect para gerir informação sobre eventos publicados na aplicação móvel. Este módulo é destinado a organizadores de eventos ou administradores que podem criar eventos.',
       },
       'gtfs-management-module': {
         title: 'Movize Connect - Módulo de Gestão GTFS',
-        role: 'Gestor de Produto/Product Owner',
+        role: 'Gestor de Produto/Product Owner/Engenheiro de Software',
         description:
           'O Módulo de Gestão GTFS é um módulo desenvolvido na plataforma Movize Connect para gerir informação de transportes públicos publicada na aplicação móvel. Este módulo foi concebido para operadores, fornecendo-lhes uma ferramenta fácil de usar para gerir toda a informação de mobilidade urbana. Era também possível criar GTFS de raiz utilizando este módulo, permitindo assim adicionar novos operadores ou digitalizar os existentes.',
       },
       'furniture-sensors-module': {
         title: 'Movize Connect - Módulo de Mobiliário Urbano e Sensores',
-        role: 'Gestor de Produto/Product Owner',
+        role: 'Gestor de Produto/Product Owner/Engenheiro de Software',
         description:
           'O Módulo de Mobiliário Urbano e Sensores é um módulo desenvolvido na plataforma Movize Connect para gerir informação sobre mobiliário urbano e sensores instalados. Este módulo foi concebido para vários tipos de clientes, tendo em conta as suas funções e as organizações para as quais trabalham. Para além de permitir aos utilizadores gerir determinada informação, este módulo oferece também um conjunto de funcionalidades relacionadas com os dados recolhidos via sensores instalados no mobiliário urbano. Isto proporciona aos utilizadores uma plataforma fácil de usar e intuitiva para analisar os dados recolhidos pelos vários sensores.',
       },

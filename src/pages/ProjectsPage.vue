@@ -138,25 +138,37 @@ onUnmounted(() => {
                     {{ t(`projects.items.${project.id}.title`) }}
                   </h3>
                   <p
-                    class="mt-4 text-sm xl:text-base leading-relaxed text-charcoal-400 dark:text-charcoal-300 max-w-2xl line-clamp-4 xl:line-clamp-6"
+                    class="mt-4 text-sm xl:text-base leading-relaxed text-charcoal-400 dark:text-charcoal-300 max-w-2xl"
                   >
                     {{ t(`projects.items.${project.id}.description`) }}
                   </p>
-                  <div class="mt-8">
+                  <div v-if="project.platforms?.length" class="mt-8">
                     <p
                       class="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-charcoal-300 dark:text-charcoal-400"
                     >
-                      {{ t("projects.toolsLabel") }}
+                      {{ t("projects.platformsLabel") }}
                     </p>
                     <div class="flex flex-wrap gap-2">
                       <span
-                        v-for="tool in project.tools"
-                        :key="tool"
+                        v-for="platform in project.platforms"
+                        :key="platform"
                         class="badge"
-                        >{{ tool }}</span
+                        >{{ t(`projects.platforms.${platform}`) }}</span
                       >
                     </div>
                   </div>
+                  <a
+                    v-if="project.url"
+                    :href="project.url"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="mt-8 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-vermillion transition-colors hover:text-vermillion-700"
+                  >
+                    {{ t("projects.visitSite") }}
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
@@ -233,21 +245,33 @@ onUnmounted(() => {
             >
               {{ t(`projects.items.${project.id}.description`) }}
             </p>
-            <div class="mt-5 sm:mt-6">
+            <div v-if="project.platforms?.length" class="mt-5 sm:mt-6">
               <p
                 class="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-charcoal-300 dark:text-charcoal-400"
               >
-                {{ t("projects.toolsLabel") }}
+                {{ t("projects.platformsLabel") }}
               </p>
               <div class="flex flex-wrap gap-1.5">
                 <span
-                  v-for="tool in project.tools"
-                  :key="tool"
+                  v-for="platform in project.platforms"
+                  :key="platform"
                   class="badge text-[10px]"
-                  >{{ tool }}</span
+                  >{{ t(`projects.platforms.${platform}`) }}</span
                 >
               </div>
             </div>
+            <a
+              v-if="project.url"
+              :href="project.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-5 sm:mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-vermillion transition-colors hover:text-vermillion-700"
+            >
+              {{ t("projects.visitSite") }}
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+            </a>
           </div>
         </article>
       </div>

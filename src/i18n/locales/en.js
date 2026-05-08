@@ -164,35 +164,49 @@ export default {
     title: "Projects",
     subtitle:
       "A selection of projects and products I’ve been involved with in various roles and that I helped develop and launch",
-    toolsLabel: "Tools & Technologies",
+    platformsLabel: "Available on",
+    visitSite: "Visit site",
+    platforms: {
+      android: "Android",
+      ios: "iOS",
+      desktop: "Desktop",
+      tablet: "Tablet",
+      phone: "Phone",
+    },
     items: {
       "mobile-app": {
-        title: "Movize",
-        role: "Product Manager/Product Owner",
+        title: "Movize Mobile App",
+        role: "Product Manager/Product Owner/Software Engineer",
         description:
           "Movize is a mobile app designed to centralize all public transportation information. The goal was to develop an app capable of helping public transportation users access all the information they need to travel throughout the country, while enabling connections between various public transportation modes and operators. I was responsible for the development and evolution of Movize, managing the product backlog and ensuring alignment between business objectives, user needs, and technical implementation. My role involved defining product requirements, prioritizing features, and translating strategic goals into clear user stories for the development team. I worked closely with designers, developers, and stakeholders to ensure the product delivered value, always maintaining a strong focus on user experience and product quality. Through backlog management, sprint planning, and continuous feedback cycles, I helped guide the product roadmap and ensured the team delivered meaningful and impactful features for Movize.",
       },
+      "web-app": {
+        title: "Movize Web App",
+        role: "Product Manager/Product Owner/Software Engineer",
+        description:
+          "Movize Web is the browser-based companion to the Movize mobile app, bringing the core public transportation experience to desktop, tablet, and mobile browsers. The goal was to extend Movize's reach to users who prefer the web — offering quick access to routes, stops, and trip planning across operators and modes — while intentionally keeping a more focused feature set than the native app. I led the product strategy and execution: defining the scope of the web experience, deciding which features to expose and which to reserve for the mobile app, and ensuring the responsive interface worked well across screen sizes. Working closely with designers and developers, I shaped the roadmap to share enough of Movize's value to attract users without competing with the depth of the native experience.",
+      },
       "web-platform": {
         title: "Movize Connect",
-        role: "Product Manager/ Product Owner/ Software Engineer",
+        role: "Product Manager/Product Owner/Software Engineer",
         description:
           "Movize Connect is a web platform developed to manage the information available on the Movize mobile app. The platform was designed for users responsible for managing public transportation information, ensuring passengers are always kept up to date. In addition, it was also used by Movize administrators to manage the entire platform and mobile app. This platform was built using modules to ensure scalability and easy adaptability to each user profile. I was responsible for the development and evolution of Movize, managing the product backlog and ensuring alignment between business objectives, user needs, and technical implementation. My role involved defining product requirements, prioritizing features, and translating strategic goals into clear user stories for the development team. I worked closely with designers, developers, and stakeholders to ensure the product delivered value, always maintaining a strong focus on user experience and product quality. Through backlog management, sprint planning, and continuous feedback cycles, I helped guide the product roadmap and ensured the team delivered meaningful and impactful features for Movize.",
       },
       "events-module": {
         title: "Movize Connect - Events Module",
-        role: "Product Manager/Product Owner",
+        role: "Product Manager/Product Owner/Software Engineer",
         description:
           "The Events Module is a module developed within the Movize Connect platform to manage information about events published in the mobile app. This module is designed for event organizers or administrators who can create events.",
       },
       "gtfs-management-module": {
         title: "Movize Connect - Gtfs Management Module",
-        role: "Product Manager/Product Owner",
+        role: "Product Manager/Product Owner/Software Engineer",
         description:
           "The Events Module is a module developed on the Movize Connect platform to manage public transportation information published in the mobile app. This module was designed for operators, providing them with an easy-to-use tool to manage all urban mobility information. It was also possible to create GTFS from scratch using this module, thereby allowing new operators to be added or existing ones to be digitized. ",
       },
       "furniture-sensors-module": {
         title: "Movize Connect - Street Furniture and Sensors Module",
-        role: "Product Manager/Product Owner",
+        role: "Product Manager/Product Owner/Software Engineer",
         description:
           "The Events Module is a module developed on the Movize Connect platform to manage information about street furniture and installed sensors. This module was designed for various types of customers, taking into account their roles and the organizations they work for. In addition to allowing users to manage certain information, this module also offers a set of features related to the data collected via sensors installed on street furniture. This provides users with an easy-to-use and intuitive platform for analyzing the data collected by the various sensors. ",
       },
