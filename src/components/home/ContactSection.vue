@@ -5,6 +5,7 @@ import { profile } from '@/data/profile'
 import ProfileCard from '@/components/ProfileCard/ProfileCard.vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { prefersReducedMotion } from '@/composables/useReducedMotion'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -19,6 +20,8 @@ const handleContact = () => {
 }
 
 onMounted(() => {
+  if (prefersReducedMotion()) return
+
   ctx = gsap.context(() => {
     // Header elements fade up
     const headerChildren = headerRef.value?.children

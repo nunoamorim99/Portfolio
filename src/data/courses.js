@@ -192,3 +192,33 @@ export const individualCourses = [
 ]
 
 export const courses = [...professionalCertificates, ...individualCourses]
+
+// Courses grouped by the program they belong to. Tracks with a `certId`
+// are the component courses of one of the professional certificates above.
+export const courseTracks = [
+  {
+    id: 'ibm-ai-pm',
+    certId: 'pc-IBMAIProductManager',
+    courseIds: ['pc-pm-1', 'pc-pm-2', 'pc-pm-3', 'pc-pm-4', 'pc-pm-5', 'pc-pm-6', 'pc-pm-7', 'pc-pm-8', 'pc-pm-9', 'pc-pm-10'],
+  },
+  {
+    id: 'ibm-po',
+    certId: 'pc-ibm-product-owner',
+    courseIds: ['pc-po-1', 'pc-po-2', 'pc-po-3', 'pc-po-4', 'pc-po-5', 'pc-po-6'],
+  },
+  {
+    id: 'microsoft-ux',
+    certId: 'pc-microsoft-ux-design',
+    courseIds: ['pc-microsoft-ux-design-1', 'pc-microsoft-ux-design-2', 'pc-microsoft-ux-design-3', 'pc-microsoft-ux-design-4'],
+  },
+  {
+    id: 'meta-fe',
+    certId: null,
+    courseIds: ['pc-meta-fe-1', 'pc-meta-fe-2', 'pc-meta-fe-3', 'pc-meta-fe-4', 'pc-meta-fe-5'],
+  },
+  {
+    id: 'standalone',
+    certId: null,
+    courseIds: ['johnsHopkins-1', 'intro-jira', 'maas-adoption-use'],
+  },
+]

@@ -13,6 +13,14 @@ import wa1 from '@/assets/projects/movizeWebApp/wa-1.png'
 import wa2 from '@/assets/projects/movizeWebApp/wa-2.png'
 import wa3 from '@/assets/projects/movizeWebApp/wa-3.png'
 
+// How the Movize ecosystem is organised on the Projects page:
+// two rider-facing apps, plus the Movize Connect operator platform and its modules.
+export const projectGroups = {
+  riderApps: ['mobile-app', 'web-app'],
+  connectId: 'web-platform',
+  connectModules: ['events-module', 'gtfs-management-module', 'furniture-sensors-module'],
+}
+
 export const projects = [
   {
     id: 'mobile-app',

@@ -4,6 +4,7 @@ import { useI18n } from 'vue-i18n'
 import { profile } from '@/data/profile'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { prefersReducedMotion } from '@/composables/useReducedMotion'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -14,6 +15,8 @@ const rightColRef = ref(null)
 let ctx
 
 onMounted(() => {
+  if (prefersReducedMotion()) return
+
   ctx = gsap.context(() => {
     // Left column slides in from the left
     gsap.from(leftColRef.value, {

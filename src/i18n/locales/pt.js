@@ -15,6 +15,100 @@ export default {
       'Construo produtos que importam - combinando experiência técnica com empatia pelo utilizador para criar experiências digitais significativas.',
     viewProjects: 'Ver Projetos',
     downloadCv: 'Descarregar CV',
+    bgWord: 'PRODUTO',
+  },
+  stats: {
+    products: 'Produtos e módulos lançados',
+    roles: 'Funções em 2 anos',
+    certificates: 'Certificados profissionais',
+    courses: 'Cursos concluídos',
+  },
+  caseStudy: {
+    back: 'Voltar aos projetos',
+    visit: 'Visitar movize.pt',
+    movize: {
+      label: 'Caso de Estudo',
+      title: 'Movize',
+      tagline:
+        'Centralizar os transportes urbanos de Portugal — e dar aos operadores as ferramentas para se digitalizarem.',
+      role: 'Gestor de Produto · Product Owner',
+      period: '2024 – Presente',
+      overview:
+        'O Movize começou como uma app para reunir todos os operadores de transporte portugueses num só lugar. Tornou-se algo maior — um ecossistema completo que permite aos operadores digitalizar e gerir as suas próprias redes. Liderei o produto desde o primeiro wireframe até uma mudança estratégica para uma plataforma multi-módulo.',
+      problem: {
+        kicker: '01 — O problema',
+        title: 'Sem um único lugar para os transportes em Portugal',
+        body: 'Portugal não tinha uma app nativa que reunisse todos os operadores de transporte urbano. Os passageiros recorriam a fontes dispersas — ou ficavam sem informação — só para planear uma viagem entre operadores e modos.',
+      },
+      v1: {
+        kicker: '02 — Começar pelo passageiro',
+        title: 'Uma app para todos os operadores',
+        body: 'Lançámos o Movize como uma app móvel para centralizar a informação de transportes, para que os passageiros vissem rotas, paragens e horários de todos os operadores num só lugar. O plano era simples: estabelecer parcerias com operadores e integrar os seus dados GTFS.',
+      },
+      pivot: {
+        kicker: '03 — A mudança',
+        title: 'O problema não era a app — era que os operadores não tinham forma de se digitalizar.',
+        body: 'Integrar os operadores revelou um problema mais profundo. A maioria dos operadores portugueses, sobretudo os mais pequenos, não tinha qualquer ferramenta digital — e não tinha como pagar a grandes empresas para digitalizar os seus dados e chegar aos passageiros. A verdadeira oportunidade não era uma app melhor. Era dar aos operadores uma forma de se digitalizarem. Assim, o Movize cresceu de uma app para um ecossistema.',
+      },
+      ecosystem: {
+        kicker: '04 — De uma app a um ecossistema',
+        title: 'Movize Connect',
+        body: 'O Movize Connect é a plataforma de back-office por trás da app. Permite a operadores, promotores de eventos e proprietários de infraestrutura gerir os seus próprios dados — e enviá-los diretamente para os passageiros. Construímo-lo módulo a módulo.',
+        inDev: 'Em desenvolvimento',
+      },
+      modules: {
+        gtfs: {
+          name: 'Gestão de GTFS',
+          body: 'Os operadores criam e digitalizam os seus dados de transporte — construindo feeds GTFS de raiz, para que até redes não digitalizadas possam entrar online.',
+        },
+        networkMap: {
+          name: 'Mapa de Rede',
+          body: 'Desenhar e manter o mapa de rede que os passageiros veem na app.',
+        },
+        news: {
+          name: 'Notícias',
+          body: 'Os operadores publicam atualizações de serviço e notícias diretamente para os passageiros do Movize.',
+        },
+        events: {
+          name: 'Eventos',
+          body: 'Os promotores de eventos publicam eventos juntamente com as rotas e autocarros dedicados que os servem — transformando transporte pontual em informação acessível.',
+        },
+        sensors: {
+          name: 'Mobiliário Urbano & Sensores',
+          body: 'Os proprietários de infraestrutura localizam e gerem ativos físicos — abrigos, paragens, sensores instalados — e veem os dados que esses sensores recolhem.',
+        },
+        drivers: {
+          name: 'Motoristas',
+          body: 'Gestão de frota e motoristas para operadores, com uma app de motorista dedicada.',
+        },
+      },
+      decisionsTitle: '05 — Decisões-chave',
+      decisions: {
+        feedback: {
+          title: 'Integrar feedback no produto',
+          body: 'Ligámos passageiros, operadores e administradores diretamente, para que os problemas reais surjam depressa e sejam respondidos — e não se percam num backlog.',
+        },
+        ecosystem: {
+          title: 'Apostar no ecossistema, não só na app',
+          body: 'Capacitar os pequenos operadores para se digitalizarem foi a chave tanto para a cobertura como para um modelo de negócio sustentável.',
+        },
+        events: {
+          title: 'Lançar Eventos como aposta de crescimento',
+          body: 'Os eventos já tinham transporte dedicado, mas não tinham onde o anunciar. O módulo gera utilização real e mantém a app cheia de conteúdo atual.',
+        },
+        portal: {
+          title: 'Priorizar o portal dos operadores',
+          body: 'Concentrámos esforço no Movize Connect — o back-office é onde o valor do ecossistema, e o seu caminho para a receita, realmente está.',
+        },
+      },
+      validation: {
+        kicker: '06 — Validação',
+        quote: 'Exatamente o que Portugal precisa.',
+        body: 'O Movize está no ar e em desenvolvimento ativo, com forte validação qualitativa de passageiros e operadores à medida que novos módulos são lançados.',
+      },
+      ctaTitle: 'Ver ao vivo',
+      ctaBody: 'O Movize está em desenvolvimento ativo e já disponível.',
+    },
   },
   about: {
     title: 'Sobre Mim',
@@ -166,6 +260,11 @@ export default {
       'Uma seleção de projetos e produtos nos quais estive envolvido em diferentes funções e que ajudei a desenvolver e lançar',
     platformsLabel: 'Disponível em',
     visitSite: 'Visitar site',
+    readCaseStudy: 'Ler o caso de estudo do Movize',
+    ecosystemTitle: 'O ecossistema Movize',
+    riderApps: 'Apps para passageiros',
+    operatorPlatform: 'Plataforma de operadores',
+    modules: 'Módulos',
     platforms: {
       android: 'Android',
       ios: 'iOS',
@@ -220,6 +319,17 @@ export default {
     professionalCertificatesSubtitle: 'Programas multi-curso concluídos do início ao fim',
     individualCoursesTitle: 'Cursos Individuais',
     individualCoursesSubtitle: 'Cursos avulsos em produto, design e engenharia',
+    summary: '{certs} certificados profissionais · {courses} cursos',
+    coursesLabel: 'cursos',
+    byProgramTitle: 'Cursos por programa',
+    byProgramSubtitle: 'Os cursos por trás dos certificados, mais aprendizagem avulsa.',
+    tracks: {
+      'ibm-ai-pm': 'IBM AI Product Manager',
+      'ibm-po': 'IBM Product Owner',
+      'microsoft-ux': 'Microsoft UX Design',
+      'meta-fe': 'Meta Front-End Developer',
+      'standalone': 'Cursos avulsos',
+    },
     items: {
       'pc-IBMAIProductManager': {
         title: 'Professional Certificate: IBM AI Product Manager',
