@@ -1,11 +1,46 @@
 <script setup>
-import { onMounted, onUnmounted, computed } from 'vue'
+import { onMounted, onUnmounted, computed, ref, watch, nextTick } from 'vue'
 import { useUiStore } from '@/stores/ui'
+import gsap from 'gsap'
+import { Flip } from 'gsap/Flip'
+import { prefersReducedMotion } from '@/composables/useReducedMotion'
+
+gsap.registerPlugin(Flip)
 
 const ui = useUiStore()
+const imgRef = ref(null)
 
 const currentImage = computed(() =>
   ui.lightbox.images[ui.lightbox.index] || ''
+)
+
+// Morph the lightbox image out of the clicked thumbnail when it opens.
+watch(
+  () => ui.lightbox.open,
+  (open) => {
+    if (!open) return
+    const origin = ui.lightbox.originEl
+    if (!origin || prefersReducedMotion()) return
+
+    nextTick(() => {
+      const imgEl = imgRef.value
+      if (!imgEl) return
+
+      const run = () => {
+        try {
+          Flip.fit(imgEl, origin, { scale: true }) // place over the thumbnail
+          const state = Flip.getState(imgEl) // record that position
+          gsap.set(imgEl, { clearProps: 'transform' }) // jump to final layout
+          Flip.from(state, { duration: 0.5, ease: 'power2.inOut' }) // animate thumb -> final
+        } catch {
+          gsap.set(imgEl, { clearProps: 'all' }) // never leave it mid-transform
+        }
+      }
+
+      if (imgEl.complete && imgEl.naturalWidth) run()
+      else imgEl.addEventListener('load', run, { once: true })
+    })
+  }
 )
 
 const hasPrev = computed(() => ui.lightbox.index > 0)
@@ -50,7 +85,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
       >
         <!-- Close button -->
         <button
-          class="absolute right-6 top-6 bg-white/10 p-2.5 text-white transition-colors hover:bg-vermillion"
+          class="absolute right-6 top-6 bg-white/10 p-2.5 text-white transition-colors hover:bg-turquoise"
           aria-label="Close lightbox"
           @click="ui.closeLightbox()"
         >
@@ -62,7 +97,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
         <!-- Prev button -->
         <button
           v-if="hasPrev"
-          class="absolute left-6 bg-white/10 p-3 text-white transition-colors hover:bg-vermillion"
+          class="absolute left-6 bg-white/10 p-3 text-white transition-colors hover:bg-turquoise"
           aria-label="Previous image"
           @click="prev"
         >
@@ -73,6 +108,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
 
         <!-- Image -->
         <img
+          ref="imgRef"
           :src="currentImage"
           alt=""
           class="max-h-[85vh] max-w-[90vw] object-contain"
@@ -82,7 +118,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
         <!-- Next button -->
         <button
           v-if="hasNext"
-          class="absolute right-6 bg-white/10 p-3 text-white transition-colors hover:bg-vermillion"
+          class="absolute right-6 bg-white/10 p-3 text-white transition-colors hover:bg-turquoise"
           aria-label="Next image"
           @click="next"
         >

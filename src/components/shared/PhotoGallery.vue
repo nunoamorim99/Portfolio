@@ -8,9 +8,9 @@ const props = defineProps({
 
 const ui = useUiStore()
 
-function openImage(index) {
+function openImage(index, e) {
   const srcs = props.images.map(img => typeof img === 'string' ? img : img.src)
-  ui.openLightbox(srcs, index)
+  ui.openLightbox(srcs, index, e?.currentTarget?.querySelector('img'))
 }
 </script>
 
@@ -26,9 +26,9 @@ function openImage(index) {
     <button
       v-for="(image, index) in images"
       :key="index"
-      class="group relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-vermillion focus:ring-offset-2"
+      class="group relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-turquoise focus:ring-offset-2"
       :aria-label="`View image ${index + 1} of ${images.length}`"
-      @click="openImage(index)"
+      @click="openImage(index, $event)"
     >
       <img
         :src="typeof image === 'string' ? image : image.src"
@@ -36,7 +36,7 @@ function openImage(index) {
         class="aspect-[4/3] w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
         loading="lazy"
       />
-      <div class="absolute inset-0 bg-vermillion/0 transition-colors duration-300 group-hover:bg-vermillion/10" />
+      <div class="absolute inset-0 bg-turquoise/0 transition-colors duration-300 group-hover:bg-turquoise/10" />
     </button>
   </div>
 </template>

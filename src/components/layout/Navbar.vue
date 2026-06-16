@@ -76,7 +76,7 @@ onUnmounted(() => {
       <!-- Logo -->
       <router-link
         to="/"
-        class="group flex items-center gap-2.5 font-serif text-2xl text-charcoal transition-colors hover:text-vermillion dark:text-cream-100 dark:hover:text-vermillion"
+        class="group flex items-center gap-2.5 font-serif text-2xl text-charcoal transition-colors hover:text-turquoise dark:text-cream-100 dark:hover:text-turquoise"
         @click="ui.closeMobileMenu()"
       >
         <img
@@ -85,7 +85,7 @@ onUnmounted(() => {
           aria-hidden="true"
           class="h-7 w-7 transition-transform duration-300 group-hover:rotate-3"
         />
-        <span>Nuno<span class="text-vermillion italic">.</span></span>
+        <span>Nuno<span class="text-turquoise italic">.</span></span>
       </router-link>
 
       <div class="flex items-center gap-1">
@@ -98,14 +98,14 @@ onUnmounted(() => {
               class="relative px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] transition-colors duration-300"
               :class="
                 isActive(link.to)
-                  ? 'text-vermillion'
+                  ? 'text-turquoise'
                   : 'text-charcoal-500 hover:text-charcoal dark:text-charcoal-300 dark:hover:text-cream-100'
               "
             >
               {{ t(`nav.${link.key}`) }}
               <span
                 v-if="isActive(link.to)"
-                class="absolute bottom-0 left-1/2 h-0.5 w-6 -translate-x-1/2 bg-vermillion"
+                class="absolute bottom-0 left-1/2 h-0.5 w-6 -translate-x-1/2 bg-turquoise"
               />
             </router-link>
           </li>
@@ -149,7 +149,7 @@ onUnmounted(() => {
                   class="flex w-full items-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-wider transition-colors"
                   :class="
                     locale === loc.code
-                      ? 'bg-vermillion/10 text-vermillion'
+                      ? 'bg-turquoise/10 text-turquoise'
                       : 'text-charcoal-500 hover:bg-charcoal-50 dark:text-charcoal-300 dark:hover:bg-charcoal-700'
                   "
                   @click="switchLocale(loc.code)"
@@ -215,7 +215,7 @@ onUnmounted(() => {
               class="flex py-4 text-sm font-bold uppercase tracking-[0.2em] transition-colors border-b border-charcoal-50 dark:border-charcoal-800"
               :class="
                 isActive(link.to)
-                  ? 'text-vermillion'
+                  ? 'text-turquoise'
                   : 'text-charcoal-500 dark:text-charcoal-300'
               "
               @click="ui.closeMobileMenu()"

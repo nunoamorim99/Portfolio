@@ -71,7 +71,7 @@ function closePanel() {
             <div class="relative">
               <img :src="selectedCity.photos[0]" :alt="selectedCity.city" class="aspect-video w-full object-cover" />
               <button
-                class="absolute right-2 top-2 bg-white p-1.5 text-charcoal transition-colors hover:bg-vermillion hover:text-white"
+                class="absolute right-2 top-2 bg-white p-1.5 text-charcoal transition-colors hover:bg-turquoise hover:text-white"
                 aria-label="Close"
                 @click="closePanel"
               >
@@ -110,7 +110,7 @@ function closePanel() {
           >
             <img :src="city.photos[0]" :alt="city.city" class="h-16 w-16 flex-shrink-0 object-cover grayscale group-hover:grayscale-0 transition-all duration-500" loading="lazy" />
             <div>
-              <h3 class="font-serif text-lg text-charcoal group-hover:text-vermillion transition-colors dark:text-cream-100">{{ city.city }}</h3>
+              <h3 class="font-serif text-lg text-charcoal group-hover:text-turquoise transition-colors dark:text-cream-100">{{ city.city }}</h3>
               <p class="text-xs font-bold uppercase tracking-widest text-charcoal-300 dark:text-charcoal-400">{{ city.country }}</p>
             </div>
           </button>

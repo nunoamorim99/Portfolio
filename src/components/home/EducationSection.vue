@@ -4,6 +4,7 @@ import { useI18n } from 'vue-i18n'
 import { profile } from '@/data/profile'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { prefersReducedMotion } from '@/composables/useReducedMotion'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -14,6 +15,8 @@ const rightColRef = ref(null)
 let ctx
 
 onMounted(() => {
+  if (prefersReducedMotion()) return
+
   ctx = gsap.context(() => {
     // Left column slides in from the left
     gsap.from(leftColRef.value, {
@@ -67,7 +70,7 @@ onUnmounted(() => {
               <div class="flex items-start justify-between gap-4">
                 <div>
                   <h3 class="font-serif text-2xl text-charcoal dark:text-cream-100">{{ t(`education.items.${id}.degree`) }}</h3>
-                  <p class="mt-2 text-sm font-bold uppercase tracking-widest text-vermillion">{{ t(`education.items.${id}.institution`) }}</p>
+                  <p class="mt-2 text-sm font-bold uppercase tracking-widest text-turquoise">{{ t(`education.items.${id}.institution`) }}</p>
                 </div>
                 <span class="flex-shrink-0 text-xs font-bold uppercase tracking-widest text-charcoal-300 dark:text-charcoal-400 mt-2">{{ profile.educationPeriods[id] }}</span>
               </div>

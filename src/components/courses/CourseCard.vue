@@ -18,7 +18,7 @@ function viewCertificate() {
 <template>
   <article class="card flex flex-col p-0 overflow-hidden">
     <button
-      class="group relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-inset focus:ring-vermillion"
+      class="group relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-inset focus:ring-turquoise"
       :aria-label="t('courses.viewCertificate')" @click="viewCertificate">
       <img :src="course.certificateImage" :alt="t(`courses.items.${course.id}.title`)"
         class="aspect-[3/2] w-full object-cover transition-all duration-500 group-hover:scale-105"
@@ -48,7 +48,7 @@ function viewCertificate() {
 
       <div class="mt-auto pt-6">
         <a :href="course.certificateUrl" target="_blank" rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-vermillion transition-colors hover:text-vermillion-700">
+          class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-turquoise transition-colors hover:text-turquoise-700">
           {{ t('courses.viewCertificate') }}
           <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round"

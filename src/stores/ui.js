@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { ref, markRaw } from 'vue'
 
 export const useUiStore = defineStore('ui', () => {
   const isMobileMenuOpen = ref(false)
-  const lightbox = ref({ open: false, images: [], index: 0 })
+  const lightbox = ref({ open: false, images: [], index: 0, originEl: null })
 
   // Dark mode is permanent - applied once at app start.
   const isDark = ref(true)
@@ -17,12 +17,19 @@ export const useUiStore = defineStore('ui', () => {
     isMobileMenuOpen.value = false
   }
 
-  function openLightbox(images, index = 0) {
-    lightbox.value = { open: true, images, index }
+  // originEl (optional): the clicked thumbnail, used by the lightbox to
+  // morph open from it (GSAP Flip). markRaw keeps Vue from proxying the node.
+  function openLightbox(images, index = 0, originEl = null) {
+    lightbox.value = {
+      open: true,
+      images,
+      index,
+      originEl: originEl ? markRaw(originEl) : null,
+    }
   }
 
   function closeLightbox() {
-    lightbox.value = { open: false, images: [], index: 0 }
+    lightbox.value = { open: false, images: [], index: 0, originEl: null }
   }
 
   function setLightboxIndex(index) {

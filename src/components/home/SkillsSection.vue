@@ -4,6 +4,7 @@ import { useI18n } from 'vue-i18n'
 import { topSkills, otherSkillIds, languages } from '@/data/skills'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { prefersReducedMotion } from '@/composables/useReducedMotion'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -18,16 +19,17 @@ const languagesRef = ref(null)
 let ctx
 
 onMounted(() => {
+  if (prefersReducedMotion()) return
+
   ctx = gsap.context(() => {
-    // Title slides up
+    // Title wipes up from behind a mask
     gsap.from(titleRef.value, {
       scrollTrigger: {
         trigger: sectionRef.value,
         start: 'top 80%',
         toggleActions: 'play none none none',
       },
-      y: 50,
-      opacity: 0,
+      yPercent: 110,
       duration: 0.9,
       ease: 'power3.out',
     })
@@ -140,7 +142,9 @@ onUnmounted(() => {
     <div class="section-container">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div class="lg:col-span-4">
-          <h2 ref="titleRef" class="section-title">{{ t('skills.title') }}</h2>
+          <div class="heading-mask">
+            <h2 ref="titleRef" class="section-title">{{ t('skills.title') }}</h2>
+          </div>
           <p ref="subtitleRef" class="section-subtitle">{{ t('skills.subtitle') }}</p>
           <div ref="lineRef" class="accent-line mt-6" />
         </div>
@@ -157,7 +161,7 @@ onUnmounted(() => {
                 </div>
                 <div class="h-1 bg-charcoal-100 dark:bg-charcoal-700 overflow-hidden">
                   <div
-                    class="skill-bar-fill h-full bg-vermillion"
+                    class="skill-bar-fill h-full bg-turquoise"
                     :style="{ width: (skill.rating / 5 * 100) + '%' }"
                     role="progressbar"
                     :aria-valuenow="skill.rating"

@@ -3,6 +3,7 @@ import { ref, onMounted, onUnmounted, watch, nextTick } from "vue";
 import { useI18n } from "vue-i18n";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { prefersReducedMotion } from "@/composables/useReducedMotion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,18 +16,18 @@ let ctx;
 
 function setupAnimations() {
   ctx?.revert();
+  if (prefersReducedMotion()) return;
 
   nextTick(() => {
     ctx = gsap.context(() => {
-      // Title slides in from below
+      // Title wipes up from behind a mask
       gsap.from(titleRef.value, {
         scrollTrigger: {
           trigger: sectionRef.value,
           start: "top 80%",
           toggleActions: "play none none none",
         },
-        y: 50,
-        opacity: 0,
+        yPercent: 110,
         duration: 0.9,
         ease: "power3.out",
       });
@@ -72,7 +73,9 @@ onUnmounted(() => ctx?.revert());
     <div class="section-container">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         <div class="lg:col-span-4">
-          <h2 ref="titleRef" class="section-title">{{ t("about.title") }}</h2>
+          <div class="heading-mask">
+            <h2 ref="titleRef" class="section-title">{{ t("about.title") }}</h2>
+          </div>
           <div ref="lineRef" class="accent-line mt-6" />
         </div>
         <div class="lg:col-span-8 min-w-0">

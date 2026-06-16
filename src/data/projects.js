@@ -1,68 +1,48 @@
 import mBanner from '@/assets/projects/movize/m-banner.png'
-import mLogo from '@/assets/projects/movize/m-logo.png'
-import m1 from '@/assets/projects/movize/m-1.JPG'
-import m2 from '@/assets/projects/movize/m-2.jpeg'
-import m3 from '@/assets/projects/movize/m-3.jpeg'
-import mcEvents1 from '@/assets/projects/movizeConnect/eventsModule/mc-events-1.png'
-import mcEvents2 from '@/assets/projects/movizeConnect/eventsModule/mc-events-2.png'
-import mcEvents3 from '@/assets/projects/movizeConnect/eventsModule/mc-events-3.jpeg'
-import mcEvents4 from '@/assets/projects/movizeConnect/eventsModule/mc-events-4.jpeg'
-import mcEvents5 from '@/assets/projects/movizeConnect/eventsModule/mc-events-5.jpeg'
-import mcEvents6 from '@/assets/projects/movizeConnect/eventsModule/mc-events-6.jpeg'
-import wa1 from '@/assets/projects/movizeWebApp/wa-1.png'
-import wa2 from '@/assets/projects/movizeWebApp/wa-2.png'
-import wa3 from '@/assets/projects/movizeWebApp/wa-3.png'
+import mobileAppImg from '@/assets/projects/mobileapp.png'
+import webAppImg from '@/assets/projects/webapp.png'
+import movizeConnectImg from '@/assets/projects/movizeconnect.png'
+
+// How the Movize ecosystem is organised on the Projects page:
+// two rider-facing apps, plus the Movize Connect operator platform.
+// The Connect modules are rendered from caseStudyMovize.js (single source);
+// the *-module entries below remain only so the homepage stat counts them.
+export const projectGroups = {
+  riderApps: ['mobile-app', 'web-app'],
+  connectId: 'web-platform',
+  connectModules: ['events-module', 'gtfs-management-module', 'furniture-sensors-module'],
+}
 
 export const projects = [
   {
     id: 'mobile-app',
     platforms: ['android', 'ios'],
-    images: [
-      mLogo,
-      m2,
-      m3,
-      mcEvents4,
-    ],
+    images: [mobileAppImg],
   },
   {
     id: 'web-app',
     platforms: ['desktop', 'tablet', 'phone'],
     url: 'https://movize.pt/',
-    images: [
-      wa1,
-      wa2,
-      wa3,
-    ],
+    images: [webAppImg],
   },
   {
     id: 'web-platform',
     platforms: ['desktop'],
-    images: [
-      mBanner,
-    ],
+    images: [movizeConnectImg],
   },
   {
     id: 'events-module',
     platforms: ['desktop'],
-    images: [
-      mcEvents5,
-      mcEvents6,
-      mcEvents1,
-      mcEvents3,
-    ],
+    images: [mBanner],
   },
   {
     id: 'gtfs-management-module',
     platforms: ['desktop'],
-    images: [
-      mBanner,
-    ],
+    images: [mBanner],
   },
   {
     id: 'furniture-sensors-module',
     platforms: ['desktop'],
-    images: [
-      mBanner,
-    ],
+    images: [mBanner],
   },
 ]

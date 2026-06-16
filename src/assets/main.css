@@ -24,11 +24,11 @@
   }
 
   ::selection {
-    @apply bg-vermillion text-white;
+    @apply bg-turquoise text-white;
   }
 
   .dark ::selection {
-    @apply bg-vermillion-600 text-white;
+    @apply bg-turquoise-600 text-white;
   }
 
   h1, h2, h3, h4 {
@@ -72,7 +72,7 @@
 
   /* Buttons */
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-charcoal text-cream-50 px-7 py-3.5 text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:bg-vermillion hover:text-white focus:outline-none focus:ring-2 focus:ring-vermillion focus:ring-offset-2 dark:bg-cream-200 dark:text-charcoal-900 dark:hover:bg-vermillion dark:hover:text-white dark:focus:ring-offset-charcoal-900;
+    @apply inline-flex items-center gap-2 bg-charcoal text-cream-50 px-7 py-3.5 text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:bg-turquoise hover:text-white focus:outline-none focus:ring-2 focus:ring-turquoise focus:ring-offset-2 dark:bg-cream-200 dark:text-charcoal-900 dark:hover:bg-turquoise dark:hover:text-white dark:focus:ring-offset-charcoal-900;
   }
 
   .btn-secondary {
@@ -89,14 +89,14 @@
     @apply inline-flex items-center border border-charcoal-200 px-3 py-1 text-xs font-bold uppercase tracking-wider text-charcoal-500 dark:border-charcoal-600 dark:text-charcoal-300;
   }
 
-  /* Vermillion accent line */
+  /* Turquoise accent line */
   .accent-line {
-    @apply w-16 h-1 bg-vermillion;
+    @apply w-16 h-1 bg-turquoise;
   }
 
   /* Back link */
   .back-link {
-    @apply mb-10 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-charcoal-400 transition-colors hover:text-vermillion dark:text-charcoal-300 dark:hover:text-vermillion;
+    @apply mb-10 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-charcoal-400 transition-colors hover:text-turquoise dark:text-charcoal-300 dark:hover:text-turquoise;
   }
 }
 
@@ -141,7 +141,78 @@
   z-index: 1 !important;
 }
 
+/* Scroll progress bar (top of viewport, above navbar) */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 60;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  background: theme('colors.turquoise.DEFAULT');
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Masked heading reveal: wrap a heading, animate the inner up from behind.
+   Vertical padding + compensating negative margin keep the clip from cutting
+   display-serif ascenders/descenders while the text sits at rest. */
+.heading-mask {
+  display: block;
+  overflow: hidden;
+  padding-top: 0.12em;
+  padding-bottom: 0.12em;
+  margin-top: -0.12em;
+  margin-bottom: -0.12em;
+}
+
+/* SplitText line wrappers used by the hero (clip chars rising from below) */
+.split-line {
+  overflow: hidden;
+  padding-top: 0.12em;
+  padding-bottom: 0.12em;
+  margin-top: -0.12em;
+  margin-bottom: -0.12em;
+}
+
 /* Leaflet overrides */
 .leaflet-container {
   font-family: 'Satoshi', system-ui, sans-serif;
+}
+
+/* ───────────────────────────────────────────────────────────
+   Reduced motion: respect the user's OS preference.
+   Neutralise looping/decorative CSS animations and instant-scroll.
+   GSAP/ScrollTrigger animations are guarded in JS via matchMedia.
+   ─────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Stop the grain texture from animating */
+  .grain-overlay {
+    animation: none !important;
+  }
+
+  /* Ensure on-load reveal utilities end visible rather than hidden */
+  .animate-reveal-up,
+  .animate-reveal-down,
+  .animate-fade-in,
+  .animate-slide-in-left,
+  .animate-slide-in-right,
+  .animate-scale-in,
+  .animate-text-clip {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
 }

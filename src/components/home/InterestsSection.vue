@@ -98,7 +98,7 @@ onUnmounted(() => {
       >
         <div>
           <p
-            class="text-xs font-bold uppercase tracking-[0.3em] text-vermillion mb-4"
+            class="text-xs font-bold uppercase tracking-[0.3em] text-turquoise mb-4"
           >
             {{ String(profile.interestIds.length).padStart(2, "0") }} Areas
           </p>
@@ -123,14 +123,14 @@ onUnmounted(() => {
         <div
           v-for="(id, index) in profile.interestIds"
           :key="id"
-          class="interest-card group p-8 lg:p-10 transition-all duration-500 bg-white dark:bg-charcoal-700 hover:bg-vermillion/5 dark:hover:bg-vermillion/10 lg:shrink-0 lg:w-[28vw] lg:min-w-[340px] lg:min-h-[55vh] lg:flex lg:flex-col lg:justify-center border border-charcoal-100 dark:border-charcoal-600"
+          class="interest-card group p-8 lg:p-10 transition-all duration-500 bg-white dark:bg-charcoal-700 hover:bg-turquoise/5 dark:hover:bg-turquoise/10 lg:shrink-0 lg:w-[28vw] lg:min-w-[340px] lg:min-h-[55vh] lg:flex lg:flex-col lg:justify-center border border-charcoal-100 dark:border-charcoal-600"
         >
           <span
-            class="text-[5rem] font-serif text-vermillion/15 leading-none mb-2 hidden lg:block select-none"
+            class="text-[5rem] font-serif text-turquoise/15 leading-none mb-2 hidden lg:block select-none"
             >0{{ index + 1 }}</span
           >
           <svg
-            class="h-8 w-8 text-vermillion mb-6 transition-transform duration-500 group-hover:scale-110"
+            class="h-8 w-8 text-turquoise mb-6 transition-transform duration-500 group-hover:scale-110"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"

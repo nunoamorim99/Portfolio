@@ -15,6 +15,100 @@ export default {
       "I build products that matter - combining technical expertise with user empathy to deliver meaningful digital experiences.",
     viewProjects: "View Projects",
     downloadCv: "Download CV",
+    bgWord: "PRODUCT",
+  },
+  stats: {
+    products: "Products & modules shipped",
+    roles: "Roles in 2 years",
+    certificates: "Professional certificates",
+    courses: "Courses completed",
+  },
+  caseStudy: {
+    back: "Back to projects",
+    visit: "Visit movize.pt",
+    movize: {
+      label: "Case Study",
+      title: "Movize",
+      tagline:
+        "Centralizing Portugal's urban transport — and giving operators the tools to go digital.",
+      role: "Product Manager · Product Owner",
+      period: "2024 – Present",
+      overview:
+        "Movize began as a consumer app to put every Portuguese transit operator in one place. It became something bigger — a full ecosystem that lets operators digitize and manage their own networks. I led product from the first wireframe through a strategic pivot to a multi-module platform.",
+      problem: {
+        kicker: "01 — The problem",
+        title: "No single home for Portugal's transit",
+        body: "Portugal had no native app that brought every urban-transport operator together. Riders juggled scattered sources — or went without — just to plan a trip across operators and modes.",
+      },
+      v1: {
+        kicker: "02 — Starting with the rider",
+        title: "One app for every operator",
+        body: "We launched Movize as a mobile app to centralize urban-transport data, so riders could see routes, stops, and schedules from every operator in one place. The plan was simple: partner with operators and integrate their GTFS feeds.",
+      },
+      pivot: {
+        kicker: "03 — The pivot",
+        title: "The problem wasn't the app — it was that operators had no way to go digital.",
+        body: "Integrating operators surfaced a deeper problem. Most Portuguese operators, especially smaller ones, had no digital tooling at all — and couldn't afford to hire big firms to digitize their data and reach riders. The real opportunity wasn't a better app. It was giving operators a way to go digital themselves. So Movize grew from an app into an ecosystem.",
+      },
+      ecosystem: {
+        kicker: "04 — From an app to an ecosystem",
+        title: "Movize Connect",
+        body: "Movize Connect is the back-office platform behind the app. It lets operators, event organizers, and infrastructure owners manage their own data — and feed it straight to riders. We built it module by module.",
+        inDev: "In development",
+      },
+      modules: {
+        gtfs: {
+          name: "GTFS Management",
+          body: "Operators create and digitize their transport data — building GTFS feeds from scratch, so even un-digitized networks can come online.",
+        },
+        networkMap: {
+          name: "Network Map",
+          body: "Design and maintain the network map riders see in the app.",
+        },
+        news: {
+          name: "News",
+          body: "Operators publish service updates and news directly to Movize riders.",
+        },
+        events: {
+          name: "Events",
+          body: "Event organizers publish events alongside the dedicated routes and buses serving them — turning one-off transport into discoverable information.",
+        },
+        sensors: {
+          name: "Street Furniture & Sensors",
+          body: "Infrastructure owners locate and manage physical assets — shelters, stops, installed sensors — and view the data those sensors collect.",
+        },
+        drivers: {
+          name: "Drivers",
+          body: "Fleet and driver management for operators, with a companion driver app.",
+        },
+      },
+      decisionsTitle: "05 — Key decisions",
+      decisions: {
+        feedback: {
+          title: "Built feedback into the product",
+          body: "Connected riders, operators, and admins directly, so real pain points surface fast and get answered — not lost in a backlog.",
+        },
+        ecosystem: {
+          title: "Bet on the ecosystem, not just the app",
+          body: "Empowering underserved small operators to digitize was the unlock for both rider coverage and a sustainable business model.",
+        },
+        events: {
+          title: "Shipped Events as a growth bet",
+          body: "Events already run dedicated transport but had nowhere to announce it. The module drives real-world usage and keeps the app full of timely content.",
+        },
+        portal: {
+          title: "Prioritized the operator portal",
+          body: "Concentrated effort on Movize Connect — the back office is where the ecosystem's value, and its path to revenue, actually lives.",
+        },
+      },
+      validation: {
+        kicker: "06 — Validation",
+        quote: "Exactly what Portugal needs.",
+        body: "Movize is live and in active development, with strong qualitative validation from riders and operators as new modules roll out.",
+      },
+      ctaTitle: "See it live",
+      ctaBody: "Movize is in active development and available now.",
+    },
   },
   about: {
     title: "About Me",
@@ -166,6 +260,19 @@ export default {
       "A selection of projects and products I’ve been involved with in various roles and that I helped develop and launch",
     platformsLabel: "Available on",
     visitSite: "Visit site",
+    readCaseStudy: "Read the Movize case study",
+    ecosystemTitle: "The Movize ecosystem",
+    riderApps: "Rider apps",
+    operatorPlatform: "Operator platform",
+    modules: "Modules",
+    selectedWork: "Selected work",
+    selectedWorkSubtitle:
+      "Products and projects I've designed, shipped, and built — from a national transport platform to a game made from scratch.",
+    movizeKicker: "Transport ecosystem",
+    astroHopKicker: "Game",
+    builtWith: "Built with",
+    playLive: "Play it live",
+    viewSource: "Source",
     platforms: {
       android: "Android",
       ios: "iOS",
@@ -174,6 +281,13 @@ export default {
       phone: "Phone",
     },
     items: {
+      "astro-hop": {
+        title: "Astro Hop",
+        tagline:
+          "Retro Mario-style 2D platformer, playable on desktop and mobile from the same URL.",
+        description:
+          "A from-scratch 2D platformer with arcade physics and real game feel — acceleration, variable jump height — a power-up state machine (small → big → fire), stompable enemies, breakable bricks, secret areas, and a full game-flow loop: title screen, lives, timer, pause, game over, and a persistent high score. Every sound effect and music track is synthesized live with the Web Audio API (zero audio files), levels are data-driven plain-text grids, and it ships responsive with multi-touch mobile controls, auto-deployed via CI.",
+      },
       "mobile-app": {
         title: "Movize Mobile App",
         role: "Product Manager/Product Owner/Software Engineer",
@@ -220,6 +334,17 @@ export default {
     professionalCertificatesSubtitle: "Multi-course programs completed end-to-end",
     individualCoursesTitle: "Individual Courses",
     individualCoursesSubtitle: "Standalone courses across product, design, and engineering",
+    summary: "{certs} professional certificates · {courses} courses",
+    coursesLabel: "courses",
+    byProgramTitle: "Courses by program",
+    byProgramSubtitle: "The courses behind the certificates, plus standalone learning.",
+    tracks: {
+      "ibm-ai-pm": "IBM AI Product Manager",
+      "ibm-po": "IBM Product Owner",
+      "microsoft-ux": "Microsoft UX Design",
+      "meta-fe": "Meta Front-End Developer",
+      "standalone": "Standalone courses",
+    },
     items: {
       "pc-IBMAIProductManager": {
         title: "Professional Certificate: IBM AI Product Manager",

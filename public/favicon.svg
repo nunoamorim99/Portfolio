@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="NA monogram">
-  <rect width="64" height="64" rx="10" fill="#ff4d00"/>
+  <rect width="64" height="64" rx="10" fill="#14b8a6"/>
   <g stroke="#fdfcfa" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none">
     <!-- N: left stem -->
     <path d="M 10 11 V 53"/>
