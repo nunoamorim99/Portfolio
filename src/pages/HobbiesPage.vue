@@ -30,7 +30,7 @@ const { t } = useI18n()
               class="aspect-[4/3] w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
               loading="lazy"
             />
-            <div class="absolute inset-0 bg-vermillion/0 transition-colors duration-300 group-hover:bg-vermillion/10" />
+            <div class="absolute inset-0 bg-turquoise/0 transition-colors duration-300 group-hover:bg-turquoise/10" />
           </div>
           <div class="p-6">
             <h3 class="font-serif text-xl text-charcoal dark:text-cream-100">{{ t(`hobbies.items.${hobby.id}.title`) }}</h3>

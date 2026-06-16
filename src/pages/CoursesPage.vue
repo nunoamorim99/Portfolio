@@ -99,7 +99,7 @@ onUnmounted(() => ctx?.revert());
             class="group flex flex-col overflow-hidden border border-charcoal-100 bg-white dark:border-charcoal-700 dark:bg-charcoal-800"
           >
             <button
-              class="relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-inset focus:ring-vermillion"
+              class="relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-inset focus:ring-turquoise"
               :aria-label="t('courses.viewCertificate')"
               @click="viewCert(cert.certificateImage, $event)"
             >
@@ -117,7 +117,7 @@ onUnmounted(() => ctx?.revert());
                 </p>
                 <span
                   v-if="countByCertId[cert.id]"
-                  class="badge text-[10px] border-vermillion/40 text-vermillion"
+                  class="badge text-[10px] border-turquoise/40 text-turquoise"
                 >
                   {{ countByCertId[cert.id] }} {{ t("courses.coursesLabel") }}
                 </span>
@@ -130,7 +130,7 @@ onUnmounted(() => ctx?.revert());
                   :href="cert.certificateUrl"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-vermillion transition-colors hover:text-vermillion-700"
+                  class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-turquoise transition-colors hover:text-turquoise-700"
                 >
                   {{ t("courses.viewCertificate") }}
                   <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
@@ -162,7 +162,7 @@ onUnmounted(() => ctx?.revert());
             class="border-b border-charcoal-100 dark:border-charcoal-700"
           >
             <button
-              class="flex w-full items-center justify-between gap-4 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-vermillion"
+              class="flex w-full items-center justify-between gap-4 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-turquoise"
               :aria-expanded="open[track.id]"
               @click="toggle(track.id)"
             >
@@ -210,7 +210,7 @@ onUnmounted(() => ctx?.revert());
                       :href="urlById[cid]"
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="inline-flex shrink-0 items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-vermillion transition-colors hover:text-vermillion-700"
+                      class="inline-flex shrink-0 items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-turquoise transition-colors hover:text-turquoise-700"
                     >
                       {{ t("courses.viewCertificate") }}
                       <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">

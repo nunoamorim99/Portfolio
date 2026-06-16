@@ -265,6 +265,14 @@ export default {
     riderApps: "Rider apps",
     operatorPlatform: "Operator platform",
     modules: "Modules",
+    selectedWork: "Selected work",
+    selectedWorkSubtitle:
+      "Products and projects I've designed, shipped, and built — from a national transport platform to a game made from scratch.",
+    movizeKicker: "Transport ecosystem",
+    astroHopKicker: "Game",
+    builtWith: "Built with",
+    playLive: "Play it live",
+    viewSource: "Source",
     platforms: {
       android: "Android",
       ios: "iOS",
@@ -273,6 +281,13 @@ export default {
       phone: "Phone",
     },
     items: {
+      "astro-hop": {
+        title: "Astro Hop",
+        tagline:
+          "Retro Mario-style 2D platformer, playable on desktop and mobile from the same URL.",
+        description:
+          "A from-scratch 2D platformer with arcade physics and real game feel — acceleration, variable jump height — a power-up state machine (small → big → fire), stompable enemies, breakable bricks, secret areas, and a full game-flow loop: title screen, lives, timer, pause, game over, and a persistent high score. Every sound effect and music track is synthesized live with the Web Audio API (zero audio files), levels are data-driven plain-text grids, and it ships responsive with multi-touch mobile controls, auto-deployed via CI.",
+      },
       "mobile-app": {
         title: "Movize Mobile App",
         role: "Product Manager/Product Owner/Software Engineer",

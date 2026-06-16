@@ -26,7 +26,7 @@ function openImage(index, e) {
     <button
       v-for="(image, index) in images"
       :key="index"
-      class="group relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-vermillion focus:ring-offset-2"
+      class="group relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-turquoise focus:ring-offset-2"
       :aria-label="`View image ${index + 1} of ${images.length}`"
       @click="openImage(index, $event)"
     >
@@ -36,7 +36,7 @@ function openImage(index, e) {
         class="aspect-[4/3] w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
         loading="lazy"
       />
-      <div class="absolute inset-0 bg-vermillion/0 transition-colors duration-300 group-hover:bg-vermillion/10" />
+      <div class="absolute inset-0 bg-turquoise/0 transition-colors duration-300 group-hover:bg-turquoise/10" />
     </button>
   </div>
 </template>

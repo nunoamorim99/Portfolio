@@ -90,9 +90,9 @@ const wrapRef = useTemplateRef<HTMLDivElement>('wrapRef');
 const cardRef = useTemplateRef<HTMLElement>('cardRef');
 
 const DEFAULT_BEHIND_GRADIENT =
-  'radial-gradient(farthest-side circle at var(--pointer-x) var(--pointer-y),hsla(16,100%,85%,var(--card-opacity)) 4%,hsla(16,60%,70%,calc(var(--card-opacity)*0.75)) 10%,hsla(16,30%,60%,calc(var(--card-opacity)*0.5)) 50%,hsla(16,0%,50%,0) 100%),radial-gradient(35% 52% at 55% 20%,#8b9e7cc4 0%,#1a1a1a00 100%),radial-gradient(100% 100% at 50% 50%,#ff4d00ff 1%,#1a1a1a00 76%),conic-gradient(from 124deg at 50% 50%,#ff4d00ff 0%,#8b9e7cff 40%,#8b9e7cff 60%,#ff4d00ff 100%)';
+  'radial-gradient(farthest-side circle at var(--pointer-x) var(--pointer-y),hsla(174,100%,85%,var(--card-opacity)) 4%,hsla(174,60%,70%,calc(var(--card-opacity)*0.75)) 10%,hsla(174,30%,60%,calc(var(--card-opacity)*0.5)) 50%,hsla(174,0%,50%,0) 100%),radial-gradient(35% 52% at 55% 20%,#8b9e7cc4 0%,#1a1a1a00 100%),radial-gradient(100% 100% at 50% 50%,#14b8a6ff 1%,#1a1a1a00 76%),conic-gradient(from 124deg at 50% 50%,#14b8a6ff 0%,#8b9e7cff 40%,#8b9e7cff 60%,#14b8a6ff 100%)';
 
-const DEFAULT_INNER_GRADIENT = 'linear-gradient(145deg,#1a1a1acc 0%,#ff4d0033 100%)';
+const DEFAULT_INNER_GRADIENT = 'linear-gradient(145deg,#1a1a1acc 0%,#14b8a633 100%)';
 
 const ANIMATION_CONFIG = {
   SMOOTH_DURATION: 600,
@@ -344,13 +344,13 @@ onUnmounted(() => {
     0 0;
   background-image:
     radial-gradient(farthest-side circle at var(--pointer-x) var(--pointer-y),
-      hsla(16, 100%, 85%, var(--card-opacity)) 4%,
-      hsla(16, 60%, 70%, calc(var(--card-opacity) * 0.75)) 10%,
-      hsla(16, 30%, 60%, calc(var(--card-opacity) * 0.5)) 50%,
-      hsla(16, 0%, 50%, 0) 100%),
+      hsla(174, 100%, 85%, var(--card-opacity)) 4%,
+      hsla(174, 60%, 70%, calc(var(--card-opacity) * 0.75)) 10%,
+      hsla(174, 30%, 60%, calc(var(--card-opacity) * 0.5)) 50%,
+      hsla(174, 0%, 50%, 0) 100%),
     radial-gradient(35% 52% at 55% 20%, #8b9e7cc4 0%, #1a1a1a00 100%),
-    radial-gradient(100% 100% at 50% 50%, #ff4d00ff 1%, #1a1a1a00 76%),
-    conic-gradient(from 124deg at 50% 50%, #ff4d00ff 0%, #8b9e7cff 40%, #8b9e7cff 60%, #ff4d00ff 100%);
+    radial-gradient(100% 100% at 50% 50%, #14b8a6ff 1%, #1a1a1a00 76%),
+    conic-gradient(from 124deg at 50% 50%, #14b8a6ff 0%, #8b9e7cff 40%, #8b9e7cff 60%, #14b8a6ff 100%);
   overflow: hidden;
 }
 
@@ -513,7 +513,7 @@ onUnmounted(() => {
   transform: translate3d(0, 0, 1.1px);
   overflow: hidden;
   background-image: radial-gradient(farthest-corner circle at var(--pointer-x) var(--pointer-y),
-      hsla(16, 15%, 75%, 0.4) 12%,
+      hsla(174, 15%, 75%, 0.4) 12%,
       hsla(0, 0%, 20%, 0.3) 90%);
   mix-blend-mode: overlay;
   filter: brightness(0.9) contrast(1.1);
@@ -627,7 +627,7 @@ onUnmounted(() => {
 }
 
 .pc-contact-btn:hover {
-  border-color: #ff4d00;
+  border-color: #14b8a6;
   background: rgba(255, 77, 0, 0.2);
   color: #fff;
   transform: translateY(-1px);
@@ -659,7 +659,7 @@ onUnmounted(() => {
   font-weight: 400;
   margin: 0;
   font-size: min(5svh, 3em);
-  background-image: linear-gradient(to bottom, #fdfcfa, #ff4d00);
+  background-image: linear-gradient(to bottom, #fdfcfa, #14b8a6);
   background-size: 1em 1.5em;
   -webkit-text-fill-color: transparent;
   background-clip: text;

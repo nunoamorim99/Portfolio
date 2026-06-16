@@ -265,6 +265,14 @@ export default {
     riderApps: 'Apps para passageiros',
     operatorPlatform: 'Plataforma de operadores',
     modules: 'Módulos',
+    selectedWork: 'Trabalho selecionado',
+    selectedWorkSubtitle:
+      'Produtos e projetos que desenhei, lancei e construí — de uma plataforma nacional de transportes a um jogo feito de raiz.',
+    movizeKicker: 'Ecossistema de transportes',
+    astroHopKicker: 'Jogo',
+    builtWith: 'Construído com',
+    playLive: 'Jogar agora',
+    viewSource: 'Código',
     platforms: {
       android: 'Android',
       ios: 'iOS',
@@ -273,6 +281,13 @@ export default {
       phone: 'Telemóvel',
     },
     items: {
+      'astro-hop': {
+        title: 'Astro Hop',
+        tagline:
+          'Plataformas 2D ao estilo retro do Mario, jogável em computador e telemóvel a partir do mesmo URL.',
+        description:
+          'Um jogo de plataformas 2D feito de raiz, com física arcade e verdadeira sensação de jogo — aceleração, altura de salto variável — uma máquina de estados de power-ups (pequeno → grande → fogo), inimigos que se eliminam ao saltar em cima, tijolos destrutíveis, áreas secretas e um ciclo de jogo completo: ecrã inicial, vidas, cronómetro, pausa, fim de jogo e recorde persistente. Todos os efeitos sonoros e a música são sintetizados ao vivo com a Web Audio API (zero ficheiros de áudio), os níveis são grelhas de texto orientadas a dados, e é responsivo com controlos multitoque para telemóvel, com deploy automático via CI.',
+      },
       'mobile-app': {
         title: 'Movize Mobile App',
         role: 'Gestor de Produto/Product Owner/Engenheiro de Software',

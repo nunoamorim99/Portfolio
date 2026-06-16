@@ -85,7 +85,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
       >
         <!-- Close button -->
         <button
-          class="absolute right-6 top-6 bg-white/10 p-2.5 text-white transition-colors hover:bg-vermillion"
+          class="absolute right-6 top-6 bg-white/10 p-2.5 text-white transition-colors hover:bg-turquoise"
           aria-label="Close lightbox"
           @click="ui.closeLightbox()"
         >
@@ -97,7 +97,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
         <!-- Prev button -->
         <button
           v-if="hasPrev"
-          class="absolute left-6 bg-white/10 p-3 text-white transition-colors hover:bg-vermillion"
+          class="absolute left-6 bg-white/10 p-3 text-white transition-colors hover:bg-turquoise"
           aria-label="Previous image"
           @click="prev"
         >
@@ -118,7 +118,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
         <!-- Next button -->
         <button
           v-if="hasNext"
-          class="absolute right-6 bg-white/10 p-3 text-white transition-colors hover:bg-vermillion"
+          class="absolute right-6 bg-white/10 p-3 text-white transition-colors hover:bg-turquoise"
           aria-label="Next image"
           @click="next"
         >

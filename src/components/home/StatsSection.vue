@@ -76,7 +76,7 @@ onUnmounted(() => ctx?.revert())
           class="flex flex-col items-center text-center lg:items-start lg:text-left"
         >
           <span
-            class="stat-value font-serif text-display-md leading-none text-vermillion"
+            class="stat-value font-serif text-display-md leading-none text-turquoise"
             :data-target="stat.value"
             :data-suffix="stat.suffix"
           >{{ stat.value }}{{ stat.suffix }}</span>

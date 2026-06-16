@@ -143,7 +143,7 @@ function onScroll() {
         <div v-for="sport in sports" :key="sport.id" class="card">
           <div class="flex items-center gap-4 mb-4">
             <svg
-              class="h-6 w-6 text-vermillion flex-shrink-0"
+              class="h-6 w-6 text-turquoise flex-shrink-0"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
@@ -184,10 +184,10 @@ function onScroll() {
         >
           <div class="relative min-w-max py-4">
             <!-- Background track -->
-            <div class="absolute top-[22px] left-0 right-0 h-[2px] bg-vermillion/15" />
+            <div class="absolute top-[22px] left-0 right-0 h-[2px] bg-turquoise/15" />
             <!-- Animated fill line -->
             <div
-              class="absolute top-[22px] left-0 h-[2px] bg-vermillion/60 transition-[width] duration-300 ease-out"
+              class="absolute top-[22px] left-0 h-[2px] bg-turquoise/60 transition-[width] duration-300 ease-out"
               :style="{ width: (lineFill * 100) + '%' }"
             />
 
@@ -203,9 +203,9 @@ function onScroll() {
               >
                 <!-- Year dot with pulse -->
                 <div class="relative z-10 flex items-start justify-center">
-                  <div class="year-dot relative h-3.5 w-3.5 rounded-full bg-vermillion border-[3px] border-cream-50 dark:border-charcoal-900 shadow-sm shadow-vermillion/30">
+                  <div class="year-dot relative h-3.5 w-3.5 rounded-full bg-turquoise border-[3px] border-cream-50 dark:border-charcoal-900 shadow-sm shadow-turquoise/30">
                     <div
-                      class="absolute inset-0 rounded-full bg-vermillion animate-ping opacity-0"
+                      class="absolute inset-0 rounded-full bg-turquoise animate-ping opacity-0"
                       :class="{ 'opacity-20': visibleYears.has(String(index)) }"
                       :style="{ animationDelay: (index * 120 + 400) + 'ms', animationIterationCount: '2' }"
                     />
@@ -213,7 +213,7 @@ function onScroll() {
                 </div>
 
                 <!-- Year label -->
-                <span class="mt-3 text-xs font-bold uppercase tracking-[0.25em] text-vermillion select-none">
+                <span class="mt-3 text-xs font-bold uppercase tracking-[0.25em] text-turquoise select-none">
                   {{ year }}
                 </span>
 
@@ -222,7 +222,7 @@ function onScroll() {
                   <div
                     v-for="(achievement, aIdx) in items"
                     :key="achievement.id"
-                    class="achievement-card rounded-lg border border-charcoal-100 dark:border-charcoal-700 bg-white dark:bg-charcoal-800 p-4 shadow-sm hover:shadow-md hover:border-vermillion/30 hover:-translate-y-0.5 transition-all duration-300"
+                    class="achievement-card rounded-lg border border-charcoal-100 dark:border-charcoal-700 bg-white dark:bg-charcoal-800 p-4 shadow-sm hover:shadow-md hover:border-turquoise/30 hover:-translate-y-0.5 transition-all duration-300"
                     :style="{ transitionDelay: visibleYears.has(String(index)) ? (aIdx * 80 + 200) + 'ms' : '0ms' }"
                   >
                     <h3 class="font-serif text-sm leading-snug text-charcoal dark:text-cream-100">
@@ -231,7 +231,7 @@ function onScroll() {
                     <p class="mt-2 text-xs text-charcoal-400 dark:text-charcoal-300">
                       {{ achievement.club }}
                     </p>
-                    <span class="mt-1 inline-block text-[10px] font-bold uppercase tracking-widest text-vermillion/70">
+                    <span class="mt-1 inline-block text-[10px] font-bold uppercase tracking-widest text-turquoise/70">
                       {{ t(`sports.categories.${achievement.category}`) }}
                     </span>
                   </div>

@@ -74,13 +74,13 @@ function go(id) {
         >
           <span
             class="text-[10px] font-bold uppercase tracking-[0.2em] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-            :class="active === s.id ? 'opacity-100 text-vermillion' : 'text-charcoal-400 dark:text-charcoal-300'"
+            :class="active === s.id ? 'opacity-100 text-turquoise' : 'text-charcoal-400 dark:text-charcoal-300'"
           >{{ t(s.labelKey) }}</span>
           <span
             class="h-2 w-2 rounded-full border transition-all duration-300"
             :class="active === s.id
-              ? 'scale-125 border-vermillion bg-vermillion'
-              : 'border-charcoal-300 group-hover:border-vermillion dark:border-charcoal-500'"
+              ? 'scale-125 border-turquoise bg-turquoise'
+              : 'border-charcoal-300 group-hover:border-turquoise dark:border-charcoal-500'"
           />
         </button>
       </li>

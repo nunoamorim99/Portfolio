@@ -89,7 +89,7 @@ onMounted(async () => {
 .marker-pin {
   width: 28px;
   height: 28px;
-  background: linear-gradient(135deg, #ff4d00 0%, #e03e00 100%);
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
   border-radius: 50% 50% 50% 0;
   transform: rotate(-45deg);
   display: flex;

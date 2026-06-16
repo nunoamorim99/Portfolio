@@ -182,14 +182,14 @@ onUnmounted(() => {
           class="shrink-0 w-[34vw] min-w-[420px] max-w-[560px] h-[80vh] flex flex-col justify-center p-10 xl:p-12 border-l border-charcoal-100 dark:border-charcoal-700"
         >
           <span
-            class="text-[4.5rem] font-serif text-vermillion/15 leading-none mb-2 select-none"
+            class="text-[4.5rem] font-serif text-turquoise/15 leading-none mb-2 select-none"
             >0{{ i + 1 }}</span
           >
           <h4 class="font-serif text-xl text-charcoal dark:text-cream-100">
             {{ t(`experience.positions.${pos.id}.title`) }}
           </h4>
           <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
-            <span class="font-bold uppercase tracking-widest text-vermillion">
+            <span class="font-bold uppercase tracking-widest text-turquoise">
               {{ t(`experience.positions.${pos.id}.type`) }}
             </span>
             <span class="text-charcoal-200 dark:text-charcoal-600">/</span>
@@ -217,7 +217,7 @@ onUnmounted(() => {
             </span>
             <span
               v-if="pos.skills.length > 5"
-              class="skills-more relative badge text-[10px] text-vermillion border-vermillion/30 cursor-default"
+              class="skills-more relative badge text-[10px] text-turquoise border-turquoise/30 cursor-default"
             >
               +{{ pos.skills.length - 5 }}
               <span class="skills-tooltip">
@@ -271,7 +271,7 @@ onUnmounted(() => {
             >
               <span
                 v-if="focoCriativo.positions.length > 1"
-                class="exp-timeline absolute left-0 top-0 h-full w-0.5 origin-top bg-vermillion/30"
+                class="exp-timeline absolute left-0 top-0 h-full w-0.5 origin-top bg-turquoise/30"
                 aria-hidden="true"
               />
               <div
@@ -286,7 +286,7 @@ onUnmounted(() => {
               >
                 <div
                   v-if="focoCriativo.positions.length > 1"
-                  class="exp-dot absolute -left-[calc(2rem+5px)] top-1.5 h-2.5 w-2.5 bg-vermillion"
+                  class="exp-dot absolute -left-[calc(2rem+5px)] top-1.5 h-2.5 w-2.5 bg-turquoise"
                 />
                 <h4 class="font-serif text-lg text-charcoal dark:text-cream-100">
                   {{ t(`experience.positions.${pos.id}.title`) }}
@@ -295,7 +295,7 @@ onUnmounted(() => {
                   class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs"
                 >
                   <span
-                    class="font-bold uppercase tracking-widest text-vermillion"
+                    class="font-bold uppercase tracking-widest text-turquoise"
                   >
                     {{ t(`experience.positions.${pos.id}.type`) }}
                   </span>

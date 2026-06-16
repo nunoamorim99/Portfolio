@@ -31,7 +31,7 @@ function openPhoto(index) {
         <button
           v-for="(photo, index) in photos"
           :key="photo.id"
-          class="group relative mb-4 block w-full overflow-hidden break-inside-avoid focus:outline-none focus:ring-2 focus:ring-vermillion focus:ring-offset-2"
+          class="group relative mb-4 block w-full overflow-hidden break-inside-avoid focus:outline-none focus:ring-2 focus:ring-turquoise focus:ring-offset-2"
           :aria-label="t(`photography.photos.${photo.id}`)"
           @click="openPhoto(index)"
         >

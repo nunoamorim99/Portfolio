@@ -161,7 +161,7 @@ onUnmounted(() => {
                 </div>
                 <div class="h-1 bg-charcoal-100 dark:bg-charcoal-700 overflow-hidden">
                   <div
-                    class="skill-bar-fill h-full bg-vermillion"
+                    class="skill-bar-fill h-full bg-turquoise"
                     :style="{ width: (skill.rating / 5 * 100) + '%' }"
                     role="progressbar"
                     :aria-valuenow="skill.rating"

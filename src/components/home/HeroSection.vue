@@ -142,7 +142,7 @@ onUnmounted(() => {
       aria-hidden="true"
     >
       <span
-        class="select-none font-serif font-medium leading-none whitespace-nowrap text-vermillion/[0.06] dark:text-vermillion-500/[0.08]"
+        class="select-none font-serif font-medium leading-none whitespace-nowrap text-turquoise/[0.06] dark:text-turquoise-500/[0.08]"
         style="font-size: clamp(7rem, 26vw, 24rem)"
       >
         {{ t('hero.bgWord') }}
@@ -151,7 +151,7 @@ onUnmounted(() => {
 
     <!-- Soft depth glow -->
     <div
-      class="pointer-events-none absolute -left-1/4 top-1/4 z-0 h-[60vh] w-[60vh] rounded-full bg-vermillion/[0.07] blur-3xl dark:bg-vermillion/[0.05]"
+      class="pointer-events-none absolute -left-1/4 top-1/4 z-0 h-[60vh] w-[60vh] rounded-full bg-turquoise/[0.07] blur-3xl dark:bg-turquoise/[0.05]"
       aria-hidden="true"
     />
 
@@ -161,7 +161,7 @@ onUnmounted(() => {
         <div class="lg:col-span-7 xl:col-span-8">
           <p
             ref="roleRef"
-            class="text-xs font-bold uppercase tracking-[0.3em] text-vermillion mb-6"
+            class="text-xs font-bold uppercase tracking-[0.3em] text-turquoise mb-6"
           >
             {{ t('hero.role') }}
           </p>
@@ -229,7 +229,7 @@ onUnmounted(() => {
         <!-- Photo: offset, editorial framing -->
         <div class="lg:col-span-5 xl:col-span-4 flex justify-center lg:justify-end">
           <div ref="photoWrapRef" class="relative will-change-transform">
-            <div class="absolute -inset-4 bg-vermillion/10 -rotate-3 dark:bg-vermillion/5" aria-hidden="true" />
+            <div class="absolute -inset-4 bg-turquoise/10 -rotate-3 dark:bg-turquoise/5" aria-hidden="true" />
             <img
               :src="profile.photo"
               :alt="`Photo of ${profile.name}`"
@@ -248,7 +248,7 @@ onUnmounted(() => {
     >
       <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-charcoal-300 dark:text-charcoal-500">Scroll</span>
       <div class="h-12 w-px bg-charcoal-100 dark:bg-charcoal-700 relative overflow-hidden">
-        <div class="absolute inset-x-0 top-0 h-3 bg-vermillion animate-scroll-line" />
+        <div class="absolute inset-x-0 top-0 h-3 bg-turquoise animate-scroll-line" />
       </div>
     </div>
   </section>
