@@ -109,6 +109,54 @@ export default {
       ctaTitle: 'Ver ao vivo',
       ctaBody: 'O Movize está em desenvolvimento ativo e já disponível.',
     },
+    astroHop: {
+      label: 'Caso de Estudo',
+      title: 'Astro Hop',
+      tagline:
+        'Um jogo de plataformas 2D feito de raiz — criado para explorar o modelo Fable 5 e lançar algo real com IA.',
+      badgeContext: 'Projeto solo',
+      badgeAi: 'Construído com Fable 5',
+      overview:
+        'O Astro Hop é um jogo de plataformas 2D ao estilo retro do Mario — jogável em computador e telemóvel a partir do mesmo URL. Construí-o de raiz como forma prática de explorar o modelo Fable 5: em parceria com IA para desenhar os sistemas, escrever a lógica do jogo e lançar uma experiência completa e polida — e para aprofundar o meu próprio conhecimento de engenharia pelo caminho.',
+      approach: {
+        kicker: '01 — Abordagem',
+        title: 'Construir com IA, para aprender a construir',
+        body: 'Em vez de apenas ler sobre um novo modelo, lancei com ele. O Astro Hop foi uma exploração deliberada do Fable 5 — usando-o como parceiro de desenvolvimento para arquitetar o jogo, resolver a matemática da física arcade e depurar casos extremos reais. O objetivo era duplo: produzir algo genuinamente jogável e polido, e construir um entendimento sólido e em primeira mão de como construir eficazmente com IA.',
+      },
+      highlightsKicker: '02 — Por dentro',
+      highlightsTitle: 'O que está lá dentro',
+      features: {
+        physics: {
+          title: 'Física arcade e sensação de jogo',
+          body: 'Aceleração, atrito e altura de salto variável que responde ao tempo que se mantém o botão premido — afinado para a sensação, não para o realismo.',
+        },
+        powerups: {
+          title: 'Máquina de estados de power-ups',
+          body: 'Uma máquina de estados limpa conduz a progressão clássica pequeno → grande → fogo e as suas transições.',
+        },
+        world: {
+          title: 'Um mundo vivo',
+          body: 'Inimigos que se eliminam ao saltar em cima, tijolos destrutíveis e áreas secretas escondidas para os jogadores descobrirem.',
+        },
+        loop: {
+          title: 'Ciclo de jogo completo',
+          body: 'Ecrã inicial, vidas, cronómetro, pausa, fim de jogo e um recorde que persiste entre sessões.',
+        },
+      },
+      audio: {
+        kicker: 'Som',
+        statement:
+          'Todos os efeitos sonoros e músicas são sintetizados ao vivo com a Web Audio API — zero ficheiros de áudio.',
+      },
+      platform: {
+        kicker: '03 — Corre em qualquer lado',
+        title: 'Um URL, computador e telemóvel',
+        body: 'Os níveis são grelhas de texto orientadas a dados, por isso criar novos é trivial. O jogo é totalmente responsivo, com controlos multitoque no ecrã para telemóvel, e cada push faz deploy automático para o GitHub Pages via GitHub Actions.',
+      },
+      techTitle: 'Construído com',
+      ctaTitle: 'Joga',
+      ctaBody: 'O Astro Hop corre no teu browser — computador ou telemóvel, o mesmo link.',
+    },
   },
   about: {
     title: 'Sobre Mim',
@@ -261,6 +309,7 @@ export default {
     platformsLabel: 'Disponível em',
     visitSite: 'Visitar site',
     readCaseStudy: 'Ler o caso de estudo do Movize',
+    viewCaseStudy: 'Ler o caso de estudo',
     ecosystemTitle: 'O ecossistema Movize',
     riderApps: 'Apps para passageiros',
     operatorPlatform: 'Plataforma de operadores',

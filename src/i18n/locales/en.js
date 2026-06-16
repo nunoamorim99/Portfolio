@@ -109,6 +109,54 @@ export default {
       ctaTitle: "See it live",
       ctaBody: "Movize is in active development and available now.",
     },
+    astroHop: {
+      label: "Case Study",
+      title: "Astro Hop",
+      tagline:
+        "A from-scratch 2D platformer — built to explore the Fable 5 model and ship something real with AI.",
+      badgeContext: "Solo build",
+      badgeAi: "Built with Fable 5",
+      overview:
+        "Astro Hop is a retro, Mario-style 2D platformer — playable on desktop and mobile from the same URL. I built it from scratch as a hands-on way to explore the Fable 5 model: pairing with AI to design the systems, write the game logic, and ship a complete, polished experience — and to deepen my own engineering knowledge along the way.",
+      approach: {
+        kicker: "01 — Approach",
+        title: "Built with AI, to learn by building",
+        body: "Instead of just reading about a new model, I shipped with it. Astro Hop was a deliberate exploration of Fable 5 — using it as a development partner to architect the game, work through the arcade-physics math, and debug real edge cases. The goal was twofold: produce something genuinely playable and polished, and build durable, first-hand understanding of how to build effectively with AI.",
+      },
+      highlightsKicker: "02 — Under the hood",
+      highlightsTitle: "What's inside",
+      features: {
+        physics: {
+          title: "Arcade physics & game feel",
+          body: "Acceleration, friction, and variable jump height that responds to how long you hold the button — tuned for feel, not realism.",
+        },
+        powerups: {
+          title: "Power-up state machine",
+          body: "A clean state machine drives the classic small → big → fire progression and its transitions.",
+        },
+        world: {
+          title: "A living world",
+          body: "Stompable enemies, breakable bricks, and secret areas tucked away for players to discover.",
+        },
+        loop: {
+          title: "Full game-flow loop",
+          body: "Title screen, lives, a countdown timer, pause, game over, and a high score that persists between sessions.",
+        },
+      },
+      audio: {
+        kicker: "Sound",
+        statement:
+          "Every sound effect and music track is synthesized live with the Web Audio API — zero audio files.",
+      },
+      platform: {
+        kicker: "03 — Runs anywhere",
+        title: "One URL, desktop and mobile",
+        body: "Levels are data-driven plain-text grids, so authoring new ones is trivial. The game is fully responsive with multi-touch on-screen controls for mobile, and every push auto-deploys to GitHub Pages via GitHub Actions.",
+      },
+      techTitle: "Built with",
+      ctaTitle: "Play it",
+      ctaBody: "Astro Hop runs in your browser — desktop or phone, same link.",
+    },
   },
   about: {
     title: "About Me",
@@ -261,6 +309,7 @@ export default {
     platformsLabel: "Available on",
     visitSite: "Visit site",
     readCaseStudy: "Read the Movize case study",
+    viewCaseStudy: "Read the case study",
     ecosystemTitle: "The Movize ecosystem",
     riderApps: "Rider apps",
     operatorPlatform: "Operator platform",
