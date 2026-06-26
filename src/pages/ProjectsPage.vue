@@ -29,6 +29,36 @@ const modules = movizeCase.modules;
 // Standalone projects (e.g. Astro Hop), kept out of the Movize data.
 const astroHop = sideProjects.find((p) => p.id === "astro-hop");
 
+// Inline "Read more" — long card copy is clamped by default and expands in
+// place (no navigation), since the full text isn't shown on the case study.
+const expanded = ref(new Set());
+function isExpanded(id) {
+  return expanded.value.has(id);
+}
+function toggleExpanded(id) {
+  const next = new Set(expanded.value);
+  next.has(id) ? next.delete(id) : next.add(id);
+  expanded.value = next;
+  ScrollTrigger.refresh();
+}
+
+// Module copy is short and only some entries overflow their 3-line clamp, so
+// the toggle is shown per-module only when the text is actually being cut off.
+const overflowing = ref(new Set());
+function checkOverflow(el, id) {
+  // Skip while expanded — the clamp is off, so the measurement is meaningless.
+  if (!el || isExpanded(id)) return;
+  // Measured while clamped, so scrollHeight > clientHeight means it's cut off.
+  const cut = el.scrollHeight - el.clientHeight > 1;
+  if (cut === overflowing.value.has(id)) return;
+  const next = new Set(overflowing.value);
+  cut ? next.add(id) : next.delete(id);
+  overflowing.value = next;
+}
+function isOverflowing(id) {
+  return overflowing.value.has(id);
+}
+
 function openGallery(images, index, e) {
   ui.openLightbox(images, index, e?.currentTarget?.querySelector("img"));
 }
@@ -131,9 +161,19 @@ onUnmounted(() => ctx?.revert());
             <h3 class="font-serif text-2xl text-charcoal dark:text-cream-100">
               {{ t(`projects.items.${proj.id}.title`) }}
             </h3>
-            <p class="mt-3 text-sm leading-relaxed text-charcoal-500 line-clamp-4 dark:text-charcoal-300">
+            <p
+              class="mt-3 text-sm leading-relaxed text-charcoal-500 dark:text-charcoal-300"
+              :class="{ 'line-clamp-4': !isExpanded(proj.id) }"
+            >
               {{ t(`projects.items.${proj.id}.description`) }}
             </p>
+            <button
+              type="button"
+              class="mt-2 self-start text-xs font-bold uppercase tracking-[0.2em] text-turquoise transition-colors hover:text-turquoise-700"
+              @click="toggleExpanded(proj.id)"
+            >
+              {{ isExpanded(proj.id) ? t("projects.readLess") : t("projects.readMore") }}
+            </button>
             <div class="mt-auto pt-6">
               <div v-if="proj.platforms?.length" class="flex flex-wrap gap-1.5">
                 <span v-for="p in proj.platforms" :key="p" class="badge text-[10px]">
@@ -170,9 +210,21 @@ onUnmounted(() => ctx?.revert());
               {{ t(`projects.items.${connect.id}.title`) }}
             </h2>
             <div data-reveal class="accent-line mt-6" />
-            <p data-reveal class="mt-6 text-base leading-relaxed text-charcoal-500 line-clamp-6 dark:text-charcoal-300">
+            <p
+              data-reveal
+              class="mt-6 text-base leading-relaxed text-charcoal-500 dark:text-charcoal-300"
+              :class="{ 'line-clamp-6': !isExpanded(connect.id) }"
+            >
               {{ t(`projects.items.${connect.id}.description`) }}
             </p>
+            <button
+              data-reveal
+              type="button"
+              class="mt-3 text-xs font-bold uppercase tracking-[0.2em] text-turquoise transition-colors hover:text-turquoise-700"
+              @click="toggleExpanded(connect.id)"
+            >
+              {{ isExpanded(connect.id) ? t("projects.readLess") : t("projects.readMore") }}
+            </button>
             <router-link
               data-reveal
               to="/projects/movize"
@@ -250,9 +302,21 @@ onUnmounted(() => ctx?.revert());
                   {{ t("caseStudy.movize.ecosystem.inDev") }}
                 </span>
               </div>
-              <p class="mt-2 text-sm leading-relaxed text-charcoal-500 line-clamp-3 dark:text-charcoal-300">
+              <p
+                :ref="(el) => checkOverflow(el, mod.id)"
+                class="mt-2 text-sm leading-relaxed text-charcoal-500 dark:text-charcoal-300"
+                :class="{ 'line-clamp-3': !isExpanded(mod.id) }"
+              >
                 {{ t(`caseStudy.movize.modules.${mod.id}.body`) }}
               </p>
+              <button
+                v-if="isOverflowing(mod.id) || isExpanded(mod.id)"
+                type="button"
+                class="mt-2 self-start text-xs font-bold uppercase tracking-[0.2em] text-turquoise transition-colors hover:text-turquoise-700"
+                @click="toggleExpanded(mod.id)"
+              >
+                {{ isExpanded(mod.id) ? t("projects.readLess") : t("projects.readMore") }}
+              </button>
             </div>
           </article>
         </div>

@@ -308,6 +308,8 @@ export default {
       "A selection of projects and products I’ve been involved with in various roles and that I helped develop and launch",
     platformsLabel: "Available on",
     visitSite: "Visit site",
+    readMore: "Read more",
+    readLess: "Read less",
     readCaseStudy: "Read the Movize case study",
     viewCaseStudy: "Read the case study",
     ecosystemTitle: "The Movize ecosystem",
