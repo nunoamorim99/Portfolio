@@ -31,15 +31,15 @@ export default {
       label: 'Caso de Estudo',
       title: 'Movize',
       tagline:
-        'Centralizar os transportes urbanos de Portugal — e dar aos operadores as ferramentas para se digitalizarem.',
+        'Centralizar os transportes urbanos de Portugal - e dar aos operadores as ferramentas para se digitalizarem.',
       role: 'Gestor de Produto · Product Owner',
       period: '2024 – Presente',
       overview:
-        'O Movize começou como uma app para reunir todos os operadores de transporte portugueses num só lugar. Tornou-se algo maior — um ecossistema completo que permite aos operadores digitalizar e gerir as suas próprias redes. Liderei o produto desde o primeiro wireframe até uma mudança estratégica para uma plataforma multi-módulo.',
+        'O Movize começou como uma app para reunir todos os operadores de transporte portugueses num só lugar. Tornou-se algo maior - um ecossistema completo que permite aos operadores digitalizar e gerir as suas próprias redes. Liderei o produto desde o primeiro wireframe até uma mudança estratégica para uma plataforma multi-módulo.',
       problem: {
         kicker: '01 — O problema',
         title: 'Sem um único lugar para os transportes em Portugal',
-        body: 'Portugal não tinha uma app nativa que reunisse todos os operadores de transporte urbano. Os passageiros recorriam a fontes dispersas — ou ficavam sem informação — só para planear uma viagem entre operadores e modos.',
+        body: 'Portugal não tinha uma app nativa que reunisse todos os operadores de transporte urbano. Os passageiros recorriam a fontes dispersas - ou ficavam sem informação - só para planear uma viagem entre operadores e modos.',
       },
       v1: {
         kicker: '02 — Começar pelo passageiro',
@@ -48,19 +48,19 @@ export default {
       },
       pivot: {
         kicker: '03 — A mudança',
-        title: 'O problema não era a app — era que os operadores não tinham forma de se digitalizar.',
-        body: 'Integrar os operadores revelou um problema mais profundo. A maioria dos operadores portugueses, sobretudo os mais pequenos, não tinha qualquer ferramenta digital — e não tinha como pagar a grandes empresas para digitalizar os seus dados e chegar aos passageiros. A verdadeira oportunidade não era uma app melhor. Era dar aos operadores uma forma de se digitalizarem. Assim, o Movize cresceu de uma app para um ecossistema.',
+        title: 'O problema não era a app - era que os operadores não tinham forma de se digitalizar.',
+        body: 'Integrar os operadores revelou um problema mais profundo. A maioria dos operadores portugueses, sobretudo os mais pequenos, não tinha qualquer ferramenta digital - e não tinha como pagar a grandes empresas para digitalizar os seus dados e chegar aos passageiros. A verdadeira oportunidade não era uma app melhor. Era dar aos operadores uma forma de se digitalizarem. Assim, o Movize cresceu de uma app para um ecossistema.',
       },
       ecosystem: {
         kicker: '04 — De uma app a um ecossistema',
         title: 'Movize Connect',
-        body: 'O Movize Connect é a plataforma de back-office por trás da app. Permite a operadores, promotores de eventos e proprietários de infraestrutura gerir os seus próprios dados — e enviá-los diretamente para os passageiros. Construímo-lo módulo a módulo.',
+        body: 'O Movize Connect é a plataforma de back-office por trás da app. Permite a operadores, promotores de eventos e proprietários de infraestrutura gerir os seus próprios dados - e enviá-los diretamente para os passageiros. Construímo-lo módulo a módulo.',
         inDev: 'Em desenvolvimento',
       },
       modules: {
         gtfs: {
           name: 'Gestão de GTFS',
-          body: 'Os operadores criam e digitalizam os seus dados de transporte — construindo feeds GTFS de raiz, para que até redes não digitalizadas possam entrar online.',
+          body: 'Os operadores criam e digitalizam os seus dados de transporte - construindo feeds GTFS de raiz, para que até redes não digitalizadas possam entrar online.',
         },
         networkMap: {
           name: 'Mapa de Rede',
@@ -72,11 +72,11 @@ export default {
         },
         events: {
           name: 'Eventos',
-          body: 'Os promotores de eventos publicam eventos juntamente com as rotas e autocarros dedicados que os servem — transformando transporte pontual em informação acessível.',
+          body: 'Os promotores de eventos publicam eventos juntamente com as rotas e autocarros dedicados que os servem - transformando transporte pontual em informação acessível.',
         },
         sensors: {
           name: 'Mobiliário Urbano & Sensores',
-          body: 'Os proprietários de infraestrutura localizam e gerem ativos físicos — abrigos, paragens, sensores instalados — e veem os dados que esses sensores recolhem.',
+          body: 'Os proprietários de infraestrutura localizam e gerem ativos físicos - abrigos, paragens, sensores instalados - e veem os dados que esses sensores recolhem.',
         },
         drivers: {
           name: 'Motoristas',
@@ -87,7 +87,7 @@ export default {
       decisions: {
         feedback: {
           title: 'Integrar feedback no produto',
-          body: 'Ligámos passageiros, operadores e administradores diretamente, para que os problemas reais surjam depressa e sejam respondidos — e não se percam num backlog.',
+          body: 'Ligámos passageiros, operadores e administradores diretamente, para que os problemas reais surjam depressa e sejam respondidos - e não se percam num backlog.',
         },
         ecosystem: {
           title: 'Apostar no ecossistema, não só na app',
@@ -99,7 +99,7 @@ export default {
         },
         portal: {
           title: 'Priorizar o portal dos operadores',
-          body: 'Concentrámos esforço no Movize Connect — o back-office é onde o valor do ecossistema, e o seu caminho para a receita, realmente está.',
+          body: 'Concentrámos esforço no Movize Connect - o back-office é onde o valor do ecossistema, e o seu caminho para a receita, realmente está.',
         },
       },
       validation: {
@@ -114,22 +114,22 @@ export default {
       label: 'Caso de Estudo',
       title: 'Astro Hop',
       tagline:
-        'Um jogo de plataformas 2D feito de raiz — criado para explorar o modelo Fable 5 e lançar algo real com IA.',
+        'Um jogo de plataformas 2D feito de raiz - criado para explorar o modelo Fable 5 e lançar algo real com IA.',
       badgeContext: 'Projeto solo',
       badgeAi: 'Construído com Fable 5',
       overview:
-        'O Astro Hop é um jogo de plataformas 2D ao estilo retro do Mario — jogável em computador e telemóvel a partir do mesmo URL. Construí-o de raiz como forma prática de explorar o modelo Fable 5: em parceria com IA para desenhar os sistemas, escrever a lógica do jogo e lançar uma experiência completa e polida — e para aprofundar o meu próprio conhecimento de engenharia pelo caminho.',
+        'O Astro Hop é um jogo de plataformas 2D ao estilo retro do Mario - jogável em computador e telemóvel a partir do mesmo URL. Construí-o de raiz como forma prática de explorar o modelo Fable 5: em parceria com IA para desenhar os sistemas, escrever a lógica do jogo e lançar uma experiência completa e polida - e para aprofundar o meu próprio conhecimento de engenharia pelo caminho.',
       approach: {
         kicker: '01 — Abordagem',
         title: 'Construir com IA, para aprender a construir',
-        body: 'Em vez de apenas ler sobre um novo modelo, lancei com ele. O Astro Hop foi uma exploração deliberada do Fable 5 — usando-o como parceiro de desenvolvimento para arquitetar o jogo, resolver a matemática da física arcade e depurar casos extremos reais. O objetivo era duplo: produzir algo genuinamente jogável e polido, e construir um entendimento sólido e em primeira mão de como construir eficazmente com IA.',
+        body: 'Em vez de apenas ler sobre um novo modelo, lancei com ele. O Astro Hop foi uma exploração deliberada do Fable 5 - usando-o como parceiro de desenvolvimento para arquitetar o jogo, resolver a matemática da física arcade e depurar casos extremos reais. O objetivo era duplo: produzir algo genuinamente jogável e polido, e construir um entendimento sólido e em primeira mão de como construir eficazmente com IA.',
       },
       highlightsKicker: '02 — Por dentro',
       highlightsTitle: 'O que está lá dentro',
       features: {
         physics: {
           title: 'Física arcade e sensação de jogo',
-          body: 'Aceleração, atrito e altura de salto variável que responde ao tempo que se mantém o botão premido — afinado para a sensação, não para o realismo.',
+          body: 'Aceleração, atrito e altura de salto variável que responde ao tempo que se mantém o botão premido - afinado para a sensação, não para o realismo.',
         },
         powerups: {
           title: 'Máquina de estados de power-ups',
@@ -147,7 +147,7 @@ export default {
       audio: {
         kicker: 'Som',
         statement:
-          'Todos os efeitos sonoros e músicas são sintetizados ao vivo com a Web Audio API — zero ficheiros de áudio.',
+          'Todos os efeitos sonoros e músicas são sintetizados ao vivo com a Web Audio API - zero ficheiros de áudio.',
       },
       platform: {
         kicker: '03 — Corre em qualquer lado',
@@ -156,21 +156,21 @@ export default {
       },
       techTitle: 'Construído com',
       ctaTitle: 'Joga',
-      ctaBody: 'O Astro Hop corre no teu browser — computador ou telemóvel, o mesmo link.',
+      ctaBody: 'O Astro Hop corre no teu browser - computador ou telemóvel, o mesmo link.',
     },
     nibble: {
       label: 'Caso de Estudo',
       title: 'Nibble',
       tagline:
-        'O clássico jogo da cobra, redesenhado — uma segunda exploração profunda do Fable 5, com novos modos de jogo, uma economia e um leaderboard.',
+        'O clássico jogo da cobra, redesenhado - uma segunda exploração profunda do Fable 5, com novos modos de jogo, uma economia e um leaderboard.',
       badgeContext: 'Projeto solo',
       badgeAi: 'Construído com Fable 5',
       overview:
-        'O Nibble é um remake moderno e instalável do clássico jogo da cobra da era Nokia. Depois do Astro Hop, quis uma segunda ronda, mais ambiciosa, com o modelo Fable 5 — desta vez não apenas a recriar um clássico, mas a redesenhá-lo: um novo modo de jogo por níveis, modificadores de desafio combináveis, uma economia de cosméticos e aquilo que mais queria aprender — como funciona realmente um leaderboard, das pontuações locais a um backend global.',
+        'O Nibble é um remake moderno e instalável do clássico jogo da cobra da era Nokia. Depois do Astro Hop, quis uma segunda ronda, mais ambiciosa, com o modelo Fable 5 - desta vez não apenas a recriar um clássico, mas a redesenhá-lo: um novo modo de jogo por níveis, modificadores de desafio combináveis, uma economia de cosméticos e aquilo que mais queria aprender - como funciona realmente um leaderboard, das pontuações locais a um backend global.',
       approach: {
         kicker: '01 — Abordagem',
-        title: 'Segunda ronda com o Fable 5 — desta vez com uma arquitetura',
-        body: 'Se o Astro Hop foi sobre lançar um jogo completo com IA, o Nibble foi sobre disciplina de engenharia. O jogo foi construído com o Claude Code usando oito subagentes especializados, cada um responsável por uma camada da arquitetura — engine, renderer, temas, níveis, persistência — com um invariante: o engine não depende de nada acima dele. O resultado é um núcleo puro e determinístico, totalmente testado com Vitest, com rendering, temas e armazenamento em camadas limpas por cima.',
+        title: 'Segunda ronda com o Fable 5 - desta vez com uma arquitetura',
+        body: 'Se o Astro Hop foi sobre lançar um jogo completo com IA, o Nibble foi sobre disciplina de engenharia. O jogo foi construído com o Claude Code usando oito subagentes especializados, cada um responsável por uma camada da arquitetura - engine, renderer, temas, níveis, persistência - com um invariante: o engine não depende de nada acima dele. O resultado é um núcleo puro e determinístico, totalmente testado com Vitest, com rendering, temas e armazenamento em camadas limpas por cima.',
       },
       highlightsKicker: '02 — Por dentro',
       highlightsTitle: 'O que está lá dentro',
@@ -181,21 +181,21 @@ export default {
         },
         challenges: {
           title: 'Modificadores de desafio combináveis',
-          body: 'Velocidade a dobrar, paredes atravessáveis ou letais, labirintos de obstáculos — flags de dificuldade que os jogadores combinam livremente, em vez de presets fixos.',
+          body: 'Velocidade a dobrar, paredes atravessáveis ou letais, labirintos de obstáculos - flags de dificuldade que os jogadores combinam livremente, em vez de presets fixos.',
         },
         economy: {
           title: 'Moedas, temas & skins',
-          body: 'As partidas rendem moedas que desbloqueiam temas visuais e skins da cobra — do pixel monocromático ao néon futurista.',
+          body: 'As partidas rendem moedas que desbloqueiam temas visuais e skins da cobra - do pixel monocromático ao néon futurista.',
         },
         leaderboard: {
           title: 'Leaderboard local-first',
-          body: 'As pontuações persistem em IndexedDB e sincronizam com um leaderboard global opcional no Supabase — construído precisamente para aprender a lógica dos sistemas de ranking.',
+          body: 'As pontuações persistem em IndexedDB e sincronizam com um leaderboard global opcional no Supabase - construído precisamente para aprender a lógica dos sistemas de ranking.',
         },
       },
       architecture: {
         kicker: 'Arquitetura',
         statement:
-          'Um engine de jogo determinístico que não depende de nada acima dele — lógica pura, totalmente testada, com rendering e armazenamento como camadas substituíveis.',
+          'Um engine de jogo determinístico que não depende de nada acima dele - lógica pura, totalmente testada, com rendering e armazenamento como camadas substituíveis.',
       },
       platform: {
         kicker: '03 — Instala em qualquer lado',
@@ -204,27 +204,27 @@ export default {
       },
       techTitle: 'Construído com',
       ctaTitle: 'Joga',
-      ctaBody: 'O Nibble corre no teu browser — instala-o e continua a funcionar offline.',
+      ctaBody: 'O Nibble corre no teu browser - instala-o e continua a funcionar offline.',
     },
     skills: {
       label: 'Caso de Estudo',
       title: 'Skills de Claude Code',
       tagline:
-        'Três skills personalizadas que transformam o Claude Code no meu toolkit de gestão de produto — construídas para otimizar o meu dia-a-dia como PM.',
+        'Três skills personalizadas que transformam o Claude Code no meu toolkit de gestão de produto - construídas para otimizar o meu dia-a-dia como PM.',
       badgeContext: 'Projeto pessoal',
       badgeAi: 'Construído com Claude Code',
       overview:
-        'Como Product Manager, passo os dias a capturar ideias, gerir sprints e manter os stakeholders informados. Construí três skills de Claude Code — Idea Ledger, Agile Ledger e Cartographer — para trazer esse trabalho para o mesmo lugar onde vive o código. Para além do ganho de produtividade, o objetivo era aprender: desenhar skills de ponta a ponta levou-me a fundo em como o Claude funciona, como se desenham fluxos de agentes e como a IA pode realmente mudar o toolkit de um PM.',
+        'Como Product Manager, passo os dias a capturar ideias, gerir sprints e manter os stakeholders informados. Construí três skills de Claude Code - Idea Ledger, Agile Ledger e Cartographer - para trazer esse trabalho para o mesmo lugar onde vive o código. Para além do ganho de produtividade, o objetivo era aprender: desenhar skills de ponta a ponta levou-me a fundo em como o Claude funciona, como se desenham fluxos de agentes e como a IA pode realmente mudar o toolkit de um PM.',
       why: {
         kicker: '01 — Porquê construir as minhas ferramentas',
         title: 'O trabalho de PM vive em demasiadas abas',
-        body: 'A gestão de produto está espalhada por ferramentas — um board aqui, documentos ali, o código noutro lugar. Cada skill ataca uma parte dessa fragmentação: capturar e versionar ideias, gerir um processo ágil completo e gerar documentação para stakeholders — tudo em Markdown simples que vive ao lado do código, sem ferramentas externas e sem lock-in.',
+        body: 'A gestão de produto está espalhada por ferramentas - um board aqui, documentos ali, o código noutro lugar. Cada skill ataca uma parte dessa fragmentação: capturar e versionar ideias, gerir um processo ágil completo e gerar documentação para stakeholders - tudo em Markdown simples que vive ao lado do código, sem ferramentas externas e sem lock-in.',
       },
       items: {
         'idea-ledger': {
           name: 'Idea Ledger',
-          tagline: 'Nunca perder uma ideia — nem a sua história',
-          body: 'Uma skill de gestão de produto leve e sem base de dados, construída inteiramente sobre dois ficheiros Markdown. As ideias são capturadas com um único comando sem quebrar o fluxo de trabalho, triadas para um backlog e versionadas à medida que são entregues — sob uma regra: nada é apagado. Foi a prova de conceito de que Markdown simples aguenta um fluxo de produto real.',
+          tagline: 'Nunca perder uma ideia - nem a sua história',
+          body: 'Uma skill de gestão de produto leve e sem base de dados, construída inteiramente sobre dois ficheiros Markdown. As ideias são capturadas com um único comando sem quebrar o fluxo de trabalho, triadas para um backlog e versionadas à medida que são entregues - sob uma regra: nada é apagado. Foi a prova de conceito de que Markdown simples aguenta um fluxo de produto real.',
           highlights: {
             capture: 'Captura instantânea com /idea, segura a meio de outra tarefa, com deteção de duplicados na triagem.',
             versioning: 'Histórico de versões por ideia, mais versionamento semântico real para releases.',
@@ -233,8 +233,8 @@ export default {
         },
         'agile-ledger': {
           name: 'Agile Ledger',
-          tagline: 'Um substituto do Jira em Markdown simples',
-          body: 'O sucessor em grande escala do Idea Ledger: oito ficheiros Markdown geridos e mais de 30 slash commands que cobrem todo o ciclo de vida do produto — ideias, épicos, user stories, bugs, planeamento e execução de sprints, e releases. Os itens descartados guardam o motivo, o trabalho reconstruído a partir do git é sempre marcado para confirmação humana, e tudo permanece legível em qualquer editor.',
+          tagline: 'Todo o fluxo de trabalho de PM em Markdown simples',
+          body: 'O sucessor em grande escala do Idea Ledger: oito ficheiros Markdown geridos e mais de 30 slash commands que cobrem todo o ciclo de vida do produto - ideias, épicos, user stories, bugs, planeamento e execução de sprints, e releases. Os itens descartados guardam o motivo, o trabalho reconstruído a partir do git é sempre marcado para confirmação humana, e tudo permanece legível em qualquer editor.',
           highlights: {
             lifecycle: 'O fluxo completo, de /idea e /bug a /triage, /plan-sprint, /start-us, /review e /release.',
             traceability: 'Os IDs das user stories funcionam como chaves de ligação entre branches, commits e PRs.',
@@ -244,7 +244,7 @@ export default {
         cartographer: {
           name: 'Cartographer',
           tagline: 'Documentação que os stakeholders realmente leem',
-          body: 'Uma skill que analisa os repositórios de uma organização e gera documentação para stakeholders adaptada à audiência — o que cada produto faz e porque importa, não como foi construído. Um passo /assess propõe um mapa de produtos para confirmação; /generate produz os documentos em Markdown e PDF polido; /doc-status sinaliza documentação desatualizada e repositórios sem cobertura.',
+          body: 'Uma skill que analisa os repositórios de uma organização e gera documentação para stakeholders adaptada à audiência - o que cada produto faz e porque importa, não como foi construído. Um passo /assess propõe um mapa de produtos para confirmação; /generate produz os documentos em Markdown e PDF polido; /doc-status sinaliza documentação desatualizada e repositórios sem cobertura.',
           highlights: {
             assess: 'Descoberta read-only que classifica repositórios, mapeia produtos e reporta maturidade antes de escrever uma palavra.',
             output: 'Uma visão geral do ecossistema mais documentos por produto, em Markdown e PDF pronto a imprimir com tipografia incluída.',
@@ -255,11 +255,11 @@ export default {
       learned: {
         kicker: '05 — O que me ensinou',
         statement:
-          'Construir as minhas próprias ferramentas transformou a IA de algo sobre o qual lia em algo com que faço engenharia — e estas skills gerem hoje o meu dia-a-dia como PM.',
+          'Construir as minhas próprias ferramentas transformou a IA de algo sobre o qual lia em algo com que faço engenharia - e estas skills gerem hoje o meu dia-a-dia como PM.',
       },
       ctaTitle: 'Explora as skills',
       ctaBody:
-        'As três são open source sob licença MIT — instala-as no Claude Code e torna-as tuas.',
+        'As três são open source sob licença MIT - instala-as no Claude Code e torna-as tuas.',
     },
   },
   about: {
@@ -423,13 +423,13 @@ export default {
     modules: 'Módulos',
     selectedWork: 'Trabalho selecionado',
     selectedWorkSubtitle:
-      'Produtos e projetos que desenhei, lancei e construí — de uma plataforma nacional de transportes a jogos e ferramentas de IA feitos de raiz.',
+      'Produtos e projetos que desenhei, lancei e construí - de uma plataforma nacional de transportes a jogos e ferramentas de IA feitos de raiz.',
     movizeKicker: 'Ecossistema de transportes',
     gameKicker: 'Jogo',
     skillsKicker: 'Ferramentas de IA',
     skillsTitle: 'Skills de Claude Code',
     skillsIntro:
-      'Três skills personalizadas que construí para otimizar o meu dia-a-dia como PM — e para aprender a fazer engenharia com IA, não apenas a usá-la. Captura de ideias, um processo ágil completo e documentação para stakeholders, tudo em Markdown simples dentro do Claude Code.',
+      'Três skills personalizadas que construí para otimizar o meu dia-a-dia como PM - e para aprender a fazer engenharia com IA, não apenas a usá-la. Captura de ideias, um processo ágil completo e documentação para stakeholders, tudo em Markdown simples dentro do Claude Code.',
     imageSoon: 'Imagens brevemente',
     builtWith: 'Construído com',
     playLive: 'Jogar agora',
@@ -447,7 +447,7 @@ export default {
         tagline:
           'Plataformas 2D ao estilo retro do Mario, jogável em computador e telemóvel a partir do mesmo URL.',
         description:
-          'Um jogo de plataformas 2D feito de raiz, com física arcade e verdadeira sensação de jogo — aceleração, altura de salto variável — uma máquina de estados de power-ups (pequeno → grande → fogo), inimigos que se eliminam ao saltar em cima, tijolos destrutíveis, áreas secretas e um ciclo de jogo completo: ecrã inicial, vidas, cronómetro, pausa, fim de jogo e recorde persistente. Todos os efeitos sonoros e a música são sintetizados ao vivo com a Web Audio API (zero ficheiros de áudio), os níveis são grelhas de texto orientadas a dados, e é responsivo com controlos multitoque para telemóvel, com deploy automático via CI.',
+          'Um jogo de plataformas 2D feito de raiz, com física arcade e verdadeira sensação de jogo - aceleração, altura de salto variável - uma máquina de estados de power-ups (pequeno → grande → fogo), inimigos que se eliminam ao saltar em cima, tijolos destrutíveis, áreas secretas e um ciclo de jogo completo: ecrã inicial, vidas, cronómetro, pausa, fim de jogo e recorde persistente. Todos os efeitos sonoros e a música são sintetizados ao vivo com a Web Audio API (zero ficheiros de áudio), os níveis são grelhas de texto orientadas a dados, e é responsivo com controlos multitoque para telemóvel, com deploy automático via CI.',
       },
       'mobile-app': {
         title: 'Movize Mobile App',
@@ -464,33 +464,33 @@ export default {
       nibble: {
         title: 'Nibble',
         tagline:
-          'O clássico jogo da cobra, redesenhado — novos modos de jogo, desbloqueáveis e um leaderboard, instalável como PWA.',
+          'O clássico jogo da cobra, redesenhado - novos modos de jogo, desbloqueáveis e um leaderboard, instalável como PWA.',
         description:
-          'Um remake moderno do clássico jogo da cobra da era Nokia, reconstruído para ir além de uma simples cópia: ao lado do modo Clássico há um modo Níveis com objetivos progressivos e obstáculos, mais modificadores de desafio combináveis — velocidade a dobrar, paredes atravessáveis ou letais, labirintos de obstáculos. Uma economia de moedas desbloqueia temas e skins da cobra, e um leaderboard local-first (com pontuações globais opcionais via Supabase) ensinou-me a lógica dos sistemas de ranking. Por baixo, é um engine de jogo determinístico e totalmente testado, desacoplado do renderer em Canvas — construído com o Claude Code usando oito subagentes especializados — e instala-se como uma PWA que funciona totalmente offline.',
+          'Um remake moderno do clássico jogo da cobra da era Nokia, reconstruído para ir além de uma simples cópia: ao lado do modo Clássico há um modo Níveis com objetivos progressivos e obstáculos, mais modificadores de desafio combináveis - velocidade a dobrar, paredes atravessáveis ou letais, labirintos de obstáculos. Uma economia de moedas desbloqueia temas e skins da cobra, e um leaderboard local-first (com pontuações globais opcionais via Supabase) ensinou-me a lógica dos sistemas de ranking. Por baixo, é um engine de jogo determinístico e totalmente testado, desacoplado do renderer em Canvas - construído com o Claude Code usando oito subagentes especializados - e instala-se como uma PWA que funciona totalmente offline.',
       },
       'movize-website': {
         title: 'Movize Website',
         role: 'Gestor de Produto/Product Owner/Engenheiro de Software',
         description:
-          'O website do Movize é a porta de entrada pública do ecossistema — um site simples e focado que apresenta todos os produtos e módulos a clientes e potenciais clientes: o que cada um faz, para quem é e como funcionam em conjunto. Guia os visitantes pelas apps de passageiros, pelo Movize Connect e pelos seus módulos, tornando fácil para operadores, municípios e promotores de eventos perceberem o que o Movize pode fazer por eles e entrarem em contacto. Defini a estrutura e o conteúdo, transformando a história do ecossistema em secções claras que fazem de uma plataforma multi-produto complexa um pitch simples.',
+          'O website do Movize é a porta de entrada pública do ecossistema - um site simples e focado que apresenta todos os produtos e módulos a clientes e potenciais clientes: o que cada um faz, para quem é e como funcionam em conjunto. Guia os visitantes pelas apps de passageiros, pelo Movize Connect e pelos seus módulos, tornando fácil para operadores, municípios e promotores de eventos perceberem o que o Movize pode fazer por eles e entrarem em contacto. Defini a estrutura e o conteúdo, transformando a história do ecossistema em secções claras que fazem de uma plataforma multi-produto complexa um pitch simples.',
       },
       'idea-ledger': {
         title: 'Idea Ledger',
         tagline: 'Backlog de ideias em Markdown para o Claude Code',
         description:
-          'Uma skill de gestão de produto leve e sem base de dados, construída sobre Markdown simples. As ideias são capturadas a meio do trabalho com um único comando /idea, recebem IDs estáveis e acumulam histórico de versões à medida que são entregues — com deteção de duplicados, bloqueio por dependências, versionamento semântico real para releases e um comando de auto-auditoria. Dois ficheiros, sem ferramentas externas, sem lock-in.',
+          'Uma skill de gestão de produto leve e sem base de dados, construída sobre Markdown simples. As ideias são capturadas a meio do trabalho com um único comando /idea, recebem IDs estáveis e acumulam histórico de versões à medida que são entregues - com deteção de duplicados, bloqueio por dependências, versionamento semântico real para releases e um comando de auto-auditoria. Dois ficheiros, sem ferramentas externas, sem lock-in.',
       },
       'agile-ledger': {
         title: 'Agile Ledger',
         tagline: 'Ideias, sprints, bugs & releases em Markdown simples',
         description:
-          'O sucessor do Idea Ledger: um sistema completo de gestão de produto para o Claude Code, sem Jira. Oito ficheiros Markdown e mais de 31 slash commands cobrem todo o ciclo de vida — capturar ideias e bugs, triar em épicos e user stories, planear e executar sprints, e fechar releases — com IDs de user stories que ligam branches, commits e PRs, mais um orquestrador opcional de workspace multi-repositório.',
+          'O sucessor do Idea Ledger: um sistema completo de gestão de produto para o Claude Code, feito para otimizar a forma como um PM gere projetos e equipas. Oito ficheiros Markdown e mais de 31 slash commands cobrem todo o ciclo de vida - capturar ideias e bugs, triar em épicos e user stories, planear e executar sprints, e fechar releases - com IDs de user stories que ligam branches, commits e PRs, mais um orquestrador opcional de workspace multi-repositório.',
       },
       cartographer: {
         title: 'Cartographer',
         tagline: 'Documentação para stakeholders gerada a partir dos repositórios',
         description:
-          'Uma skill de Claude Code que fecha a lacuna de comunicação entre a engenharia e os stakeholders. Analisa repositórios, propõe um mapa de produtos e gera documentação adaptada à audiência — em Markdown e PDF polido — a explicar o que cada produto faz e porque importa, não como foi construído. Inclui uma fase de avaliação read-only, verificação de documentação desatualizada e audiências separadas de marketing e gestão.',
+          'Uma skill de Claude Code que fecha a lacuna de comunicação entre a engenharia e os stakeholders. Analisa repositórios, propõe um mapa de produtos e gera documentação adaptada à audiência - em Markdown e PDF polido - a explicar o que cada produto faz e porque importa, não como foi construído. Inclui uma fase de avaliação read-only, verificação de documentação desatualizada e audiências separadas de marketing e gestão.',
       },
       'web-platform': {
         title: 'Movize Connect',

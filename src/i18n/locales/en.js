@@ -31,15 +31,15 @@ export default {
       label: "Case Study",
       title: "Movize",
       tagline:
-        "Centralizing Portugal's urban transport — and giving operators the tools to go digital.",
+        "Centralizing Portugal's urban transport - and giving operators the tools to go digital.",
       role: "Product Manager · Product Owner",
       period: "2024 – Present",
       overview:
-        "Movize began as a consumer app to put every Portuguese transit operator in one place. It became something bigger — a full ecosystem that lets operators digitize and manage their own networks. I led product from the first wireframe through a strategic pivot to a multi-module platform.",
+        "Movize began as a consumer app to put every Portuguese transit operator in one place. It became something bigger - a full ecosystem that lets operators digitize and manage their own networks. I led product from the first wireframe through a strategic pivot to a multi-module platform.",
       problem: {
         kicker: "01 — The problem",
         title: "No single home for Portugal's transit",
-        body: "Portugal had no native app that brought every urban-transport operator together. Riders juggled scattered sources — or went without — just to plan a trip across operators and modes.",
+        body: "Portugal had no native app that brought every urban-transport operator together. Riders juggled scattered sources - or went without - just to plan a trip across operators and modes.",
       },
       v1: {
         kicker: "02 — Starting with the rider",
@@ -48,19 +48,19 @@ export default {
       },
       pivot: {
         kicker: "03 — The pivot",
-        title: "The problem wasn't the app — it was that operators had no way to go digital.",
-        body: "Integrating operators surfaced a deeper problem. Most Portuguese operators, especially smaller ones, had no digital tooling at all — and couldn't afford to hire big firms to digitize their data and reach riders. The real opportunity wasn't a better app. It was giving operators a way to go digital themselves. So Movize grew from an app into an ecosystem.",
+        title: "The problem wasn't the app - it was that operators had no way to go digital.",
+        body: "Integrating operators surfaced a deeper problem. Most Portuguese operators, especially smaller ones, had no digital tooling at all - and couldn't afford to hire big firms to digitize their data and reach riders. The real opportunity wasn't a better app. It was giving operators a way to go digital themselves. So Movize grew from an app into an ecosystem.",
       },
       ecosystem: {
         kicker: "04 — From an app to an ecosystem",
         title: "Movize Connect",
-        body: "Movize Connect is the back-office platform behind the app. It lets operators, event organizers, and infrastructure owners manage their own data — and feed it straight to riders. We built it module by module.",
+        body: "Movize Connect is the back-office platform behind the app. It lets operators, event organizers, and infrastructure owners manage their own data - and feed it straight to riders. We built it module by module.",
         inDev: "In development",
       },
       modules: {
         gtfs: {
           name: "GTFS Management",
-          body: "Operators create and digitize their transport data — building GTFS feeds from scratch, so even un-digitized networks can come online.",
+          body: "Operators create and digitize their transport data - building GTFS feeds from scratch, so even un-digitized networks can come online.",
         },
         networkMap: {
           name: "Network Map",
@@ -72,11 +72,11 @@ export default {
         },
         events: {
           name: "Events",
-          body: "Event organizers publish events alongside the dedicated routes and buses serving them — turning one-off transport into discoverable information.",
+          body: "Event organizers publish events alongside the dedicated routes and buses serving them - turning one-off transport into discoverable information.",
         },
         sensors: {
           name: "Street Furniture & Sensors",
-          body: "Infrastructure owners locate and manage physical assets — shelters, stops, installed sensors — and view the data those sensors collect.",
+          body: "Infrastructure owners locate and manage physical assets - shelters, stops, installed sensors - and view the data those sensors collect.",
         },
         drivers: {
           name: "Drivers",
@@ -87,7 +87,7 @@ export default {
       decisions: {
         feedback: {
           title: "Built feedback into the product",
-          body: "Connected riders, operators, and admins directly, so real pain points surface fast and get answered — not lost in a backlog.",
+          body: "Connected riders, operators, and admins directly, so real pain points surface fast and get answered - not lost in a backlog.",
         },
         ecosystem: {
           title: "Bet on the ecosystem, not just the app",
@@ -99,7 +99,7 @@ export default {
         },
         portal: {
           title: "Prioritized the operator portal",
-          body: "Concentrated effort on Movize Connect — the back office is where the ecosystem's value, and its path to revenue, actually lives.",
+          body: "Concentrated effort on Movize Connect - the back office is where the ecosystem's value, and its path to revenue, actually lives.",
         },
       },
       validation: {
@@ -114,22 +114,22 @@ export default {
       label: "Case Study",
       title: "Astro Hop",
       tagline:
-        "A from-scratch 2D platformer — built to explore the Fable 5 model and ship something real with AI.",
+        "A from-scratch 2D platformer - built to explore the Fable 5 model and ship something real with AI.",
       badgeContext: "Solo build",
       badgeAi: "Built with Fable 5",
       overview:
-        "Astro Hop is a retro, Mario-style 2D platformer — playable on desktop and mobile from the same URL. I built it from scratch as a hands-on way to explore the Fable 5 model: pairing with AI to design the systems, write the game logic, and ship a complete, polished experience — and to deepen my own engineering knowledge along the way.",
+        "Astro Hop is a retro, Mario-style 2D platformer - playable on desktop and mobile from the same URL. I built it from scratch as a hands-on way to explore the Fable 5 model: pairing with AI to design the systems, write the game logic, and ship a complete, polished experience - and to deepen my own engineering knowledge along the way.",
       approach: {
         kicker: "01 — Approach",
         title: "Built with AI, to learn by building",
-        body: "Instead of just reading about a new model, I shipped with it. Astro Hop was a deliberate exploration of Fable 5 — using it as a development partner to architect the game, work through the arcade-physics math, and debug real edge cases. The goal was twofold: produce something genuinely playable and polished, and build durable, first-hand understanding of how to build effectively with AI.",
+        body: "Instead of just reading about a new model, I shipped with it. Astro Hop was a deliberate exploration of Fable 5 - using it as a development partner to architect the game, work through the arcade-physics math, and debug real edge cases. The goal was twofold: produce something genuinely playable and polished, and build durable, first-hand understanding of how to build effectively with AI.",
       },
       highlightsKicker: "02 — Under the hood",
       highlightsTitle: "What's inside",
       features: {
         physics: {
           title: "Arcade physics & game feel",
-          body: "Acceleration, friction, and variable jump height that responds to how long you hold the button — tuned for feel, not realism.",
+          body: "Acceleration, friction, and variable jump height that responds to how long you hold the button - tuned for feel, not realism.",
         },
         powerups: {
           title: "Power-up state machine",
@@ -147,7 +147,7 @@ export default {
       audio: {
         kicker: "Sound",
         statement:
-          "Every sound effect and music track is synthesized live with the Web Audio API — zero audio files.",
+          "Every sound effect and music track is synthesized live with the Web Audio API - zero audio files.",
       },
       platform: {
         kicker: "03 — Runs anywhere",
@@ -156,21 +156,21 @@ export default {
       },
       techTitle: "Built with",
       ctaTitle: "Play it",
-      ctaBody: "Astro Hop runs in your browser — desktop or phone, same link.",
+      ctaBody: "Astro Hop runs in your browser - desktop or phone, same link.",
     },
     nibble: {
       label: "Case Study",
       title: "Nibble",
       tagline:
-        "The classic snake game, redesigned — a second deep-dive into Fable 5, with new game modes, an economy, and a leaderboard.",
+        "The classic snake game, redesigned - a second deep-dive into Fable 5, with new game modes, an economy, and a leaderboard.",
       badgeContext: "Solo build",
       badgeAi: "Built with Fable 5",
       overview:
-        "Nibble is a modern, installable remake of the Nokia-era snake game. After Astro Hop, I wanted a second, more ambitious round with the Fable 5 model — this time not just recreating a classic but redesigning it: a new level-based game mode, composable challenge modifiers, a cosmetic economy, and the thing I most wanted to learn — how a leaderboard actually works, from local scores to a global backend.",
+        "Nibble is a modern, installable remake of the Nokia-era snake game. After Astro Hop, I wanted a second, more ambitious round with the Fable 5 model - this time not just recreating a classic but redesigning it: a new level-based game mode, composable challenge modifiers, a cosmetic economy, and the thing I most wanted to learn - how a leaderboard actually works, from local scores to a global backend.",
       approach: {
         kicker: "01 — Approach",
-        title: "Round two with Fable 5 — this time with an architecture",
-        body: "Where Astro Hop was about shipping a complete game with AI, Nibble was about engineering discipline. The game was built with Claude Code using eight specialized subagents, each owning one architectural layer — engine, renderer, themes, levels, persistence — with one invariant: the engine depends on nothing above it. The result is a pure, deterministic core, fully unit-tested with Vitest, with rendering, theming, and storage layered cleanly on top.",
+        title: "Round two with Fable 5 - this time with an architecture",
+        body: "Where Astro Hop was about shipping a complete game with AI, Nibble was about engineering discipline. The game was built with Claude Code using eight specialized subagents, each owning one architectural layer - engine, renderer, themes, levels, persistence - with one invariant: the engine depends on nothing above it. The result is a pure, deterministic core, fully unit-tested with Vitest, with rendering, theming, and storage layered cleanly on top.",
       },
       highlightsKicker: "02 — Under the hood",
       highlightsTitle: "What's inside",
@@ -181,21 +181,21 @@ export default {
         },
         challenges: {
           title: "Composable challenge modifiers",
-          body: "Double speed, wraparound versus lethal walls, obstacle mazes — difficulty flags players can mix freely instead of fixed presets.",
+          body: "Double speed, wraparound versus lethal walls, obstacle mazes - difficulty flags players can mix freely instead of fixed presets.",
         },
         economy: {
           title: "Coins, themes & skins",
-          body: "Runs earn coins that unlock visual themes and snake skins — from monochrome pixel to neon futuristic.",
+          body: "Runs earn coins that unlock visual themes and snake skins - from monochrome pixel to neon futuristic.",
         },
         leaderboard: {
           title: "Local-first leaderboard",
-          body: "Scores persist in IndexedDB and sync to an optional global leaderboard on Supabase — built precisely to learn the logic of ranking systems.",
+          body: "Scores persist in IndexedDB and sync to an optional global leaderboard on Supabase - built precisely to learn the logic of ranking systems.",
         },
       },
       architecture: {
         kicker: "Architecture",
         statement:
-          "A deterministic game engine that depends on nothing above it — pure logic, fully unit-tested, with rendering and storage as replaceable layers.",
+          "A deterministic game engine that depends on nothing above it - pure logic, fully unit-tested, with rendering and storage as replaceable layers.",
       },
       platform: {
         kicker: "03 — Install it anywhere",
@@ -204,27 +204,27 @@ export default {
       },
       techTitle: "Built with",
       ctaTitle: "Play it",
-      ctaBody: "Nibble runs in your browser — install it and it keeps working offline.",
+      ctaBody: "Nibble runs in your browser - install it and it keeps working offline.",
     },
     skills: {
       label: "Case Study",
       title: "Claude Code Skills",
       tagline:
-        "Three custom skills that turn Claude Code into my product-management toolkit — built to optimize my day-to-day work as a PM.",
+        "Three custom skills that turn Claude Code into my product-management toolkit - built to optimize my day-to-day work as a PM.",
       badgeContext: "Personal project",
       badgeAi: "Built with Claude Code",
       overview:
-        "As a Product Manager I spend my days capturing ideas, running sprints, and keeping stakeholders informed. I built three Claude Code skills — Idea Ledger, Agile Ledger, and Cartographer — to bring that work into the same place where the code lives. Beyond the productivity gain, the goal was to learn: designing skills end-to-end took me deep into how Claude works, how agent workflows are designed, and how AI can genuinely change a PM's toolkit.",
+        "As a Product Manager I spend my days capturing ideas, running sprints, and keeping stakeholders informed. I built three Claude Code skills - Idea Ledger, Agile Ledger, and Cartographer - to bring that work into the same place where the code lives. Beyond the productivity gain, the goal was to learn: designing skills end-to-end took me deep into how Claude works, how agent workflows are designed, and how AI can genuinely change a PM's toolkit.",
       why: {
         kicker: "01 — Why build my own tools",
         title: "PM work lives in too many tabs",
-        body: "Product management is scattered across tools — a board here, docs there, the actual code somewhere else. Each skill attacks one piece of that fragmentation: capturing and versioning ideas, running a full agile process, and generating stakeholder documentation — all as plain Markdown that lives next to the code, with no external tools and no lock-in.",
+        body: "Product management is scattered across tools - a board here, docs there, the actual code somewhere else. Each skill attacks one piece of that fragmentation: capturing and versioning ideas, running a full agile process, and generating stakeholder documentation - all as plain Markdown that lives next to the code, with no external tools and no lock-in.",
       },
       items: {
         "idea-ledger": {
           name: "Idea Ledger",
-          tagline: "Never lose an idea — or its history",
-          body: "A lightweight, database-free product-management skill built entirely on two Markdown files. Ideas are captured with a single command without breaking flow, triaged into a backlog, and versioned as they ship — under one rule: nothing is ever deleted. It was the proof of concept that plain Markdown can carry a real product workflow.",
+          tagline: "Never lose an idea - or its history",
+          body: "A lightweight, database-free product-management skill built entirely on two Markdown files. Ideas are captured with a single command without breaking flow, triaged into a backlog, and versioned as they ship - under one rule: nothing is ever deleted. It was the proof of concept that plain Markdown can carry a real product workflow.",
           highlights: {
             capture: "Instant /idea capture, safe to use mid-task, with duplicate detection at triage.",
             versioning: "Per-idea version history plus real semantic versioning for releases.",
@@ -233,8 +233,8 @@ export default {
         },
         "agile-ledger": {
           name: "Agile Ledger",
-          tagline: "A Jira replacement in plain Markdown",
-          body: "The full-scale successor to Idea Ledger: eight managed Markdown files and more than 30 slash commands covering the entire product lifecycle — ideas, epics, user stories, bugs, sprint planning and execution, and releases. Discarded items keep their reason, work reconstructed from git is always flagged for human confirmation, and everything stays readable in any editor.",
+          tagline: "The whole PM workflow in plain Markdown",
+          body: "The full-scale successor to Idea Ledger: eight managed Markdown files and more than 30 slash commands covering the entire product lifecycle - ideas, epics, user stories, bugs, sprint planning and execution, and releases. Discarded items keep their reason, work reconstructed from git is always flagged for human confirmation, and everything stays readable in any editor.",
           highlights: {
             lifecycle: "The complete flow, from /idea and /bug through /triage, /plan-sprint, /start-us, /review, and /release.",
             traceability: "User-story IDs act as join keys across branches, commits, and PRs.",
@@ -244,7 +244,7 @@ export default {
         cartographer: {
           name: "Cartographer",
           tagline: "Documentation stakeholders actually read",
-          body: "A skill that scans an organization's repositories and generates audience-aware stakeholder documentation — what each product does and why it matters, not how it's built. An /assess pass proposes a product map for confirmation; /generate produces the docs in Markdown and polished PDF; /doc-status flags stale docs and uncovered repos.",
+          body: "A skill that scans an organization's repositories and generates audience-aware stakeholder documentation - what each product does and why it matters, not how it's built. An /assess pass proposes a product map for confirmation; /generate produces the docs in Markdown and polished PDF; /doc-status flags stale docs and uncovered repos.",
           highlights: {
             assess: "Read-only discovery that classifies repos, maps products, and reports maturity before writing a word.",
             output: "An ecosystem overview plus per-product docs, in Markdown and print-ready PDF with bundled typography.",
@@ -255,11 +255,11 @@ export default {
       learned: {
         kicker: "05 — What it taught me",
         statement:
-          "Building my own tools turned AI from something I read about into something I engineer with — and these skills now run my day-to-day PM work.",
+          "Building my own tools turned AI from something I read about into something I engineer with - and these skills now run my day-to-day PM work.",
       },
       ctaTitle: "Explore the skills",
       ctaBody:
-        "All three are open source under MIT — install them in Claude Code and make them yours.",
+        "All three are open source under MIT - install them in Claude Code and make them yours.",
     },
   },
   about: {
@@ -423,13 +423,13 @@ export default {
     modules: "Modules",
     selectedWork: "Selected work",
     selectedWorkSubtitle:
-      "Products and projects I've designed, shipped, and built — from a national transport platform to games and AI tooling made from scratch.",
+      "Products and projects I've designed, shipped, and built - from a national transport platform to games and AI tooling made from scratch.",
     movizeKicker: "Transport ecosystem",
     gameKicker: "Game",
     skillsKicker: "AI tooling",
     skillsTitle: "Claude Code skills",
     skillsIntro:
-      "Three custom skills I built to optimize my day-to-day work as a PM — and to learn how to engineer with AI, not just use it. Idea capture, a full agile process, and stakeholder documentation, all in plain Markdown inside Claude Code.",
+      "Three custom skills I built to optimize my day-to-day work as a PM - and to learn how to engineer with AI, not just use it. Idea capture, a full agile process, and stakeholder documentation, all in plain Markdown inside Claude Code.",
     imageSoon: "Screenshots coming soon",
     builtWith: "Built with",
     playLive: "Play it live",
@@ -447,7 +447,7 @@ export default {
         tagline:
           "Retro Mario-style 2D platformer, playable on desktop and mobile from the same URL.",
         description:
-          "A from-scratch 2D platformer with arcade physics and real game feel — acceleration, variable jump height — a power-up state machine (small → big → fire), stompable enemies, breakable bricks, secret areas, and a full game-flow loop: title screen, lives, timer, pause, game over, and a persistent high score. Every sound effect and music track is synthesized live with the Web Audio API (zero audio files), levels are data-driven plain-text grids, and it ships responsive with multi-touch mobile controls, auto-deployed via CI.",
+          "A from-scratch 2D platformer with arcade physics and real game feel - acceleration, variable jump height - a power-up state machine (small → big → fire), stompable enemies, breakable bricks, secret areas, and a full game-flow loop: title screen, lives, timer, pause, game over, and a persistent high score. Every sound effect and music track is synthesized live with the Web Audio API (zero audio files), levels are data-driven plain-text grids, and it ships responsive with multi-touch mobile controls, auto-deployed via CI.",
       },
       "mobile-app": {
         title: "Movize Mobile App",
@@ -464,33 +464,33 @@ export default {
       nibble: {
         title: "Nibble",
         tagline:
-          "The classic snake game, redesigned — new game modes, unlockables, and a leaderboard, installable as a PWA.",
+          "The classic snake game, redesigned - new game modes, unlockables, and a leaderboard, installable as a PWA.",
         description:
-          "A modern remake of the Nokia-era snake game, rebuilt to go further than a straight port: alongside Classic mode there's a Level mode with progressive targets and obstacles, plus composable challenge modifiers — double speed, wraparound or lethal walls, obstacle mazes. A coin economy unlocks themes and snake skins, and a local-first leaderboard (with optional global scores via Supabase) taught me the logic behind ranking systems. Under the hood it's a deterministic, fully unit-tested game engine decoupled from the Canvas renderer — built with Claude Code using eight specialized subagents — and it installs as a PWA that works fully offline.",
+          "A modern remake of the Nokia-era snake game, rebuilt to go further than a straight port: alongside Classic mode there's a Level mode with progressive targets and obstacles, plus composable challenge modifiers - double speed, wraparound or lethal walls, obstacle mazes. A coin economy unlocks themes and snake skins, and a local-first leaderboard (with optional global scores via Supabase) taught me the logic behind ranking systems. Under the hood it's a deterministic, fully unit-tested game engine decoupled from the Canvas renderer - built with Claude Code using eight specialized subagents - and it installs as a PWA that works fully offline.",
       },
       "movize-website": {
         title: "Movize Website",
         role: "Product Manager/Product Owner/Software Engineer",
         description:
-          "The Movize website is the public front door of the ecosystem — a simple, focused site that presents every product and module to customers and prospects: what each one does, who it's for, and how they work together. It walks visitors through the rider apps, Movize Connect, and its modules, making it easy for operators, municipalities, and event organizers to understand what Movize can do for them and get in touch. I defined the structure and the content, shaping the story of the ecosystem into clear sections that turn a complex multi-product platform into a simple pitch.",
+          "The Movize website is the public front door of the ecosystem - a simple, focused site that presents every product and module to customers and prospects: what each one does, who it's for, and how they work together. It walks visitors through the rider apps, Movize Connect, and its modules, making it easy for operators, municipalities, and event organizers to understand what Movize can do for them and get in touch. I defined the structure and the content, shaping the story of the ecosystem into clear sections that turn a complex multi-product platform into a simple pitch.",
       },
       "idea-ledger": {
         title: "Idea Ledger",
         tagline: "Markdown-only idea backlog for Claude Code",
         description:
-          "A lightweight, database-free product-management skill built on plain Markdown. Ideas are captured mid-work with a single /idea command, get stable IDs, and accumulate per-idea version history as they ship — with duplicate detection, dependency gating, real semantic versioning for releases, and a self-audit command. Two files, no external tools, no lock-in.",
+          "A lightweight, database-free product-management skill built on plain Markdown. Ideas are captured mid-work with a single /idea command, get stable IDs, and accumulate per-idea version history as they ship - with duplicate detection, dependency gating, real semantic versioning for releases, and a self-audit command. Two files, no external tools, no lock-in.",
       },
       "agile-ledger": {
         title: "Agile Ledger",
         tagline: "Ideas, sprints, bugs & releases in plain Markdown",
         description:
-          "The successor to Idea Ledger: a complete, Jira-free product-management system for Claude Code. Eight Markdown files and 31+ slash commands cover the whole lifecycle — capturing ideas and bugs, triaging into epics and user stories, planning and running sprints, and cutting releases — with user-story IDs that link across branches, commits, and PRs, plus an optional multi-repo workspace orchestrator.",
+          "The successor to Idea Ledger: a complete product-management system for Claude Code, built to streamline how a PM runs projects and teams. Eight Markdown files and 31+ slash commands cover the whole lifecycle - capturing ideas and bugs, triaging into epics and user stories, planning and running sprints, and cutting releases - with user-story IDs that link across branches, commits, and PRs, plus an optional multi-repo workspace orchestrator.",
       },
       cartographer: {
         title: "Cartographer",
         tagline: "Stakeholder docs generated from your repos",
         description:
-          "A Claude Code skill that closes the communication gap between engineering and stakeholders. It scans repositories, proposes a product map, and generates audience-aware documentation — in Markdown and polished PDF — explaining what each product does and why it matters, not how it's built. Includes a read-only assessment pass, staleness checks, and separate marketing and management audiences.",
+          "A Claude Code skill that closes the communication gap between engineering and stakeholders. It scans repositories, proposes a product map, and generates audience-aware documentation - in Markdown and polished PDF - explaining what each product does and why it matters, not how it's built. Includes a read-only assessment pass, staleness checks, and separate marketing and management audiences.",
       },
       "web-platform": {
         title: "Movize Connect",

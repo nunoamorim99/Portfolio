@@ -111,10 +111,11 @@ if ('scrollRestoration' in history) {
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
-  scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) return savedPosition
-    if (to.hash) return { el: to.hash, behavior: 'smooth' }
-    return { top: 0, behavior: 'smooth' }
+  // Scrolling is driven by Lenis via the route watcher in App.vue (Lenis owns
+  // the scroll position, so returning offsets here would be ignored or fight
+  // it). Returning false keeps vue-router from touching scroll at all.
+  scrollBehavior() {
+    return false
   },
 })
 

@@ -2,6 +2,7 @@ import mBanner from '@/assets/projects/movize/m-banner.png'
 import mobileAppImg from '@/assets/projects/mobileapp.png'
 import webAppImg from '@/assets/projects/webapp.png'
 import movizeConnectImg from '@/assets/projects/movizeconnect.png'
+import movizeWebsiteCombined from '@/assets/projects/movizeWebsite/combined.png'
 import movizeWebsiteDesktop from '@/assets/projects/movizeWebsite/desktop.png'
 import movizeWebsitePhone from '@/assets/projects/movizeWebsite/phone.png'
 
@@ -33,7 +34,9 @@ export const projects = [
     id: 'movize-website',
     platforms: ['desktop', 'tablet', 'phone'],
     url: 'https://movize.pt/',
-    images: [movizeWebsiteDesktop, movizeWebsitePhone],
+    // Combined desktop+phone hero first (card image); the standalone shots
+    // follow as extra frames in the click-through gallery.
+    images: [movizeWebsiteCombined, movizeWebsiteDesktop, movizeWebsitePhone],
   },
   {
     id: 'web-platform',

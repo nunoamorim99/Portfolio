@@ -53,15 +53,36 @@ onMounted(() => {
   })
 })
 
-// Page content height changes on navigation — recompute trigger positions
-// once the entering page has settled (after the out-in transition).
+// On navigation: jump to the top (or to the hash target) and recompute
+// trigger positions once the entering page has settled.
+//
+// Lenis owns the scroll position, so vue-router's scrollBehavior can't move
+// the page on its own — we reset Lenis here instead. `immediate: true` makes
+// it an instant jump (no visible scroll-up), and `force: true` lets it fire
+// even mid-momentum. Falls back to window.scrollTo for reduced-motion users.
 watch(
-  () => route.path,
+  () => route.fullPath,
   async () => {
+    const hash = route.hash
+    // Reset before the new page paints so it never flashes at the old offset.
+    if (lenis) {
+      lenis.scrollTo(hash || 0, { immediate: !hash, force: true, offset: hash ? -80 : 0 })
+    } else {
+      const el = hash && document.querySelector(hash)
+      if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' })
+      else window.scrollTo(0, 0)
+    }
+
     await nextTick()
+    // A hash target's real position isn't known until the page has laid out;
+    // re-scroll to it once settled so we land accurately.
+    if (hash && lenis) {
+      requestAnimationFrame(() => lenis.scrollTo(hash, { offset: -80, force: true }))
+    }
     clearTimeout(refreshTimer)
     refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 500)
-  }
+  },
+  { flush: 'pre' }
 )
 
 onUnmounted(() => {
