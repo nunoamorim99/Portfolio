@@ -18,6 +18,50 @@ let lenis
 let ctx
 let refreshTimer
 
+// Offset so a hash target lands below the fixed navbar instead of under it.
+const HASH_OFFSET = -80
+let hashTimers = []
+
+function clearHashTimers() {
+  hashTimers.forEach(clearTimeout)
+  hashTimers = []
+}
+
+// Scroll to a hash target reliably. The case-study pages are full of
+// `data-reveal` elements and lazy images, so a target's real Y position keeps
+// shifting for up to ~1s after mount. A single scroll lands at a stale spot
+// (often the bottom). So we refresh ScrollTrigger and re-scroll on a few
+// staggered ticks until layout settles. `force`/`immediate` because Lenis
+// owns the scroll position and may be mid-momentum from the previous page.
+function scrollToHash(hash, { smooth = false } = {}) {
+  clearHashTimers()
+  const attempt = (immediate) => {
+    const el = document.querySelector(hash)
+    if (!el) return
+    ScrollTrigger.refresh()
+    if (lenis) {
+      lenis.scrollTo(el, { offset: HASH_OFFSET, force: true, immediate })
+    } else {
+      const y = window.scrollY + el.getBoundingClientRect().top + HASH_OFFSET
+      window.scrollTo({ top: y, behavior: immediate ? 'auto' : 'smooth' })
+    }
+  }
+  // First pass instant (no visible scroll-through); later passes correct for
+  // late layout shifts. The final pass can be smooth for a gentle settle.
+  attempt(true)
+  hashTimers = [
+    setTimeout(() => attempt(true), 150),
+    setTimeout(() => attempt(true), 400),
+    setTimeout(() => attempt(!smooth), 750),
+  ]
+}
+
+function scrollToTop({ immediate = true } = {}) {
+  clearHashTimers()
+  if (lenis) lenis.scrollTo(0, { immediate, force: true })
+  else window.scrollTo(0, 0)
+}
+
 onMounted(() => {
   const reduced = prefersReducedMotion()
 
@@ -51,34 +95,31 @@ onMounted(() => {
       },
     })
   })
+
+  // Direct load / refresh on a URL that already has a hash: the route watcher
+  // below never fires (fullPath didn't change), so honor the anchor here.
+  if (route.hash) {
+    nextTick(() => scrollToHash(route.hash))
+  }
 })
 
-// On navigation: jump to the top (or to the hash target) and recompute
-// trigger positions once the entering page has settled.
+// On navigation: jump to the top (or settle onto the hash target), then
+// recompute trigger positions once the entering page has laid out.
 //
 // Lenis owns the scroll position, so vue-router's scrollBehavior can't move
-// the page on its own — we reset Lenis here instead. `immediate: true` makes
-// it an instant jump (no visible scroll-up), and `force: true` lets it fire
-// even mid-momentum. Falls back to window.scrollTo for reduced-motion users.
+// the page — we drive it here instead.
 watch(
   () => route.fullPath,
   async () => {
     const hash = route.hash
-    // Reset before the new page paints so it never flashes at the old offset.
-    if (lenis) {
-      lenis.scrollTo(hash || 0, { immediate: !hash, force: true, offset: hash ? -80 : 0 })
-    } else {
-      const el = hash && document.querySelector(hash)
-      if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' })
-      else window.scrollTo(0, 0)
+    if (!hash) {
+      // Reset before the new page paints so it never flashes at the old offset.
+      scrollToTop()
     }
-
     await nextTick()
-    // A hash target's real position isn't known until the page has laid out;
-    // re-scroll to it once settled so we land accurately.
-    if (hash && lenis) {
-      requestAnimationFrame(() => lenis.scrollTo(hash, { offset: -80, force: true }))
-    }
+    // The page mounts fresh (keyed on route.path) after this tick; scroll to
+    // the anchor now that it exists, with retries for late layout shifts.
+    if (hash) scrollToHash(hash)
     clearTimeout(refreshTimer)
     refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 500)
   },
@@ -86,6 +127,7 @@ watch(
 )
 
 onUnmounted(() => {
+  clearHashTimers()
   clearTimeout(refreshTimer)
   ctx?.revert()
   lenis?.destroy()
