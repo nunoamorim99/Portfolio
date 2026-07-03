@@ -1,4 +1,5 @@
 import gameboyImg from '@/assets/projects/astrohop/gameboyastro.png'
+import nibbleCover from '@/assets/projects/nibble/cover.png'
 
 // Standalone projects shown on the Projects page alongside the Movize flagship.
 // Kept separate from the Movize `projects` array so they don't inflate the
@@ -21,8 +22,7 @@ export const sideProjects = [
   },
   {
     id: 'nibble',
-    // Screenshots pending — drop them in assets/projects/nibble and wire here.
-    image: null,
+    image: nibbleCover,
     liveUrl: 'https://nunoamorim99.github.io/nibble/',
     repoUrl: 'https://github.com/nunoamorim99/nibble',
     tech: [

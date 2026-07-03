@@ -2,6 +2,8 @@ import mBanner from '@/assets/projects/movize/m-banner.png'
 import mobileAppImg from '@/assets/projects/mobileapp.png'
 import webAppImg from '@/assets/projects/webapp.png'
 import movizeConnectImg from '@/assets/projects/movizeconnect.png'
+import movizeWebsiteDesktop from '@/assets/projects/movizeWebsite/desktop.png'
+import movizeWebsitePhone from '@/assets/projects/movizeWebsite/phone.png'
 
 // How the Movize ecosystem is organised on the Projects page:
 // two rider-facing apps, the public ecosystem website, plus the
@@ -31,8 +33,7 @@ export const projects = [
     id: 'movize-website',
     platforms: ['desktop', 'tablet', 'phone'],
     url: 'https://movize.pt/',
-    // Placeholder — swap for real mockups in assets/projects/movizeWebsite once uploaded.
-    images: [mBanner],
+    images: [movizeWebsiteDesktop, movizeWebsitePhone],
   },
   {
     id: 'web-platform',
