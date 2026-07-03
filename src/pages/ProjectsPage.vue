@@ -4,6 +4,7 @@ import { useI18n } from "vue-i18n";
 import { projects, projectGroups } from "@/data/projects";
 import { movizeCase } from "@/data/caseStudyMovize";
 import { sideProjects } from "@/data/sideProjects";
+import { claudeSkills } from "@/data/claudeSkills";
 import { useUiStore } from "@/stores/ui";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -21,13 +22,15 @@ const riderApps = computed(() =>
   projectGroups.riderApps.map((id) => byId[id]).filter(Boolean),
 );
 const connect = computed(() => byId[projectGroups.connectId]);
+const website = computed(() => byId[projectGroups.websiteId]);
 
 // Modules come from the same source as the case study, so both pages
 // always show the exact same set (incl. in-development ones).
 const modules = movizeCase.modules;
 
-// Standalone projects (e.g. Astro Hop), kept out of the Movize data.
+// Standalone projects (e.g. Astro Hop, Nibble), kept out of the Movize data.
 const astroHop = sideProjects.find((p) => p.id === "astro-hop");
+const nibble = sideProjects.find((p) => p.id === "nibble");
 
 // Inline "Read more" — long card copy is clamped by default and expands in
 // place (no navigation), since the full text isn't shown on the case study.
@@ -122,6 +125,66 @@ onUnmounted(() => ctx?.revert());
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
           </svg>
         </router-link>
+      </div>
+    </section>
+
+    <!-- ───────── ECOSYSTEM WEBSITE ───────── -->
+    <section class="section-container pb-20 lg:pb-28">
+      <div class="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+        <div class="lg:col-span-5">
+          <p data-reveal class="text-xs font-bold uppercase tracking-[0.2em] text-turquoise">
+            {{ t("projects.ecosystemWebsite") }}
+          </p>
+          <h2 data-reveal class="mt-4 font-serif text-display-sm text-charcoal dark:text-cream-100">
+            {{ t(`projects.items.${website.id}.title`) }}
+          </h2>
+          <div data-reveal class="accent-line mt-6" />
+          <p
+            data-reveal
+            class="mt-6 text-base leading-relaxed text-charcoal-500 dark:text-charcoal-300"
+            :class="{ 'line-clamp-6': !isExpanded(website.id) }"
+          >
+            {{ t(`projects.items.${website.id}.description`) }}
+          </p>
+          <button
+            data-reveal
+            type="button"
+            class="mt-3 text-xs font-bold uppercase tracking-[0.2em] text-turquoise transition-colors hover:text-turquoise-700"
+            @click="toggleExpanded(website.id)"
+          >
+            {{ isExpanded(website.id) ? t("projects.readLess") : t("projects.readMore") }}
+          </button>
+          <div data-reveal class="mt-6 flex flex-wrap gap-1.5">
+            <span v-for="p in website.platforms" :key="p" class="badge text-[10px]">
+              {{ t(`projects.platforms.${p}`) }}
+            </span>
+          </div>
+          <a
+            data-reveal
+            :href="website.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-turquoise transition-colors hover:text-turquoise-700"
+          >
+            {{ t("projects.visitSite") }}
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+            </svg>
+          </a>
+        </div>
+        <div data-reveal class="lg:col-span-7">
+          <button
+            class="group block w-full overflow-hidden border border-charcoal-100 focus:outline-none focus:ring-2 focus:ring-turquoise dark:border-charcoal-700"
+            @click="openGallery(website.images, 0, $event)"
+          >
+            <img
+              :src="website.images[0]"
+              :alt="t(`projects.items.${website.id}.title`)"
+              class="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+          </button>
+        </div>
       </div>
     </section>
 
@@ -327,7 +390,7 @@ onUnmounted(() => ctx?.revert());
     <section class="section-container py-20 lg:py-28">
       <div data-reveal class="mb-10">
         <p class="text-xs font-bold uppercase tracking-[0.2em] text-turquoise">
-          {{ t("projects.astroHopKicker") }}
+          {{ t("projects.gameKicker") }}
         </p>
         <h2 class="mt-3 font-serif text-display-md text-charcoal dark:text-cream-100">
           {{ t(`projects.items.${astroHop.id}.title`) }}
@@ -382,6 +445,182 @@ onUnmounted(() => ctx?.revert());
             />
           </button>
         </div>
+      </div>
+    </section>
+
+    <!-- ───────── NIBBLE (standalone project) ───────── -->
+    <section class="bg-cream-100 py-20 dark:bg-charcoal-800 lg:py-28">
+      <div class="section-container">
+        <div data-reveal class="mb-10">
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-turquoise">
+            {{ t("projects.gameKicker") }}
+          </p>
+          <h2 class="mt-3 font-serif text-display-md text-charcoal dark:text-cream-100">
+            {{ t(`projects.items.${nibble.id}.title`) }}
+          </h2>
+          <div class="accent-line mt-6" />
+        </div>
+
+        <div class="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+          <div data-reveal class="lg:order-1 lg:col-span-5">
+            <button
+              v-if="nibble.image"
+              class="group mx-auto block w-full max-w-sm overflow-hidden border border-charcoal-100 focus:outline-none focus:ring-2 focus:ring-turquoise dark:border-charcoal-700"
+              @click="openGallery([nibble.image], 0, $event)"
+            >
+              <img
+                :src="nibble.image"
+                :alt="t(`projects.items.${nibble.id}.title`)"
+                class="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            </button>
+            <div
+              v-else
+              class="mx-auto flex aspect-[4/5] w-full max-w-sm items-center justify-center border border-dashed border-charcoal-200 dark:border-charcoal-600"
+            >
+              <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-charcoal-300 dark:text-charcoal-500">
+                {{ t("projects.imageSoon") }}
+              </span>
+            </div>
+          </div>
+          <div class="lg:order-2 lg:col-span-7">
+            <p data-reveal class="font-serif text-lg text-charcoal-600 dark:text-charcoal-200 lg:text-xl">
+              {{ t(`projects.items.${nibble.id}.tagline`) }}
+            </p>
+            <p data-reveal class="mt-5 text-base leading-relaxed text-charcoal-500 dark:text-charcoal-300">
+              {{ t(`projects.items.${nibble.id}.description`) }}
+            </p>
+            <div data-reveal class="mt-6">
+              <p class="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-charcoal-300 dark:text-charcoal-400">
+                {{ t("projects.builtWith") }}
+              </p>
+              <div class="flex flex-wrap gap-1.5">
+                <span v-for="tech in nibble.tech" :key="tech" class="badge text-[10px]">{{ tech }}</span>
+              </div>
+            </div>
+            <div data-reveal class="mt-8 flex flex-wrap items-center gap-4">
+              <a :href="nibble.liveUrl" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                {{ t("projects.playLive") }}
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                </svg>
+              </a>
+              <router-link
+                to="/projects/nibble"
+                class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-turquoise transition-colors hover:text-turquoise-700"
+              >
+                {{ t("projects.viewCaseStudy") }}
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── CLAUDE CODE SKILLS ───────── -->
+    <section class="section-container py-20 lg:py-28">
+      <div data-reveal class="mb-10">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-turquoise">
+          {{ t("projects.skillsKicker") }}
+        </p>
+        <h2 class="mt-3 font-serif text-display-md text-charcoal dark:text-cream-100">
+          {{ t("projects.skillsTitle") }}
+        </h2>
+        <div class="accent-line mt-6" />
+        <p class="mt-6 max-w-2xl text-base leading-relaxed text-charcoal-500 dark:text-charcoal-300">
+          {{ t("projects.skillsIntro") }}
+        </p>
+        <router-link
+          to="/projects/claude-skills"
+          class="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-turquoise transition-colors hover:text-turquoise-700"
+        >
+          {{ t("projects.viewCaseStudy") }}
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </router-link>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <article
+          v-for="skill in claudeSkills"
+          :key="skill.id"
+          data-reveal
+          class="group flex flex-col overflow-hidden border border-charcoal-100 bg-white dark:border-charcoal-700 dark:bg-charcoal-800"
+        >
+          <button
+            v-if="skill.image"
+            class="block overflow-hidden focus:outline-none focus:ring-2 focus:ring-inset focus:ring-turquoise"
+            @click="openGallery([skill.image], 0, $event)"
+          >
+            <img
+              :src="skill.image"
+              :alt="t(`projects.items.${skill.id}.title`)"
+              class="aspect-video w-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
+              loading="lazy"
+            />
+          </button>
+          <div
+            v-else
+            class="flex aspect-video items-center justify-center border-b border-dashed border-charcoal-200 dark:border-charcoal-600"
+          >
+            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-charcoal-300 dark:text-charcoal-500">
+              {{ t("projects.imageSoon") }}
+            </span>
+          </div>
+          <div class="flex flex-1 flex-col p-6">
+            <h3 class="font-serif text-xl text-charcoal dark:text-cream-100">
+              {{ t(`projects.items.${skill.id}.title`) }}
+            </h3>
+            <p class="mt-1 text-sm font-medium text-charcoal-400 dark:text-charcoal-400">
+              {{ t(`projects.items.${skill.id}.tagline`) }}
+            </p>
+            <p
+              class="mt-3 text-sm leading-relaxed text-charcoal-500 dark:text-charcoal-300"
+              :class="{ 'line-clamp-4': !isExpanded(skill.id) }"
+            >
+              {{ t(`projects.items.${skill.id}.description`) }}
+            </p>
+            <button
+              type="button"
+              class="mt-2 self-start text-xs font-bold uppercase tracking-[0.2em] text-turquoise transition-colors hover:text-turquoise-700"
+              @click="toggleExpanded(skill.id)"
+            >
+              {{ isExpanded(skill.id) ? t("projects.readLess") : t("projects.readMore") }}
+            </button>
+            <div class="mt-auto pt-6">
+              <div class="flex flex-wrap gap-1.5">
+                <span v-for="tech in skill.tech" :key="tech" class="badge text-[10px]">{{ tech }}</span>
+              </div>
+              <div class="mt-5 flex flex-wrap items-center gap-4">
+                <router-link
+                  :to="`/projects/claude-skills#${skill.id}`"
+                  class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-turquoise transition-colors hover:text-turquoise-700"
+                >
+                  {{ t("projects.viewCaseStudy") }}
+                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </router-link>
+                <a
+                  :href="skill.repoUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-charcoal-400 transition-colors hover:text-turquoise dark:text-charcoal-300"
+                >
+                  {{ t("projects.viewSource") }}
+                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
   </div>

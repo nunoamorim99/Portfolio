@@ -5,6 +5,8 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { prefersReducedMotion } from '@/composables/useReducedMotion'
 import { projects } from '@/data/projects'
+import { sideProjects } from '@/data/sideProjects'
+import { claudeSkills } from '@/data/claudeSkills'
 import { experience } from '@/data/experience'
 import { professionalCertificates, courses } from '@/data/courses'
 
@@ -21,6 +23,7 @@ const foco = experience.find((c) => c.id === 'foco-criativo')
 
 const stats = [
   { value: projects.length, suffix: '', labelKey: 'stats.products' },
+  { value: sideProjects.length + claudeSkills.length, suffix: '', labelKey: 'stats.aiProjects' },
   { value: foco?.positions.length ?? 0, suffix: '', labelKey: 'stats.roles' },
   { value: professionalCertificates.length, suffix: '', labelKey: 'stats.certificates' },
   { value: courses.length, suffix: '+', labelKey: 'stats.courses' },
@@ -69,11 +72,12 @@ onUnmounted(() => ctx?.revert())
     class="border-y border-charcoal-100 bg-cream-100/40 dark:border-charcoal-700 dark:bg-charcoal-800/30"
   >
     <div class="section-container py-16 lg:py-20">
-      <div ref="gridRef" class="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-4">
+      <div ref="gridRef" class="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-8 lg:grid-cols-5">
         <div
-          v-for="stat in stats"
+          v-for="(stat, i) in stats"
           :key="stat.labelKey"
           class="flex flex-col items-center text-center lg:items-start lg:text-left"
+          :class="{ 'col-span-2 lg:col-span-1': i === stats.length - 1 && stats.length % 2 === 1 }"
         >
           <span
             class="stat-value font-serif text-display-md leading-none text-turquoise"

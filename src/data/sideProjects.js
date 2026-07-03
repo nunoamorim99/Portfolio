@@ -19,4 +19,22 @@ export const sideProjects = [
       'GitHub Pages',
     ],
   },
+  {
+    id: 'nibble',
+    // Screenshots pending — drop them in assets/projects/nibble and wire here.
+    image: null,
+    liveUrl: 'https://nunoamorim99.github.io/nibble/',
+    repoUrl: 'https://github.com/nunoamorim99/nibble',
+    tech: [
+      'TypeScript',
+      'Vite',
+      'Canvas 2D',
+      'IndexedDB',
+      'Vitest',
+      'PWA (Workbox)',
+      'Supabase',
+      'GitHub Actions',
+      'GitHub Pages',
+    ],
+  },
 ]

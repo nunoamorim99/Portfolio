@@ -4,6 +4,8 @@ const HomePage = () => import('@/pages/HomePage.vue')
 const ProjectsPage = () => import('@/pages/ProjectsPage.vue')
 const CaseStudyMovize = () => import('@/pages/CaseStudyMovize.vue')
 const CaseStudyAstroHop = () => import('@/pages/CaseStudyAstroHop.vue')
+const CaseStudyNibble = () => import('@/pages/CaseStudyNibble.vue')
+const CaseStudySkills = () => import('@/pages/CaseStudySkills.vue')
 const CoursesPage = () => import('@/pages/CoursesPage.vue')
 const PersonalPage = () => import('@/pages/PersonalPage.vue')
 const TravelPage = () => import('@/pages/TravelPage.vue')
@@ -35,6 +37,16 @@ const routes = [
     path: '/projects/astro-hop',
     name: 'astro-hop',
     component: CaseStudyAstroHop,
+  },
+  {
+    path: '/projects/nibble',
+    name: 'nibble',
+    component: CaseStudyNibble,
+  },
+  {
+    path: '/projects/claude-skills',
+    name: 'claude-skills',
+    component: CaseStudySkills,
   },
   {
     path: '/courses',

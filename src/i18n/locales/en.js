@@ -19,6 +19,7 @@ export default {
   },
   stats: {
     products: "Products & modules shipped",
+    aiProjects: "AI side projects shipped",
     roles: "Roles in 2 years",
     certificates: "Professional certificates",
     courses: "Courses completed",
@@ -156,6 +157,109 @@ export default {
       techTitle: "Built with",
       ctaTitle: "Play it",
       ctaBody: "Astro Hop runs in your browser — desktop or phone, same link.",
+    },
+    nibble: {
+      label: "Case Study",
+      title: "Nibble",
+      tagline:
+        "The classic snake game, redesigned — a second deep-dive into Fable 5, with new game modes, an economy, and a leaderboard.",
+      badgeContext: "Solo build",
+      badgeAi: "Built with Fable 5",
+      overview:
+        "Nibble is a modern, installable remake of the Nokia-era snake game. After Astro Hop, I wanted a second, more ambitious round with the Fable 5 model — this time not just recreating a classic but redesigning it: a new level-based game mode, composable challenge modifiers, a cosmetic economy, and the thing I most wanted to learn — how a leaderboard actually works, from local scores to a global backend.",
+      approach: {
+        kicker: "01 — Approach",
+        title: "Round two with Fable 5 — this time with an architecture",
+        body: "Where Astro Hop was about shipping a complete game with AI, Nibble was about engineering discipline. The game was built with Claude Code using eight specialized subagents, each owning one architectural layer — engine, renderer, themes, levels, persistence — with one invariant: the engine depends on nothing above it. The result is a pure, deterministic core, fully unit-tested with Vitest, with rendering, theming, and storage layered cleanly on top.",
+      },
+      highlightsKicker: "02 — Under the hood",
+      highlightsTitle: "What's inside",
+      features: {
+        modes: {
+          title: "Two ways to play",
+          body: "Classic mode chases the endless high score; Level mode adds progressive apple targets, obstacles, and new mechanics level by level.",
+        },
+        challenges: {
+          title: "Composable challenge modifiers",
+          body: "Double speed, wraparound versus lethal walls, obstacle mazes — difficulty flags players can mix freely instead of fixed presets.",
+        },
+        economy: {
+          title: "Coins, themes & skins",
+          body: "Runs earn coins that unlock visual themes and snake skins — from monochrome pixel to neon futuristic.",
+        },
+        leaderboard: {
+          title: "Local-first leaderboard",
+          body: "Scores persist in IndexedDB and sync to an optional global leaderboard on Supabase — built precisely to learn the logic of ranking systems.",
+        },
+      },
+      architecture: {
+        kicker: "Architecture",
+        statement:
+          "A deterministic game engine that depends on nothing above it — pure logic, fully unit-tested, with rendering and storage as replaceable layers.",
+      },
+      platform: {
+        kicker: "03 — Install it anywhere",
+        title: "A PWA that works fully offline",
+        body: "Nibble installs to the home screen on desktop, Android, and iOS, and once installed it runs entirely offline. Every push to main runs the tests, builds, and auto-deploys to GitHub Pages.",
+      },
+      techTitle: "Built with",
+      ctaTitle: "Play it",
+      ctaBody: "Nibble runs in your browser — install it and it keeps working offline.",
+    },
+    skills: {
+      label: "Case Study",
+      title: "Claude Code Skills",
+      tagline:
+        "Three custom skills that turn Claude Code into my product-management toolkit — built to optimize my day-to-day work as a PM.",
+      badgeContext: "Personal project",
+      badgeAi: "Built with Claude Code",
+      overview:
+        "As a Product Manager I spend my days capturing ideas, running sprints, and keeping stakeholders informed. I built three Claude Code skills — Idea Ledger, Agile Ledger, and Cartographer — to bring that work into the same place where the code lives. Beyond the productivity gain, the goal was to learn: designing skills end-to-end took me deep into how Claude works, how agent workflows are designed, and how AI can genuinely change a PM's toolkit.",
+      why: {
+        kicker: "01 — Why build my own tools",
+        title: "PM work lives in too many tabs",
+        body: "Product management is scattered across tools — a board here, docs there, the actual code somewhere else. Each skill attacks one piece of that fragmentation: capturing and versioning ideas, running a full agile process, and generating stakeholder documentation — all as plain Markdown that lives next to the code, with no external tools and no lock-in.",
+      },
+      items: {
+        "idea-ledger": {
+          name: "Idea Ledger",
+          tagline: "Never lose an idea — or its history",
+          body: "A lightweight, database-free product-management skill built entirely on two Markdown files. Ideas are captured with a single command without breaking flow, triaged into a backlog, and versioned as they ship — under one rule: nothing is ever deleted. It was the proof of concept that plain Markdown can carry a real product workflow.",
+          highlights: {
+            capture: "Instant /idea capture, safe to use mid-task, with duplicate detection at triage.",
+            versioning: "Per-idea version history plus real semantic versioning for releases.",
+            audit: "Dependency gating and a /ledger-check command that audits the ledger's own consistency.",
+          },
+        },
+        "agile-ledger": {
+          name: "Agile Ledger",
+          tagline: "A Jira replacement in plain Markdown",
+          body: "The full-scale successor to Idea Ledger: eight managed Markdown files and more than 30 slash commands covering the entire product lifecycle — ideas, epics, user stories, bugs, sprint planning and execution, and releases. Discarded items keep their reason, work reconstructed from git is always flagged for human confirmation, and everything stays readable in any editor.",
+          highlights: {
+            lifecycle: "The complete flow, from /idea and /bug through /triage, /plan-sprint, /start-us, /review, and /release.",
+            traceability: "User-story IDs act as join keys across branches, commits, and PRs.",
+            workspace: "An optional orchestrator that discovers, syncs, and proposes changes across multiple repos.",
+          },
+        },
+        cartographer: {
+          name: "Cartographer",
+          tagline: "Documentation stakeholders actually read",
+          body: "A skill that scans an organization's repositories and generates audience-aware stakeholder documentation — what each product does and why it matters, not how it's built. An /assess pass proposes a product map for confirmation; /generate produces the docs in Markdown and polished PDF; /doc-status flags stale docs and uncovered repos.",
+          highlights: {
+            assess: "Read-only discovery that classifies repos, maps products, and reports maturity before writing a word.",
+            output: "An ecosystem overview plus per-product docs, in Markdown and print-ready PDF with bundled typography.",
+            audiences: "Separate marketing and management outputs, with configurable scope and language.",
+          },
+        },
+      },
+      learned: {
+        kicker: "05 — What it taught me",
+        statement:
+          "Building my own tools turned AI from something I read about into something I engineer with — and these skills now run my day-to-day PM work.",
+      },
+      ctaTitle: "Explore the skills",
+      ctaBody:
+        "All three are open source under MIT — install them in Claude Code and make them yours.",
     },
   },
   about: {
@@ -314,13 +418,19 @@ export default {
     viewCaseStudy: "Read the case study",
     ecosystemTitle: "The Movize ecosystem",
     riderApps: "Rider apps",
+    ecosystemWebsite: "Ecosystem website",
     operatorPlatform: "Operator platform",
     modules: "Modules",
     selectedWork: "Selected work",
     selectedWorkSubtitle:
-      "Products and projects I've designed, shipped, and built — from a national transport platform to a game made from scratch.",
+      "Products and projects I've designed, shipped, and built — from a national transport platform to games and AI tooling made from scratch.",
     movizeKicker: "Transport ecosystem",
-    astroHopKicker: "Game",
+    gameKicker: "Game",
+    skillsKicker: "AI tooling",
+    skillsTitle: "Claude Code skills",
+    skillsIntro:
+      "Three custom skills I built to optimize my day-to-day work as a PM — and to learn how to engineer with AI, not just use it. Idea capture, a full agile process, and stakeholder documentation, all in plain Markdown inside Claude Code.",
+    imageSoon: "Screenshots coming soon",
     builtWith: "Built with",
     playLive: "Play it live",
     viewSource: "Source",
@@ -350,6 +460,37 @@ export default {
         role: "Product Manager/Product Owner/Software Engineer",
         description:
           "Movize Web is the browser-based companion to the Movize mobile app, bringing the core public transportation experience to desktop, tablet, and mobile browsers. The goal was to extend Movize's reach to users who prefer the web - offering quick access to routes, stops, and trip planning across operators and modes - while intentionally keeping a more focused feature set than the native app. I led the product strategy and execution: defining the scope of the web experience, deciding which features to expose and which to reserve for the mobile app, and ensuring the responsive interface worked well across screen sizes. Working closely with designers and developers, I shaped the roadmap to share enough of Movize's value to attract users without competing with the depth of the native experience.",
+      },
+      nibble: {
+        title: "Nibble",
+        tagline:
+          "The classic snake game, redesigned — new game modes, unlockables, and a leaderboard, installable as a PWA.",
+        description:
+          "A modern remake of the Nokia-era snake game, rebuilt to go further than a straight port: alongside Classic mode there's a Level mode with progressive targets and obstacles, plus composable challenge modifiers — double speed, wraparound or lethal walls, obstacle mazes. A coin economy unlocks themes and snake skins, and a local-first leaderboard (with optional global scores via Supabase) taught me the logic behind ranking systems. Under the hood it's a deterministic, fully unit-tested game engine decoupled from the Canvas renderer — built with Claude Code using eight specialized subagents — and it installs as a PWA that works fully offline.",
+      },
+      "movize-website": {
+        title: "Movize Website",
+        role: "Product Manager/Product Owner/Software Engineer",
+        description:
+          "The Movize website is the public front door of the ecosystem — a simple, focused site that presents every product and module to customers and prospects: what each one does, who it's for, and how they work together. It walks visitors through the rider apps, Movize Connect, and its modules, making it easy for operators, municipalities, and event organizers to understand what Movize can do for them and get in touch. I defined the structure and the content, shaping the story of the ecosystem into clear sections that turn a complex multi-product platform into a simple pitch.",
+      },
+      "idea-ledger": {
+        title: "Idea Ledger",
+        tagline: "Markdown-only idea backlog for Claude Code",
+        description:
+          "A lightweight, database-free product-management skill built on plain Markdown. Ideas are captured mid-work with a single /idea command, get stable IDs, and accumulate per-idea version history as they ship — with duplicate detection, dependency gating, real semantic versioning for releases, and a self-audit command. Two files, no external tools, no lock-in.",
+      },
+      "agile-ledger": {
+        title: "Agile Ledger",
+        tagline: "Ideas, sprints, bugs & releases in plain Markdown",
+        description:
+          "The successor to Idea Ledger: a complete, Jira-free product-management system for Claude Code. Eight Markdown files and 31+ slash commands cover the whole lifecycle — capturing ideas and bugs, triaging into epics and user stories, planning and running sprints, and cutting releases — with user-story IDs that link across branches, commits, and PRs, plus an optional multi-repo workspace orchestrator.",
+      },
+      cartographer: {
+        title: "Cartographer",
+        tagline: "Stakeholder docs generated from your repos",
+        description:
+          "A Claude Code skill that closes the communication gap between engineering and stakeholders. It scans repositories, proposes a product map, and generates audience-aware documentation — in Markdown and polished PDF — explaining what each product does and why it matters, not how it's built. Includes a read-only assessment pass, staleness checks, and separate marketing and management audiences.",
       },
       "web-platform": {
         title: "Movize Connect",
