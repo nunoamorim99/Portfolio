@@ -283,7 +283,7 @@ onUnmounted(() => ctx?.revert());
             <button
               data-reveal
               type="button"
-              class="mt-3 text-xs font-bold uppercase tracking-[0.2em] text-turquoise transition-colors hover:text-turquoise-700"
+              class="mt-3 block w-fit text-xs font-bold uppercase tracking-[0.2em] text-turquoise transition-colors hover:text-turquoise-700"
               @click="toggleExpanded(connect.id)"
             >
               {{ isExpanded(connect.id) ? t("projects.readLess") : t("projects.readMore") }}
@@ -291,7 +291,7 @@ onUnmounted(() => ctx?.revert());
             <router-link
               data-reveal
               to="/projects/movize"
-              class="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-turquoise transition-colors hover:text-turquoise-700"
+              class="mt-6 flex w-fit items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-turquoise transition-colors hover:text-turquoise-700"
             >
               {{ t("projects.readCaseStudy") }}
               <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
@@ -307,7 +307,7 @@ onUnmounted(() => ctx?.revert());
               <img
                 :src="connect.images[0]"
                 :alt="t(`projects.items.${connect.id}.title`)"
-                class="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                class="aspect-video w-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
                 loading="lazy"
               />
             </button>
@@ -440,7 +440,7 @@ onUnmounted(() => ctx?.revert());
             <img
               :src="astroHop.image"
               :alt="t(`projects.items.${astroHop.id}.title`)"
-              class="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              class="aspect-[4/5] w-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
               loading="lazy"
             />
           </button>
@@ -471,7 +471,7 @@ onUnmounted(() => ctx?.revert());
               <img
                 :src="nibble.image"
                 :alt="t(`projects.items.${nibble.id}.title`)"
-                class="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                class="aspect-[4/5] w-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
                 loading="lazy"
               />
             </button>
