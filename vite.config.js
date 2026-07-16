@@ -4,7 +4,7 @@ import { imagetools } from 'vite-imagetools'
 import { resolve } from 'path'
 
 export default defineConfig({
-  base: '/Portfolio/',
+  base: '/',
   assetsInclude: ['**/*.JPG'],
   plugins: [
     vue(),

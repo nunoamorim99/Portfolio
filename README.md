@@ -2,7 +2,7 @@
 
 > Engineer turned Product Manager - working at the intersection of strategy, design, and code.
 
-**Live site:** [nunoamorim99.github.io/Portfolio](https://nunoamorim99.github.io/Portfolio/)
+**Live site:** [nunoamorim.dev](https://nunoamorim.dev)
 
 ## What this is
 
@@ -17,9 +17,9 @@ The site is dark by default and designed to read like an editorial piece, not a 
 
 ## Stack
 
-Vue 3 + Vite, Tailwind CSS, Pinia, Vue Router, GSAP for motion. Deployed via GitHub Actions to GitHub Pages.
+Vue 3 + Vite, Tailwind CSS, Pinia, Vue Router, GSAP for motion. Deployed via GitHub Actions to GitHub Pages, served from the custom domain `nunoamorim.dev` (see `public/CNAME`).
 
 ## Contact
 
 - [nunomamorim99@gmail.com](mailto:nunomamorim99@gmail.com)
-- [Live portfolio](https://nunoamorim99.github.io/Portfolio/)
+- [Live portfolio](https://nunoamorim.dev)
