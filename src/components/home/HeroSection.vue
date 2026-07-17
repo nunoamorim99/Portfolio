@@ -158,7 +158,7 @@ onUnmounted(() => {
     <div ref="contentRef" class="section-container relative z-10 py-32 will-change-transform">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         <!-- Text content: asymmetric, editorial -->
-        <div class="lg:col-span-7 xl:col-span-8">
+        <div class="relative z-20 lg:col-span-7 xl:col-span-8">
           <p
             ref="roleRef"
             class="text-xs font-bold uppercase tracking-[0.3em] text-turquoise mb-6"
@@ -227,7 +227,7 @@ onUnmounted(() => {
         </div>
 
         <!-- Photo: offset, editorial framing -->
-        <div class="lg:col-span-5 xl:col-span-4 flex justify-center lg:justify-end">
+        <div class="relative z-10 lg:col-span-5 xl:col-span-4 flex justify-center lg:justify-end">
           <div ref="photoWrapRef" class="relative will-change-transform">
             <div class="absolute -inset-4 bg-turquoise/10 -rotate-3 dark:bg-turquoise/5" aria-hidden="true" />
             <img
