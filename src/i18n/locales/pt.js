@@ -206,6 +206,115 @@ export default {
       ctaTitle: 'Joga',
       ctaBody: 'O Nibble corre no teu browser - instala-o e continua a funcionar offline.',
     },
+    beagleChomp: {
+      label: 'Caso de Estudo',
+      title: 'Beagle Chomp',
+      tagline:
+        'Um jogo arcade 3D de labirinto e perseguição para browser - reconstruído como um produto full-stack, com cada malha, textura, som e tipo de letra gerado em código.',
+      badgeContext: 'Projeto solo',
+      badgeAi: 'Construído com Claude Code',
+      overview:
+        'O Beagle Chomp começou como um fim de semana de será-que-consigo-fazer-o-Pac-Man-em-three.js e tornou-se no projeto onde respondi a uma pergunta mais difícil: o que é preciso, na prática, para lançar um jogo como produto? Guias um beagle por um labirinto de sebes, comes todas as bolachas para limpar o mapa e trincas um osso para tornar os perseguidores assustados e comestíveis. Quinze releases depois, corre como PWA instalável no telemóvel e no desktop, com contas de jogador, uma economia de cosméticos, um leaderboard partilhado e pontuações validadas no servidor - e nem um único modelo, textura ou ficheiro de áudio é descarregado. A maior parte do que aprendi não foi sobre rendering. Foi sobre honestidade: sobre o que o cliente pode reclamar, sobre medir em vez de adivinhar, e sobre escrever porque é que uma decisão foi tomada para que a versão seguinte não a desfaça em silêncio.',
+      numbersKicker: 'Dimensão',
+      numbers: {
+        releases: 'Releases lançadas, v1.0 a v7.0',
+        lines: 'Linhas de TypeScript & CSS',
+        files: 'Ficheiros de código',
+        tests: 'Asserções em 49 ficheiros de teste',
+        content: 'Labirintos numa grelha 19×21',
+        assets: 'Ficheiros de assets 3D no build',
+      },
+      approach: {
+        kicker: '01 — Abordagem',
+        title: 'Uma parede entre a lógica e os píxeis',
+        body: 'A primeira decisão a sério foi a que mais vezes se pagou a si própria: a lógica de jogo não pode importar three.js. Não é que não deva - toda a camada de lógica corre em Node, sem browser nenhum. Matemática de grelha, túneis, movimento por tile, targeting dos inimigos, a máquina de estados, pontuação, as regras dos power-ups: TypeScript puro que um script headless consegue correr a 10.000 frames por segundo, com uma camada de render que lê esse estado e nunca o altera. O bug mais complicado de todo o projeto - inimigos a teletransportarem-se um tile inteiro ao inverterem a direção a meio - foi encontrado, corrigido e trancado por 27 asserções de regressão sem abrir um browser uma única vez. E quando chegou o backend e o servidor precisou das regras do jogo para avaliar uma partida, essas regras já eram puras, por isso puderam ser geradas diretamente para a API. Não foi um acaso feliz; foi o dividendo direto da parede.',
+      },
+      architecture: {
+        kicker: 'Arquitetura',
+        statement:
+          'A lógica de jogo não pode importar three.js. Quase tudo o que este projeto tem de bom é um dividendo dessa única regra.',
+        body: 'Testes headless, um servidor que partilha as regras do jogo e qualquer bug difícil reproduzível num script. O modelo de coordenadas por baixo é deliberadamente aborrecido: uma unidade do mundo é um tile do labirinto, tudo se move na grelha, e o 3D é apenas uma vista sobre ela.',
+      },
+      highlightsKicker: '02 — Por dentro',
+      highlightsTitle: 'O que está lá dentro',
+      features: {
+        generated: {
+          title: 'Todos os assets gerados em código',
+          body: 'Sem modelos, sem texturas, sem ficheiros de áudio. Paredes e chãos são pintados para um canvas em runtime, todos os sons são sintetizados com a Web Audio API, e o beagle é construído sobre uma pequena biblioteca de escultura de sólidos varridos e perfis revolvidos. Só a tipografia é ficheiro - cinco woff2 subsetados, 108 KiB no total.',
+        },
+        toon: {
+          title: 'Cel shading como sistema, não como filtro',
+          body: 'Todas as superfícies iluminadas partilham um único gradiente toon de três passos, com o tone mapping desligado - uma curva fílmica volta a comprimir as bandas da rampa e desfaz todo o objetivo de as quantizar. A cena tem exatamente uma exceção deliberada, o brilho do olho sem iluminação, com a razão escrita mesmo ao lado.',
+        },
+        ui: {
+          title: 'Tabuletas toon, não painéis de vidro',
+          body: 'Os painéis de vidro fosco custavam uma composição de ecrã inteiro por frame sobre um canvas WebGL vivo, e pareciam mobiliário de sistema operativo pousado em cima de um jogo. Cinco regras num único ficheiro de tokens substituíram-nos: contornar tudo, profundidade é uma borda inferior grossa, escurecer com tinta e não com opacidade, a cor vem do mundo, e três tipos de letra self-hosted com uma família de ícones.',
+        },
+        content: {
+          title: 'Conteúdo em escada',
+          body: '18 labirintos, 15 mapas numerados em três etapas de dificuldade mais três mapas bónus, 8 níveis de desafio, 6 temas completos com céu, iluminação, materiais e props próprios, 5 pelagens de beagle, 5 inimigos, 5 frutas numa escada de valor e 5 power-ups com três tempos de vida diferentes.',
+        },
+        fullstack: {
+          title: 'Contas sem dados pessoais',
+          body: 'Utilizador e password, nunca email - uma decisão deliberada sobre superfície de RGPD, já que um endereço que nunca é recolhido não traz obrigação nenhuma. A contrapartida é um código de recuperação de uso único que repõe a password esquecida e autentica num dispositivo novo, mostrado num ecrã genuinamente bloqueante porque é a única forma de voltar a entrar numa conta.',
+        },
+        validation: {
+          title: 'Um leaderboard em que se pode confiar',
+          body: 'As pontuações do cliente não são de confiança, e as implausíveis são rejeitadas em vez de silenciosamente limitadas. O validador é uma função pura - sem base de dados, sem relógio, sem aleatoriedade - o que faz dele o código mais testado do backend, e é honesto num comentário sobre o único caso que só simulação completa apanharia.',
+        },
+      },
+      art: {
+        kicker: '03 — Direção de arte',
+        title: 'Cartoon, não fotorrealista - e afinado nos dois enquadramentos',
+        body: 'As texturas são desenhadas para um canvas em vez de descarregadas, o que obrigou a aprender o meio pelo caminho difícil. A primeira versão fazia delas mapas de luminância multiplicados pela cor da paleta - mas um mapa só consegue escurecer, e no chão quase preto da Night City uma marcação branca aparecia a 0,22 de luminância e era invisível, por isso a textura passou a trazer a cor da paleta já cozida. O chão é derivado da grelha do labirinto, e é assim que o caminho de gravilha do parque e as marcações da estrada seguem os corredores em vez de serem ruído aleatório por baixo deles. E o primeiro scatter por pixel ficava ótimo em zoom: à câmara real do jogo, uma face de parede tem cerca de 25 píxeis de altura, e todo esse detalhe voltava a serrilhar em pontinhos - uma fotografia colocada por baixo de uma cena cel-shaded. A regra em que acabei é um punhado fixo de tons nomeados por superfície, formas reais em vez de scatter, e nada mais pequeno do que dois píxeis.',
+      },
+      backend: {
+        kicker: '04 — Passar a full-stack',
+        title: 'A release que mudou o que o projeto era',
+        body: 'Nas primeiras quatro versões maiores isto era uma PWA offline estática com tudo em localStorage. A v5.0 tornou-a numa aplicação full-stack: contas, perfis entre dispositivos, um leaderboard partilhado e pontuações validadas no servidor - com a autenticação garantida estruturalmente e não por verificações espalhadas, já que o auth gate é esperado antes de o objeto Game sequer existir. O refactor mais bonito do projeto foi a migração para aqui. A store de perfil tinha 19 pontos de chamada síncronos espalhados por código de jogo, loja e mapa de níveis; em vez de tornar tudo assíncrono, mantive as 19 assinaturas e mudei a store para ler uma cache em memória hidratada a partir do servidor. O código de gameplay ficou intocado.',
+        body2:
+          'O incidente mais instrutivo foi lento - jogadores a reportar pontuações que nunca apareciam, encontrado aos bocados ao longo de três releases: um submit sem retry no momento exato em que o jogador tem algo que lhe importa; um limpador de sessões a fechar partidas ainda a ser jogadas; uma query de leaderboard a fazer scan sequencial; um botão de jogar outra vez que nunca abria sessão no servidor, e é por isso que todos os diagnósticos vinham vazios; e por fim um campo de mapa que o cliente nunca enviava e o servidor nunca lia, pelo que boas partidas da etapa 3 eram rejeitadas como impossíveis. Essa última deu origem à correção estrutural de que mais gosto: o código que lê uma submissão da rede vive agora num módulo puro próprio, com um teste de ida e volta, em vez de estar dentro do módulo que abre uma pool de Postgres ao ser importado. As constantes de balanceamento do servidor também são geradas a partir dos módulos reais do jogo, com um teste de drift que falha o build - apanhou as 11 divergências quando os preços dos cosméticos subiram.',
+      },
+      platform: {
+        kicker: '05 — Mobile',
+        title: 'Todas as falhas aqui foram de geometria',
+        body: 'Há três esquemas de toque - swipe, um D-pad no ecrã e um thumbstick - todos a alimentar o mesmo campo único na entidade do jogador, por isso o gameplay não sabe qual está ativo. O problema difícil foi o tabuleiro de power-ups. O labirinto é 3D e a câmara afasta-se conforme o rácio do ecrã, por isso o CSS não consegue saber onde o tabuleiro acaba: um palpite falha no telemóvel seguinte e volta a falhar na rotação. A camada de cena passou a publicar o canto projetado mais baixo do tabuleiro como uma custom property de CSS, recalculada em cada resize. Num telemóvel de 390×844 o tabuleiro acaba em y=620 e o D-pad começa em y=636 - dezasseis píxeis - por isso o swipe ancora o topo do tabuleiro de power-ups ao tabuleiro de jogo e o D-pad ancora a base ao pad, o que é exato com qualquer número de linhas. A versão que falhou foi a que adivinhava a altura da linha, e falhou exatamente por uma linha. Todos os bugs de layout deste projeto foram encontrados a medir e não a olhar, por isso os testes de browser também medem.',
+      },
+      tooling: {
+        kicker: '06 — Ferramentas & testes',
+        title: 'O editor que não planeei construir',
+        body: 'Cerca de 12.000 linhas deste projeto - mais do que a camada de render - são um editor 3D de personagens dentro do repositório que nunca chega aos jogadores. Viewport de órbita, árvore de partes, inspetor, undo/redo, gizmo de transformação, importação e exportação de glTF, e quatro separadores que editam personagens, pickups, temas e props a partir de um registo em vez de quatro cópias. Tem ainda uma timeline de animação que teve de ser feita ao contrário de todos os tutoriais, porque estas personagens não têm clips de animação: são animadas proceduralmente por código que lê o estado das entidades, por isso o tempo é delta acumulado dado à função de animação real e recuar significa restaurar e voltar a reproduzir. O que o torna mais do que um brinquedo é escrever TypeScript real de volta no código - um endpoint só de desenvolvimento reescreve as próprias funções que constroem as malhas. Isso veio direito de uma cicatriz: o antigo fluxo de copiar e colar lançou um beagle partido para produção duas vezes.',
+        body2:
+          'Não há Jest, nem Vitest, nem Mocha. Os testes são scripts TypeScript corridos com tsx que importam os módulos reais e chamam um pequeno helper check() - cerca de 1.600 asserções em 49 ficheiros, divididas em três tipos. Os testes de lógica headless correm sem browser nenhum: validação dos labirintos, uma simulação completa de gameplay, a máquina de estados dos power-ups, as fronteiras exatas do sorteio das frutas com uma fonte de aleatoriedade injetável. 29 suites de Playwright conduzem a aplicação real em tamanhos de ecrã reais. E os testes de drift protegem as falhas silenciosas - o meu preferido existe só para falhar quando alguém adiciona um campo à paleta de um tema e se esquece do gerador de código que o escreve.',
+      },
+      process: {
+        kicker: 'Como trabalhei',
+        statement: 'O que mais moldou este projeto não está no código.',
+        body: 'São dois ficheiros Markdown simples: um backlog de 50 ideias, cada uma com o seu próprio histórico de versões, e um registo de releases onde cada versão tem um parágrafo a explicar que argumento estava a fazer, e não apenas o que mudou. Aqui as ideias não são substituídas, são versionadas - o tutorial saiu como dicas durante o jogo, os playtests mostraram que legendas a meio da perseguição distraem em vez de ensinar, e a v2 substituiu-as por um carrossel antes do primeiro jogo, com ambas no registo e com a razão da mudança. O ficheiro de guia do projeto está cheio de frases como “a versão que adivinhava a altura da linha foi a que falhou, e falhou exatamente por uma linha”. Isso não é documentação. São vedações: cada uma marca um sítio onde a abordagem óbvia está errada, e escrever porquê é o que impede a abordagem óbvia de voltar daqui a três semanas.',
+      },
+      lessonsTitle: 'O que diria a quem começasse o mesmo projeto',
+      lessons: {
+        purity: {
+          title: 'Decide a fronteira de pureza no primeiro dia',
+          body: 'Nada de three.js na lógica de jogo deu-me testes headless, um servidor que partilha as regras e qualquer bug difícil reproduzível num script. Depois nunca a atravesses.',
+        },
+        generate: {
+          title: 'Gera os assets em código, se puderes',
+          body: 'Sem ficheiros de textura, áudio ou modelos, e tipografia self-hosted e subsetada. A instalação é minúscula, funciona offline, e não há CDN nenhum que possa deitar abaixo a identidade do jogo - sei isso da última porque um deitou.',
+        },
+        reject: {
+          title: 'Rejeita, não limites',
+          body: 'Um validador em que cada limite deriva do que o jogo consegue fisicamente produzir é um validador que um jogador honesto nunca dispara - e que se consegue depurar, porque cada rejeição tem um motivo com nome.',
+        },
+        measure: {
+          title: 'Mede o telemóvel, não olhes para ele',
+          body: 'Todos os bugs de layout deste projeto eram geometria, e todos foram encontrados com números. Esses números estão na documentação, com a instrução de voltar a medir se algum dos dados mudar.',
+        },
+      },
+      techTitle: 'Construído com',
+      ctaTitle: 'Joga',
+      ctaBody: 'O Beagle Chomp corre no teu browser - instala-o e continua a funcionar offline.',
+    },
     skills: {
       label: 'Caso de Estudo',
       title: 'Skills de Claude Code',
@@ -467,6 +576,13 @@ export default {
           'O clássico jogo da cobra, redesenhado - novos modos de jogo, desbloqueáveis e um leaderboard, instalável como PWA.',
         description:
           'Um remake moderno do clássico jogo da cobra da era Nokia, reconstruído para ir além de uma simples cópia: ao lado do modo Clássico há um modo Níveis com objetivos progressivos e obstáculos, mais modificadores de desafio combináveis - velocidade a dobrar, paredes atravessáveis ou letais, labirintos de obstáculos. Uma economia de moedas desbloqueia temas e skins da cobra, e um leaderboard local-first (com pontuações globais opcionais via Supabase) ensinou-me a lógica dos sistemas de ranking. Por baixo, é um engine de jogo determinístico e totalmente testado, desacoplado do renderer em Canvas - construído com o Claude Code usando oito subagentes especializados - e instala-se como uma PWA que funciona totalmente offline.',
+      },
+      'beagle-chomp': {
+        title: 'Beagle Chomp',
+        tagline:
+          'Um jogo arcade 3D de labirinto e perseguição no browser - full-stack, instalável, e construído inteiramente com assets gerados em código.',
+        description:
+          'Uma leitura 3D cel-shaded da fórmula arcade de labirinto e perseguição, feita com three.js: guias um beagle por um labirinto de sebes, comes todas as bolachas para limpar o mapa e trincas um osso para tornar os perseguidores assustados e comestíveis. Ao longo de 15 releases cresceu de PWA offline para produto full-stack - contas de jogador que não guardam dados pessoais, uma economia de cosméticos alimentada apenas pelas moedas que realmente vais buscar, um leaderboard partilhado e um validador de pontuações puro que rejeita submissões implausíveis em vez de as limitar em silêncio. A lógica de jogo está proibida de importar three.js, e foi isso que permitiu gerar as mesmas regras para a API e reproduzir qualquer bug difícil sem browser. Nada é descarregado: cada modelo, textura e som é gerado em runtime, com ~1.600 asserções e 29 suites de Playwright a segurar tudo.',
       },
       'movize-website': {
         title: 'Movize Website',

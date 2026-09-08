@@ -206,6 +206,115 @@ export default {
       ctaTitle: "Play it",
       ctaBody: "Nibble runs in your browser - install it and it keeps working offline.",
     },
+    beagleChomp: {
+      label: "Case Study",
+      title: "Beagle Chomp",
+      tagline:
+        "A 3D maze-chase arcade game for the browser - rebuilt as a full-stack product, with every mesh, texture, sound and font generated in code.",
+      badgeContext: "Solo build",
+      badgeAi: "Built with Claude Code",
+      overview:
+        "Beagle Chomp started as a weekend can-I-build-Pac-Man-in-three.js and turned into the project where I got to answer a harder question: what does it actually take to ship a game as a product? You guide a beagle through a hedge maze, eat every biscuit to clear the map, and chomp a bone to turn the pursuers scared and edible. Fifteen releases later it runs as an installable PWA on phone and desktop, with player accounts, a cosmetics economy, a shared leaderboard and server-validated scores - and not a single model, texture or audio file is downloaded. Most of what I learned wasn't about rendering. It was about honesty: about what the client is allowed to claim, about measuring instead of guessing, and about writing down why a decision was made so the next version doesn't quietly undo it.",
+      numbersKicker: "Scope",
+      numbers: {
+        releases: "Releases shipped, v1.0 to v7.0",
+        lines: "Lines of TypeScript & CSS",
+        files: "Source files",
+        tests: "Assertions across 49 test files",
+        content: "Mazes on a 19×21 grid",
+        assets: "3D asset files shipped",
+      },
+      approach: {
+        kicker: "01 — Approach",
+        title: "A wall between logic and pixels",
+        body: "The first real decision was the one that paid for itself the most times: the game logic is not allowed to import three.js. Not shouldn't - the entire logic layer runs in Node with no browser at all. Grid maths, tunnel wrapping, tile-stepping movement, enemy targeting, the state machine, scoring, the power-up rules: pure TypeScript that a headless script can drive at 10,000 frames a second, with a render layer that reads that state and never mutates it. The trickiest bug in the whole project - enemies teleporting a full tile when they reversed direction mid-tile - was found, fixed and locked down by 27 regression assertions without opening a browser once. And when the backend arrived and the server needed the game's rules to price a run, those rules were already pure, so they could be generated straight into the API. That's not a happy accident; it's the direct dividend of the wall.",
+      },
+      architecture: {
+        kicker: "Architecture",
+        statement:
+          "The game logic may not import three.js. Almost everything good about this project is a dividend of that one rule.",
+        body: "Headless tests, a server that can share the game's rules, and every hard bug reproducible in a script. The coordinate model underneath it is deliberately boring: one world unit is one maze tile, everything moves on the grid, and the 3D is a view onto it.",
+      },
+      highlightsKicker: "02 — Under the hood",
+      highlightsTitle: "What's inside",
+      features: {
+        generated: {
+          title: "Every asset generated in code",
+          body: "No models, no textures, no audio files. Walls and floors are painted to a canvas at runtime, every sound is synthesised with the Web Audio API, and the beagle is built over a small sculpting library of swept solids and revolved profiles. Only the type ships as files - five subset woff2s, 108 KiB in total.",
+        },
+        toon: {
+          title: "Cel shading as a system, not a filter",
+          body: "Every lit surface shares one three-step toon gradient, with tone mapping switched off - a filmic curve re-compresses the ramp's bands and undoes the entire point of quantising them. The scene has exactly one deliberate exception, the unlit eye glint, with the reason written next to it.",
+        },
+        ui: {
+          title: "Toon boards, not glass panels",
+          body: "Frosted-glass panels cost a full-screen composite every frame over a live WebGL canvas, and looked like OS furniture sitting on a game. Five rules in one token file replaced them: outline everything, depth is a thick bottom border, dim by paint rather than opacity, colour comes from the world, and three self-hosted fonts with one icon family.",
+        },
+        content: {
+          title: "Content on a ladder",
+          body: "18 mazes, 15 numbered maps across three difficulty stages plus three bonus maps, 8 challenge levels, 6 full themes each with its own sky, lighting, materials and props, 5 beagle coats, 5 enemy characters, 5 fruits on a value ladder and 5 power-ups on three different lifetimes.",
+        },
+        fullstack: {
+          title: "Accounts with no personal data",
+          body: "Username and password, no email, ever - a deliberate GDPR-surface decision, since an address you never collect carries no obligation. The trade-off is a single-use recovery code that both resets a forgotten password and signs you in on a new device, shown on a genuinely blocking screen because it is the only way back into an account.",
+        },
+        validation: {
+          title: "A scoreboard you can trust",
+          body: "Client scores are untrusted, and implausible ones are rejected rather than silently clamped. The validator is a pure function - no database, no clock, no randomness - which is why it's the most heavily tested code in the backend, and it's honest in a comment about the one case only full simulation would catch.",
+        },
+      },
+      art: {
+        kicker: "03 — Art direction",
+        title: "Cartoon, not photoreal - and tuned at both framings",
+        body: "Textures are drawn to a canvas rather than downloaded, which meant learning the medium the hard way. My first pass made them luminance maps multiplied over the palette colour - but a map can only ever darken, and on Night City's near-black floor a pure-white lane marking rendered at 0.22 luminance and was invisible, so the texture now bakes its palette colour in. The floor is derived from the maze grid, which is how the park's gravel path and the road markings follow the corridors instead of being random noise underneath them. And the first per-pixel scatter looked great zoomed in: at the actual game camera a wall face is about 25 pixels tall, and all that detail aliased back into speckle - a photograph laid under a cel-shaded scene. The rule I ended up with is a fixed handful of named tones per surface, real shapes rather than scatter, and nothing smaller than a couple of pixels.",
+      },
+      backend: {
+        kicker: "04 — Going full-stack",
+        title: "The release that changed what the project was",
+        body: "For its first four major versions this was a static offline PWA with everything in localStorage. v5.0 made it a full-stack app: accounts, cross-device profiles, a shared leaderboard and server-validated scores - with sign-in enforced structurally rather than by scattered checks, since the auth gate is awaited before the Game object exists at all. The nicest refactor in the project was the migration into it. The profile store had 19 synchronous call sites across game, shop and level-map code; rather than making everything async I kept all 19 signatures and changed the store to read an in-memory cache hydrated from the server. The gameplay code was untouched.",
+        body2:
+          "The most instructive incident was a slow one - players reporting scores that never appeared, found in pieces across three releases: a submit with no retry at the exact moment a player has something they care about; a session sweeper closing runs that were still being played; a leaderboard query doing a sequential scan; a Play again button that never opened a server session, which is why every diagnostic came back empty; and finally a map field the client never sent and the server never read, so strong stage-3 runs were rejected as impossible. That last one produced the structural fix I care most about: the code that reads a submission off the wire now lives in its own pure module with a round-trip test, instead of inside the module that opens a Postgres pool on import. The server's balance constants are generated from the real game modules too, with a drift test that fails the build - it caught all 11 mismatches when cosmetic prices were raised.",
+      },
+      platform: {
+        kicker: "05 — Mobile",
+        title: "Every failure here was geometry",
+        body: "Three touch schemes ship - swipe, an on-screen D-pad and a thumbstick - all feeding the same single field on the player entity, so gameplay knows nothing about which one is on. The hard problem was the power-up tray. The maze is 3D and its camera dollies with the aspect ratio, so CSS cannot know where the board ends: a guess is wrong on the next phone and wrong again on rotation. The scene layer now publishes the board's lowest projected corner as a CSS custom property, recomputed on every resize. On a 390×844 phone the board ends at y=620 and the D-pad starts at y=636 - sixteen pixels - so swipe anchors the tray's top to the board and the D-pad anchors its bottom to the pad, which is exact at any number of wrapped rows. The version that failed was the one with a guessed row height, and it failed by exactly one line. Every layout bug in this project was found by measuring rather than by looking, so the browser tests measure too.",
+      },
+      tooling: {
+        kicker: "06 — Tooling & testing",
+        title: "The editor I didn't plan to build",
+        body: "About 12,000 lines of this project - more than the render layer - is an in-repo 3D character editor that never ships to players. Orbit viewport, part tree, inspector, undo/redo, a transform gizmo, glTF import and export, and four tabs that edit characters, pickups, themes and props from one registry rather than four copies. It also has an animation timeline that had to be built unlike every tutorial, because these characters have no animation clips: they're animated procedurally by code that reads entity state, so time is accumulated delta fed to the real animation function and scrubbing backwards means restore-and-replay. What makes it more than a toy is that it writes real TypeScript back into the codebase - a dev-only endpoint rewrites the actual mesh-builder functions in place. That came straight from a scar: the old copy-and-paste workflow shipped a broken beagle to production twice.",
+        body2:
+          "There is no Jest, no Vitest, no Mocha. Tests are TypeScript scripts run with tsx that import the real modules and call a tiny check() helper - about 1,600 assertions across 49 files, split three ways. Headless logic tests run with no browser at all: maze validation, a full gameplay simulation, the power-up state machine, the fruit ladder's exact roll boundaries with an injectable random source. 29 Playwright suites drive the real app at real viewport sizes. And drift tests guard the silent failures - my favourite exists only to fail when someone adds a theme palette field and forgets the code generator that writes it.",
+      },
+      process: {
+        kicker: "How I worked",
+        statement: "The thing that shaped this project most isn't in the source at all.",
+        body: "It's a pair of plain Markdown files: a backlog of 50 ideas, each carrying its own version history, and a release log where every version gets a paragraph explaining what argument it was making, not just what changed. Ideas here don't get replaced, they get versioned - the tutorial shipped as coaching tips during play, playtesting showed captions mid-chase distract rather than teach, and v2 replaced them with a carousel before the first game, with both in the record and the reason for the change. The project's guide file is full of sentences like “a guessed row height was the version that failed, and it failed by exactly one line.” Those aren't documentation. They're fences: each one marks a place where the obvious approach is wrong, and writing down why is what stops the obvious approach coming back in three weeks.",
+      },
+      lessonsTitle: "What I'd tell someone starting the same project",
+      lessons: {
+        purity: {
+          title: "Decide your purity boundary on day one",
+          body: "No three.js in the game logic bought me headless tests, a server that could share the rules, and every hard bug being reproducible in a script. Then never cross it.",
+        },
+        generate: {
+          title: "Generate assets in code if you can afford to",
+          body: "No texture, audio or model files, and self-hosted subset fonts. The install is tiny, it works offline, and there is no CDN that can take the game's identity down - I know that last one because one did.",
+        },
+        reject: {
+          title: "Reject, don't clamp",
+          body: "A validator whose every bound is derived from what the game can physically produce is one an honest player can never trip - and one you can debug, because a rejection has a named reason.",
+        },
+        measure: {
+          title: "Measure the phone, don't look at it",
+          body: "Every layout bug in this project was geometry, and every one was found with numbers. Those numbers live in the docs, with an instruction to re-measure if any of the inputs change.",
+        },
+      },
+      techTitle: "Built with",
+      ctaTitle: "Play it",
+      ctaBody: "Beagle Chomp runs in your browser - install it and it keeps working offline.",
+    },
     skills: {
       label: "Case Study",
       title: "Claude Code Skills",
@@ -467,6 +576,13 @@ export default {
           "The classic snake game, redesigned - new game modes, unlockables, and a leaderboard, installable as a PWA.",
         description:
           "A modern remake of the Nokia-era snake game, rebuilt to go further than a straight port: alongside Classic mode there's a Level mode with progressive targets and obstacles, plus composable challenge modifiers - double speed, wraparound or lethal walls, obstacle mazes. A coin economy unlocks themes and snake skins, and a local-first leaderboard (with optional global scores via Supabase) taught me the logic behind ranking systems. Under the hood it's a deterministic, fully unit-tested game engine decoupled from the Canvas renderer - built with Claude Code using eight specialized subagents - and it installs as a PWA that works fully offline.",
+      },
+      "beagle-chomp": {
+        title: "Beagle Chomp",
+        tagline:
+          "A 3D maze-chase arcade game in the browser - full-stack, installable, and built entirely from assets generated in code.",
+        description:
+          "A cel-shaded 3D take on the maze-chase arcade formula, built with three.js: guide a beagle through a hedge maze, eat every biscuit to clear the map, and chomp a bone to turn the pursuers scared and edible. Across 15 releases it grew from an offline PWA into a full-stack product - player accounts that hold no personal data, a cosmetics economy fed only by the coins you actually go and get, a shared leaderboard, and a pure score validator that rejects implausible submissions instead of silently clamping them. The game logic is forbidden from importing three.js, which is what let the same rules be generated into the API and every hard bug be reproduced headlessly. Nothing is downloaded: every model, texture and sound is generated at runtime, with ~1,600 assertions and 29 Playwright suites holding it together.",
       },
       "movize-website": {
         title: "Movize Website",

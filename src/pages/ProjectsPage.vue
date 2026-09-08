@@ -31,6 +31,7 @@ const modules = movizeCase.modules;
 // Standalone projects (e.g. Astro Hop, Nibble), kept out of the Movize data.
 const astroHop = sideProjects.find((p) => p.id === "astro-hop");
 const nibble = sideProjects.find((p) => p.id === "nibble");
+const beagleChomp = sideProjects.find((p) => p.id === "beagle-chomp");
 
 // Inline "Read more" — long card copy is clamped by default and expands in
 // place (no navigation), since the full text isn't shown on the case study.
@@ -516,6 +517,77 @@ onUnmounted(() => ctx?.revert());
                 </svg>
               </router-link>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── BEAGLE CHOMP (standalone project) ───────── -->
+    <section class="section-container py-20 lg:py-28">
+      <div data-reveal class="mb-10">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-turquoise">
+          {{ t("projects.gameKicker") }}
+        </p>
+        <h2 class="mt-3 font-serif text-display-md text-charcoal dark:text-cream-100">
+          {{ t(`projects.items.${beagleChomp.id}.title`) }}
+        </h2>
+        <div class="accent-line mt-6" />
+      </div>
+
+      <div class="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+        <div class="lg:col-span-7">
+          <p data-reveal class="font-serif text-lg text-charcoal-600 dark:text-charcoal-200 lg:text-xl">
+            {{ t(`projects.items.${beagleChomp.id}.tagline`) }}
+          </p>
+          <p data-reveal class="mt-5 text-base leading-relaxed text-charcoal-500 dark:text-charcoal-300">
+            {{ t(`projects.items.${beagleChomp.id}.description`) }}
+          </p>
+          <div data-reveal class="mt-6">
+            <p class="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-charcoal-300 dark:text-charcoal-400">
+              {{ t("projects.builtWith") }}
+            </p>
+            <div class="flex flex-wrap gap-1.5">
+              <span v-for="tech in beagleChomp.tech" :key="tech" class="badge text-[10px]">{{ tech }}</span>
+            </div>
+          </div>
+          <div data-reveal class="mt-8 flex flex-wrap items-center gap-4">
+            <a :href="beagleChomp.liveUrl" target="_blank" rel="noopener noreferrer" class="btn-primary">
+              {{ t("projects.playLive") }}
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+            </a>
+            <router-link
+              to="/projects/beagle-chomp"
+              class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-turquoise transition-colors hover:text-turquoise-700"
+            >
+              {{ t("projects.viewCaseStudy") }}
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </router-link>
+          </div>
+        </div>
+        <div data-reveal class="lg:col-span-5">
+          <button
+            v-if="beagleChomp.image"
+            class="group mx-auto block w-full max-w-sm overflow-hidden border border-charcoal-100 focus:outline-none focus:ring-2 focus:ring-turquoise dark:border-charcoal-700"
+            @click="openGallery([beagleChomp.image], 0, $event)"
+          >
+            <img
+              :src="beagleChomp.image"
+              :alt="t(`projects.items.${beagleChomp.id}.title`)"
+              class="aspect-[4/5] w-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
+              loading="lazy"
+            />
+          </button>
+          <div
+            v-else
+            class="mx-auto flex aspect-[4/5] w-full max-w-sm items-center justify-center border border-dashed border-charcoal-200 dark:border-charcoal-600"
+          >
+            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-charcoal-300 dark:text-charcoal-500">
+              {{ t("projects.imageSoon") }}
+            </span>
           </div>
         </div>
       </div>

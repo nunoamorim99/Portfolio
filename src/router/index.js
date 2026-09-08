@@ -5,6 +5,7 @@ const ProjectsPage = () => import('@/pages/ProjectsPage.vue')
 const CaseStudyMovize = () => import('@/pages/CaseStudyMovize.vue')
 const CaseStudyAstroHop = () => import('@/pages/CaseStudyAstroHop.vue')
 const CaseStudyNibble = () => import('@/pages/CaseStudyNibble.vue')
+const CaseStudyBeagleChomp = () => import('@/pages/CaseStudyBeagleChomp.vue')
 const CaseStudySkills = () => import('@/pages/CaseStudySkills.vue')
 const CoursesPage = () => import('@/pages/CoursesPage.vue')
 const PersonalPage = () => import('@/pages/PersonalPage.vue')
@@ -42,6 +43,11 @@ const routes = [
     path: '/projects/nibble',
     name: 'nibble',
     component: CaseStudyNibble,
+  },
+  {
+    path: '/projects/beagle-chomp',
+    name: 'beagle-chomp',
+    component: CaseStudyBeagleChomp,
   },
   {
     path: '/projects/claude-skills',

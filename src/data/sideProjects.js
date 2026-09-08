@@ -1,5 +1,6 @@
 import gameboyImg from '@/assets/projects/astrohop/gameboyastro.png'
 import nibbleCover from '@/assets/projects/nibble/cover.png'
+import beagleCover from '@/assets/projects/beaglechomp/cover.png'
 
 // Standalone projects shown on the Projects page alongside the Movize flagship.
 // Kept separate from the Movize `projects` array so they don't inflate the
@@ -35,6 +36,30 @@ export const sideProjects = [
       'Supabase',
       'GitHub Actions',
       'GitHub Pages',
+    ],
+  },
+  {
+    id: 'beagle-chomp',
+    image: beagleCover,
+    liveUrl: 'https://beaglechomp.nunoamorim.dev',
+    // No `repoUrl` on purpose — the repo is private, so neither the Projects
+    // page nor the case study shows a source link for this one.
+    tech: [
+      'TypeScript',
+      'three.js r169',
+      'Vite',
+      'PWA (vite-plugin-pwa)',
+      'Web Audio API',
+      'Canvas 2D',
+      'Node 22',
+      'Hono',
+      'PostgreSQL 17',
+      'Zod',
+      'argon2id',
+      'Playwright',
+      'Docker',
+      'Cloudflare Pages',
+      'Hetzner + Dokploy',
     ],
   },
 ]
