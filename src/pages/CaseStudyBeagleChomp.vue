@@ -116,13 +116,27 @@ onUnmounted(() => ctx?.revert())
       </span>
     </div>
 
-    <!-- ───────── OVERVIEW ───────── -->
+    <!-- ───────── OVERVIEW — where the idea came from, before any of the tech.
+         The serif line is the hook; the two body paragraphs tell the story and
+         hand off to the technical sections that follow. ───────── -->
     <section class="section-container py-20 lg:py-28">
       <p
         data-reveal
-        class="max-w-3xl font-serif text-lg lg:text-2xl leading-relaxed text-charcoal-600 dark:text-charcoal-200"
+        class="max-w-3xl font-serif text-xl lg:text-3xl leading-relaxed text-charcoal-600 dark:text-charcoal-200"
       >
         {{ t('caseStudy.beagleChomp.overview') }}
+      </p>
+      <p
+        data-reveal
+        class="mt-10 max-w-3xl text-lg leading-relaxed text-charcoal-500 dark:text-charcoal-300"
+      >
+        {{ t('caseStudy.beagleChomp.overviewBody') }}
+      </p>
+      <p
+        data-reveal
+        class="mt-6 max-w-3xl text-lg leading-relaxed text-charcoal-500 dark:text-charcoal-300"
+      >
+        {{ t('caseStudy.beagleChomp.overviewBody2') }}
       </p>
     </section>
 

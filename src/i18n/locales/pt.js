@@ -37,22 +37,22 @@ export default {
       overview:
         'O Movize começou como uma app para reunir todos os operadores de transporte portugueses num só lugar. Tornou-se algo maior - um ecossistema completo que permite aos operadores digitalizar e gerir as suas próprias redes. Liderei o produto desde o primeiro wireframe até uma mudança estratégica para uma plataforma multi-módulo.',
       problem: {
-        kicker: '01 — O problema',
+        kicker: '01 - O problema',
         title: 'Sem um único lugar para os transportes em Portugal',
         body: 'Portugal não tinha uma app nativa que reunisse todos os operadores de transporte urbano. Os passageiros recorriam a fontes dispersas - ou ficavam sem informação - só para planear uma viagem entre operadores e modos.',
       },
       v1: {
-        kicker: '02 — Começar pelo passageiro',
+        kicker: '02 - Começar pelo passageiro',
         title: 'Uma app para todos os operadores',
         body: 'Lançámos o Movize como uma app móvel para centralizar a informação de transportes, para que os passageiros vissem rotas, paragens e horários de todos os operadores num só lugar. O plano era simples: estabelecer parcerias com operadores e integrar os seus dados GTFS.',
       },
       pivot: {
-        kicker: '03 — A mudança',
+        kicker: '03 - A mudança',
         title: 'O problema não era a app - era que os operadores não tinham forma de se digitalizar.',
         body: 'Integrar os operadores revelou um problema mais profundo. A maioria dos operadores portugueses, sobretudo os mais pequenos, não tinha qualquer ferramenta digital - e não tinha como pagar a grandes empresas para digitalizar os seus dados e chegar aos passageiros. A verdadeira oportunidade não era uma app melhor. Era dar aos operadores uma forma de se digitalizarem. Assim, o Movize cresceu de uma app para um ecossistema.',
       },
       ecosystem: {
-        kicker: '04 — De uma app a um ecossistema',
+        kicker: '04 - De uma app a um ecossistema',
         title: 'Movize Connect',
         body: 'O Movize Connect é a plataforma de back-office por trás da app. Permite a operadores, promotores de eventos e proprietários de infraestrutura gerir os seus próprios dados - e enviá-los diretamente para os passageiros. Construímo-lo módulo a módulo.',
         inDev: 'Em desenvolvimento',
@@ -83,7 +83,7 @@ export default {
           body: 'Gestão de frota e motoristas para operadores, com uma app de motorista dedicada.',
         },
       },
-      decisionsTitle: '05 — Decisões-chave',
+      decisionsTitle: '05 - Decisões-chave',
       decisions: {
         feedback: {
           title: 'Integrar feedback no produto',
@@ -103,7 +103,7 @@ export default {
         },
       },
       validation: {
-        kicker: '06 — Validação',
+        kicker: '06 - Validação',
         quote: 'Exatamente o que Portugal precisa.',
         body: 'O Movize está no ar e em desenvolvimento ativo, com forte validação qualitativa de passageiros e operadores à medida que novos módulos são lançados.',
       },
@@ -120,11 +120,11 @@ export default {
       overview:
         'O Astro Hop é um jogo de plataformas 2D ao estilo retro do Mario - jogável em computador e telemóvel a partir do mesmo URL. Construí-o de raiz como forma prática de explorar o modelo Fable 5: em parceria com IA para desenhar os sistemas, escrever a lógica do jogo e lançar uma experiência completa e polida - e para aprofundar o meu próprio conhecimento de engenharia pelo caminho.',
       approach: {
-        kicker: '01 — Abordagem',
+        kicker: '01 - Abordagem',
         title: 'Construir com IA, para aprender a construir',
         body: 'Em vez de apenas ler sobre um novo modelo, lancei com ele. O Astro Hop foi uma exploração deliberada do Fable 5 - usando-o como parceiro de desenvolvimento para arquitetar o jogo, resolver a matemática da física arcade e depurar casos extremos reais. O objetivo era duplo: produzir algo genuinamente jogável e polido, e construir um entendimento sólido e em primeira mão de como construir eficazmente com IA.',
       },
-      highlightsKicker: '02 — Por dentro',
+      highlightsKicker: '02 - Por dentro',
       highlightsTitle: 'O que está lá dentro',
       features: {
         physics: {
@@ -150,7 +150,7 @@ export default {
           'Todos os efeitos sonoros e músicas são sintetizados ao vivo com a Web Audio API - zero ficheiros de áudio.',
       },
       platform: {
-        kicker: '03 — Corre em qualquer lado',
+        kicker: '03 - Corre em qualquer lado',
         title: 'Um URL, computador e telemóvel',
         body: 'Os níveis são grelhas de texto orientadas a dados, por isso criar novos é trivial. O jogo é totalmente responsivo, com controlos multitoque no ecrã para telemóvel, e cada push faz deploy automático para o GitHub Pages via GitHub Actions.',
       },
@@ -168,11 +168,11 @@ export default {
       overview:
         'O Nibble é um remake moderno e instalável do clássico jogo da cobra da era Nokia. Depois do Astro Hop, quis uma segunda ronda, mais ambiciosa, com o modelo Fable 5 - desta vez não apenas a recriar um clássico, mas a redesenhá-lo: um novo modo de jogo por níveis, modificadores de desafio combináveis, uma economia de cosméticos e aquilo que mais queria aprender - como funciona realmente um leaderboard, das pontuações locais a um backend global.',
       approach: {
-        kicker: '01 — Abordagem',
+        kicker: '01 - Abordagem',
         title: 'Segunda ronda com o Fable 5 - desta vez com uma arquitetura',
         body: 'Se o Astro Hop foi sobre lançar um jogo completo com IA, o Nibble foi sobre disciplina de engenharia. O jogo foi construído com o Claude Code usando oito subagentes especializados, cada um responsável por uma camada da arquitetura - engine, renderer, temas, níveis, persistência - com um invariante: o engine não depende de nada acima dele. O resultado é um núcleo puro e determinístico, totalmente testado com Vitest, com rendering, temas e armazenamento em camadas limpas por cima.',
       },
-      highlightsKicker: '02 — Por dentro',
+      highlightsKicker: '02 - Por dentro',
       highlightsTitle: 'O que está lá dentro',
       features: {
         modes: {
@@ -198,7 +198,7 @@ export default {
           'Um engine de jogo determinístico que não depende de nada acima dele - lógica pura, totalmente testada, com rendering e armazenamento como camadas substituíveis.',
       },
       platform: {
-        kicker: '03 — Instala em qualquer lado',
+        kicker: '03 - Instala em qualquer lado',
         title: 'Uma PWA que funciona totalmente offline',
         body: 'O Nibble instala-se no ecrã inicial em desktop, Android e iOS, e depois de instalado corre totalmente offline. Cada push para main corre os testes, faz o build e o deploy automático para o GitHub Pages.',
       },
@@ -210,11 +210,15 @@ export default {
       label: 'Caso de Estudo',
       title: 'Beagle Chomp',
       tagline:
-        'Um jogo arcade 3D de labirinto e perseguição para browser - reconstruído como um produto full-stack, com cada malha, textura, som e tipo de letra gerado em código.',
+        'Um clássico arcade de labirinto e perseguição refeito em 3D - uma desculpa para aprender three.js, com o cão que andamos sempre a dizer que vamos ter.',
       badgeContext: 'Projeto solo',
       badgeAi: 'Construído com Claude Code',
       overview:
-        'O Beagle Chomp começou como um fim de semana de será-que-consigo-fazer-o-Pac-Man-em-three.js e tornou-se no projeto onde respondi a uma pergunta mais difícil: o que é preciso, na prática, para lançar um jogo como produto? Guias um beagle por um labirinto de sebes, comes todas as bolachas para limpar o mapa e trincas um osso para tornar os perseguidores assustados e comestíveis. Quinze releases depois, corre como PWA instalável no telemóvel e no desktop, com contas de jogador, uma economia de cosméticos, um leaderboard partilhado e pontuações validadas no servidor - e nem um único modelo, textura ou ficheiro de áudio é descarregado. A maior parte do que aprendi não foi sobre rendering. Foi sobre honestidade: sobre o que o cliente pode reclamar, sobre medir em vez de adivinhar, e sobre escrever porque é que uma decisão foi tomada para que a versão seguinte não a desfaça em silêncio.',
+        'Começou como uma ideia simples - refazer o Pac-Man - e acabou no cão que andamos sempre a dizer que vamos ter.',
+      overviewBody:
+        'Queria uma razão a sério para aprender three.js. Não para ler sobre a tecnologia, mas para construir alguma coisa com ela e perceber até onde ia, por isso escolhi um jogo cujas regras já sabia de cor e refi-lo em 3D. O beagle veio depois, e é a razão pela qual o projeto pegou. Eu e a minha cara-metade adoramos beagles e andamos sempre a falar em ter um - e os beagles são conhecidos por duas coisas: um faro extraordinário e uma devoção absoluta à comida. Num jogo cujo ciclo inteiro é seguir um rasto e comer tudo o que está nele, isso encaixava tão bem que o resto do design quase se escreveu sozinho. Bolachas em vez de pastilhas. Um osso em vez da pastilha de poder. Um labirinto de sebes em vez de uma grelha.',
+      overviewBody2:
+        'Assim que a ideia teve uma personagem, pude trazer para dentro dela a outra metade do meu trabalho. Um leaderboard só vale a pena se as pontuações que estão nele forem de confiança. Uma loja só é interessante se ganhar for uma escolha - por isso as pelagens do beagle, as skins dos inimigos e os temas do labirinto pagam-se com moedas que tens mesmo de ir buscar ao labirinto. E existe um modo de desafio para quem quer a versão difícil. Depois bati na parede de não saber three.js o suficiente para dar forma a uma personagem escrevendo coordenadas num ficheiro, e a resposta honesta não foi ficar melhor a fazê-lo a olho - foi construir o editor que me faltava. Foi trabalhar tudo isto com IA que tornou esse ritmo possível: menos um atalho e mais uma forma de aprender mais depressa, partir os problemas até conseguir raciocinar sobre eles sozinho, e perceber de facto aquilo que tinha construído. Quinze releases depois é uma PWA instalável com contas de jogador, um leaderboard partilhado e pontuações validadas no servidor, e nem um modelo, textura ou som é descarregado. É assim que está feito.',
       numbersKicker: 'Dimensão',
       numbers: {
         releases: 'Releases lançadas, v1.0 a v7.0',
@@ -225,7 +229,7 @@ export default {
         assets: 'Ficheiros de assets 3D no build',
       },
       approach: {
-        kicker: '01 — Abordagem',
+        kicker: '01 - Abordagem',
         title: 'Uma parede entre a lógica e os píxeis',
         body: 'A primeira decisão a sério foi a que mais vezes se pagou a si própria: a lógica de jogo não pode importar three.js. Não é que não deva - toda a camada de lógica corre em Node, sem browser nenhum. Matemática de grelha, túneis, movimento por tile, targeting dos inimigos, a máquina de estados, pontuação, as regras dos power-ups: TypeScript puro que um script headless consegue correr a 10.000 frames por segundo, com uma camada de render que lê esse estado e nunca o altera. O bug mais complicado de todo o projeto - inimigos a teletransportarem-se um tile inteiro ao inverterem a direção a meio - foi encontrado, corrigido e trancado por 27 asserções de regressão sem abrir um browser uma única vez. E quando chegou o backend e o servidor precisou das regras do jogo para avaliar uma partida, essas regras já eram puras, por isso puderam ser geradas diretamente para a API. Não foi um acaso feliz; foi o dividendo direto da parede.',
       },
@@ -235,7 +239,7 @@ export default {
           'A lógica de jogo não pode importar three.js. Quase tudo o que este projeto tem de bom é um dividendo dessa única regra.',
         body: 'Testes headless, um servidor que partilha as regras do jogo e qualquer bug difícil reproduzível num script. O modelo de coordenadas por baixo é deliberadamente aborrecido: uma unidade do mundo é um tile do labirinto, tudo se move na grelha, e o 3D é apenas uma vista sobre ela.',
       },
-      highlightsKicker: '02 — Por dentro',
+      highlightsKicker: '02 - Por dentro',
       highlightsTitle: 'O que está lá dentro',
       features: {
         generated: {
@@ -264,24 +268,24 @@ export default {
         },
       },
       art: {
-        kicker: '03 — Direção de arte',
+        kicker: '03 - Direção de arte',
         title: 'Cartoon, não fotorrealista - e afinado nos dois enquadramentos',
         body: 'As texturas são desenhadas para um canvas em vez de descarregadas, o que obrigou a aprender o meio pelo caminho difícil. A primeira versão fazia delas mapas de luminância multiplicados pela cor da paleta - mas um mapa só consegue escurecer, e no chão quase preto da Night City uma marcação branca aparecia a 0,22 de luminância e era invisível, por isso a textura passou a trazer a cor da paleta já cozida. O chão é derivado da grelha do labirinto, e é assim que o caminho de gravilha do parque e as marcações da estrada seguem os corredores em vez de serem ruído aleatório por baixo deles. E o primeiro scatter por pixel ficava ótimo em zoom: à câmara real do jogo, uma face de parede tem cerca de 25 píxeis de altura, e todo esse detalhe voltava a serrilhar em pontinhos - uma fotografia colocada por baixo de uma cena cel-shaded. A regra em que acabei é um punhado fixo de tons nomeados por superfície, formas reais em vez de scatter, e nada mais pequeno do que dois píxeis.',
       },
       backend: {
-        kicker: '04 — Passar a full-stack',
+        kicker: '04 - Passar a full-stack',
         title: 'A release que mudou o que o projeto era',
         body: 'Nas primeiras quatro versões maiores isto era uma PWA offline estática com tudo em localStorage. A v5.0 tornou-a numa aplicação full-stack: contas, perfis entre dispositivos, um leaderboard partilhado e pontuações validadas no servidor - com a autenticação garantida estruturalmente e não por verificações espalhadas, já que o auth gate é esperado antes de o objeto Game sequer existir. O refactor mais bonito do projeto foi a migração para aqui. A store de perfil tinha 19 pontos de chamada síncronos espalhados por código de jogo, loja e mapa de níveis; em vez de tornar tudo assíncrono, mantive as 19 assinaturas e mudei a store para ler uma cache em memória hidratada a partir do servidor. O código de gameplay ficou intocado.',
         body2:
           'O incidente mais instrutivo foi lento - jogadores a reportar pontuações que nunca apareciam, encontrado aos bocados ao longo de três releases: um submit sem retry no momento exato em que o jogador tem algo que lhe importa; um limpador de sessões a fechar partidas ainda a ser jogadas; uma query de leaderboard a fazer scan sequencial; um botão de jogar outra vez que nunca abria sessão no servidor, e é por isso que todos os diagnósticos vinham vazios; e por fim um campo de mapa que o cliente nunca enviava e o servidor nunca lia, pelo que boas partidas da etapa 3 eram rejeitadas como impossíveis. Essa última deu origem à correção estrutural de que mais gosto: o código que lê uma submissão da rede vive agora num módulo puro próprio, com um teste de ida e volta, em vez de estar dentro do módulo que abre uma pool de Postgres ao ser importado. As constantes de balanceamento do servidor também são geradas a partir dos módulos reais do jogo, com um teste de drift que falha o build - apanhou as 11 divergências quando os preços dos cosméticos subiram.',
       },
       platform: {
-        kicker: '05 — Mobile',
+        kicker: '05 - Mobile',
         title: 'Todas as falhas aqui foram de geometria',
         body: 'Há três esquemas de toque - swipe, um D-pad no ecrã e um thumbstick - todos a alimentar o mesmo campo único na entidade do jogador, por isso o gameplay não sabe qual está ativo. O problema difícil foi o tabuleiro de power-ups. O labirinto é 3D e a câmara afasta-se conforme o rácio do ecrã, por isso o CSS não consegue saber onde o tabuleiro acaba: um palpite falha no telemóvel seguinte e volta a falhar na rotação. A camada de cena passou a publicar o canto projetado mais baixo do tabuleiro como uma custom property de CSS, recalculada em cada resize. Num telemóvel de 390×844 o tabuleiro acaba em y=620 e o D-pad começa em y=636 - dezasseis píxeis - por isso o swipe ancora o topo do tabuleiro de power-ups ao tabuleiro de jogo e o D-pad ancora a base ao pad, o que é exato com qualquer número de linhas. A versão que falhou foi a que adivinhava a altura da linha, e falhou exatamente por uma linha. Todos os bugs de layout deste projeto foram encontrados a medir e não a olhar, por isso os testes de browser também medem.',
       },
       tooling: {
-        kicker: '06 — Ferramentas & testes',
+        kicker: '06 - Ferramentas & testes',
         title: 'O editor que não planeei construir',
         body: 'Cerca de 12.000 linhas deste projeto - mais do que a camada de render - são um editor 3D de personagens dentro do repositório que nunca chega aos jogadores. Viewport de órbita, árvore de partes, inspetor, undo/redo, gizmo de transformação, importação e exportação de glTF, e quatro separadores que editam personagens, pickups, temas e props a partir de um registo em vez de quatro cópias. Tem ainda uma timeline de animação que teve de ser feita ao contrário de todos os tutoriais, porque estas personagens não têm clips de animação: são animadas proceduralmente por código que lê o estado das entidades, por isso o tempo é delta acumulado dado à função de animação real e recuar significa restaurar e voltar a reproduzir. O que o torna mais do que um brinquedo é escrever TypeScript real de volta no código - um endpoint só de desenvolvimento reescreve as próprias funções que constroem as malhas. Isso veio direito de uma cicatriz: o antigo fluxo de copiar e colar lançou um beagle partido para produção duas vezes.',
         body2:
@@ -325,7 +329,7 @@ export default {
       overview:
         'Como Product Manager, passo os dias a capturar ideias, gerir sprints e manter os stakeholders informados. Construí três skills de Claude Code - Idea Ledger, Agile Ledger e Cartographer - para trazer esse trabalho para o mesmo lugar onde vive o código. Para além do ganho de produtividade, o objetivo era aprender: desenhar skills de ponta a ponta levou-me a fundo em como o Claude funciona, como se desenham fluxos de agentes e como a IA pode realmente mudar o toolkit de um PM.',
       why: {
-        kicker: '01 — Porquê construir as minhas ferramentas',
+        kicker: '01 - Porquê construir as minhas ferramentas',
         title: 'O trabalho de PM vive em demasiadas abas',
         body: 'A gestão de produto está espalhada por ferramentas - um board aqui, documentos ali, o código noutro lugar. Cada skill ataca uma parte dessa fragmentação: capturar e versionar ideias, gerir um processo ágil completo e gerar documentação para stakeholders - tudo em Markdown simples que vive ao lado do código, sem ferramentas externas e sem lock-in.',
       },
@@ -362,7 +366,7 @@ export default {
         },
       },
       learned: {
-        kicker: '05 — O que me ensinou',
+        kicker: '05 - O que me ensinou',
         statement:
           'Construir as minhas próprias ferramentas transformou a IA de algo sobre o qual lia em algo com que faço engenharia - e estas skills gerem hoje o meu dia-a-dia como PM.',
       },
@@ -580,9 +584,9 @@ export default {
       'beagle-chomp': {
         title: 'Beagle Chomp',
         tagline:
-          'Um jogo arcade 3D de labirinto e perseguição no browser - full-stack, instalável, e construído inteiramente com assets gerados em código.',
+          'Um clássico arcade de labirinto e perseguição refeito em 3D - uma desculpa para aprender three.js, com o cão que andamos sempre a dizer que vamos ter.',
         description:
-          'Uma leitura 3D cel-shaded da fórmula arcade de labirinto e perseguição, feita com three.js: guias um beagle por um labirinto de sebes, comes todas as bolachas para limpar o mapa e trincas um osso para tornar os perseguidores assustados e comestíveis. Ao longo de 15 releases cresceu de PWA offline para produto full-stack - contas de jogador que não guardam dados pessoais, uma economia de cosméticos alimentada apenas pelas moedas que realmente vais buscar, um leaderboard partilhado e um validador de pontuações puro que rejeita submissões implausíveis em vez de as limitar em silêncio. A lógica de jogo está proibida de importar three.js, e foi isso que permitiu gerar as mesmas regras para a API e reproduzir qualquer bug difícil sem browser. Nada é descarregado: cada modelo, textura e som é gerado em runtime, com ~1.600 asserções e 29 suites de Playwright a segurar tudo.',
+          'Começou como uma ideia simples - refazer o Pac-Man - e como desculpa para aprender three.js construindo alguma coisa a sério com a tecnologia em vez de ler sobre ela. O beagle veio depois, e é a razão pela qual o projeto pegou: eu e a minha cara-metade adoramos beagles e andamos sempre a falar em ter um, e os beagles são conhecidos por duas coisas - um faro extraordinário e uma devoção absoluta à comida. Num jogo cujo ciclo inteiro é seguir um rasto e comer tudo o que está nele, encaixava tão bem que o resto quase se escreveu sozinho: bolachas em vez de pastilhas, um osso em vez da pastilha de poder, um labirinto de sebes em vez de uma grelha. A partir daí pude trazer o meu lado de produto - um leaderboard cujas pontuações são de confiança, uma loja com pelagens para o beagle, skins para os inimigos e temas para o labirinto, e um modo de desafio para quem quer a versão difícil - e quando bati na parede de não saber three.js o suficiente para dar forma a uma personagem escrevendo coordenadas, construí antes o editor que me faltava. Quinze releases depois é uma PWA instalável com contas, uma economia e pontuações validadas no servidor, onde cada modelo, textura e som é gerado em código em vez de descarregado.',
       },
       'movize-website': {
         title: 'Movize Website',

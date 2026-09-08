@@ -210,11 +210,15 @@ export default {
       label: "Case Study",
       title: "Beagle Chomp",
       tagline:
-        "A 3D maze-chase arcade game for the browser - rebuilt as a full-stack product, with every mesh, texture, sound and font generated in code.",
+        "A classic maze-chase arcade game remade in 3D - an excuse to learn three.js, starring the dog my partner and I keep saying we'll get one day.",
       badgeContext: "Solo build",
       badgeAi: "Built with Claude Code",
       overview:
-        "Beagle Chomp started as a weekend can-I-build-Pac-Man-in-three.js and turned into the project where I got to answer a harder question: what does it actually take to ship a game as a product? You guide a beagle through a hedge maze, eat every biscuit to clear the map, and chomp a bone to turn the pursuers scared and edible. Fifteen releases later it runs as an installable PWA on phone and desktop, with player accounts, a cosmetics economy, a shared leaderboard and server-validated scores - and not a single model, texture or audio file is downloaded. Most of what I learned wasn't about rendering. It was about honesty: about what the client is allowed to claim, about measuring instead of guessing, and about writing down why a decision was made so the next version doesn't quietly undo it.",
+        "It started as a simple idea - remake Pac-Man - and ended up as the dog my partner and I keep saying we'll get one day.",
+      overviewBody:
+        "I wanted a real reason to learn three.js. Not to read about it, but to build something with it and find out what the technology could actually do, so I picked a game whose rules I already knew by heart and rebuilt it in 3D. The beagle came later, and it's the reason the project stuck. My partner and I both love beagles and keep talking about getting one - and beagles are famous for two things: an extraordinary nose and an absolute devotion to food. In a game whose entire loop is following a trail and eating everything on it, that fit so well the rest of the design almost wrote itself. Biscuits instead of pellets. A bone instead of a power pellet. A hedge maze instead of a grid.",
+      overviewBody2:
+        "Once the idea had a character, I could bring the other half of my job into it. A leaderboard is only worth having if the scores on it can be trusted. A shop is only interesting if earning is a choice - so the coats for the beagle, the skins for the enemies and the themes for the maze are paid for with coins you have to go into the maze and fetch. A challenge mode exists for the people who want the harder version. And when I hit the wall of not knowing three.js well enough to shape a character by typing coordinates into a file, the honest answer wasn't to get better at eyeballing it - it was to build the editor I was missing. Working through all of it with AI is what made that pace possible: less a shortcut than a way to learn faster, break problems down until I could reason about them myself, and actually understand the thing I had built. Fifteen releases later it's an installable PWA with player accounts, a shared leaderboard and server-validated scores, and not one model, texture or sound is downloaded. Here's how it's built.",
       numbersKicker: "Scope",
       numbers: {
         releases: "Releases shipped, v1.0 to v7.0",
@@ -580,9 +584,9 @@ export default {
       "beagle-chomp": {
         title: "Beagle Chomp",
         tagline:
-          "A 3D maze-chase arcade game in the browser - full-stack, installable, and built entirely from assets generated in code.",
+          "A classic maze-chase arcade game remade in 3D - an excuse to learn three.js, starring the dog my partner and I keep saying we'll get.",
         description:
-          "A cel-shaded 3D take on the maze-chase arcade formula, built with three.js: guide a beagle through a hedge maze, eat every biscuit to clear the map, and chomp a bone to turn the pursuers scared and edible. Across 15 releases it grew from an offline PWA into a full-stack product - player accounts that hold no personal data, a cosmetics economy fed only by the coins you actually go and get, a shared leaderboard, and a pure score validator that rejects implausible submissions instead of silently clamping them. The game logic is forbidden from importing three.js, which is what let the same rules be generated into the API and every hard bug be reproduced headlessly. Nothing is downloaded: every model, texture and sound is generated at runtime, with ~1,600 assertions and 29 Playwright suites holding it together.",
+          "It started as a simple idea - remake Pac-Man - and as an excuse to learn three.js by building something real with it rather than reading about it. The beagle came later, and it's the reason the project stuck: my partner and I both love beagles and keep talking about getting one, and beagles are famous for two things - an extraordinary nose and an absolute devotion to food. In a game whose whole loop is following a trail and eating everything on it, that fit so well the rest almost wrote itself: biscuits instead of pellets, a bone instead of a power pellet, a hedge maze instead of a grid. From there I could bring my product side into it - a leaderboard whose scores can be trusted, a shop selling coats for the beagle, skins for the enemies and themes for the maze, and a challenge mode for people who want the harder version - and when I hit the wall of not knowing three.js well enough to shape a character by typing coordinates, I built the editor I was missing instead. Fifteen releases later it's an installable PWA with accounts, an economy and server-validated scores, where every model, texture and sound is generated in code rather than downloaded.",
       },
       "movize-website": {
         title: "Movize Website",
