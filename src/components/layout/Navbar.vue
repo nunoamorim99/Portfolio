@@ -76,16 +76,20 @@ onUnmounted(() => {
       <!-- Logo -->
       <router-link
         to="/"
-        class="group flex items-center gap-2.5 font-serif text-2xl text-charcoal transition-colors hover:text-turquoise dark:text-cream-100 dark:hover:text-turquoise"
+        class="flex items-center transition-opacity duration-300 hover:opacity-80"
+        aria-label="Nuno Amorim"
         @click="ui.closeMobileMenu()"
       >
         <img
-          :src="`${baseUrl}favicon.svg`"
+          :src="`${baseUrl}logo/nuno-amorim-horizontal-color.svg`"
           alt=""
-          aria-hidden="true"
-          class="h-7 w-7 transition-transform duration-300 group-hover:rotate-3"
+          class="h-9 w-auto dark:hidden"
         />
-        <span>Nuno<span class="text-turquoise italic">.</span></span>
+        <img
+          :src="`${baseUrl}logo/nuno-amorim-horizontal-reversed.svg`"
+          alt=""
+          class="hidden h-9 w-auto dark:block"
+        />
       </router-link>
 
       <div class="flex items-center gap-1">
