@@ -624,25 +624,23 @@ onUnmounted(() => ctx?.revert());
           data-reveal
           class="group flex flex-col overflow-hidden border border-charcoal-100 bg-white dark:border-charcoal-700 dark:bg-charcoal-800"
         >
-          <button
-            v-if="skill.image"
-            class="block overflow-hidden focus:outline-none focus:ring-2 focus:ring-inset focus:ring-turquoise"
-            @click="openGallery([skill.image], 0, $event)"
+          <!-- Logo lockup on a quiet panel; the dark-ink version swaps for the
+               reversed one in dark mode, same as the Navbar logo. -->
+          <div
+            class="flex aspect-video items-center justify-center overflow-hidden border-b border-charcoal-100 bg-cream-50 px-10 dark:border-charcoal-700 dark:bg-charcoal-900"
           >
             <img
-              :src="skill.image"
+              :src="skill.logo.light"
               :alt="t(`projects.items.${skill.id}.title`)"
-              class="aspect-video w-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
+              class="max-h-16 w-full object-contain grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0 dark:hidden"
               loading="lazy"
             />
-          </button>
-          <div
-            v-else
-            class="flex aspect-video items-center justify-center border-b border-dashed border-charcoal-200 dark:border-charcoal-600"
-          >
-            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-charcoal-300 dark:text-charcoal-500">
-              {{ t("projects.imageSoon") }}
-            </span>
+            <img
+              :src="skill.logo.dark"
+              :alt="t(`projects.items.${skill.id}.title`)"
+              class="hidden max-h-16 w-full object-contain grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0 dark:block"
+              loading="lazy"
+            />
           </div>
           <div class="flex flex-1 flex-col p-6">
             <h3 class="font-serif text-xl text-charcoal dark:text-cream-100">

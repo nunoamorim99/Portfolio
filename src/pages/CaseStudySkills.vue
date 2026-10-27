@@ -159,24 +159,24 @@ onUnmounted(() => ctx?.revert())
             </a>
           </div>
           <div :class="i % 2 === 1 ? 'lg:order-1' : ''" data-reveal class="lg:col-span-5">
+            <!-- Logo panel contrasts with the section ground it sits on, which
+                 alternates; the reversed lockup takes over in dark mode. -->
             <div
-              v-if="skill.image"
-              class="overflow-hidden border border-charcoal-100 dark:border-charcoal-700"
+              :class="i % 2 === 1 ? 'bg-cream-50 dark:bg-charcoal-900' : 'bg-cream-100 dark:bg-charcoal-800'"
+              class="flex aspect-[4/3] items-center justify-center border border-charcoal-100 px-10 dark:border-charcoal-700 lg:px-14"
             >
               <img
-                :src="skill.image"
+                :src="skill.logo.light"
                 :alt="t(`caseStudy.skills.items.${skill.id}.name`)"
-                class="w-full object-cover"
+                class="max-h-24 w-full object-contain dark:hidden"
                 loading="lazy"
               />
-            </div>
-            <div
-              v-else
-              class="flex aspect-[4/3] items-center justify-center border border-dashed border-charcoal-200 dark:border-charcoal-600"
-            >
-              <span class="text-xs font-bold uppercase tracking-[0.2em] text-charcoal-300 dark:text-charcoal-500">
-                {{ t('projects.imageSoon') }}
-              </span>
+              <img
+                :src="skill.logo.dark"
+                :alt="t(`caseStudy.skills.items.${skill.id}.name`)"
+                class="hidden max-h-24 w-full object-contain dark:block"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>

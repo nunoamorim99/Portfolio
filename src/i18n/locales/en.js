@@ -323,15 +323,15 @@ export default {
       label: "Case Study",
       title: "Claude Code Skills",
       tagline:
-        "Three custom skills that turn Claude Code into my product-management toolkit - built to optimize my day-to-day work as a PM.",
+        "Five custom skills that turn Claude Code into my product toolkit - built to optimize my day-to-day work as a PM, from the first idea to protecting what ships.",
       badgeContext: "Personal project",
       badgeAi: "Built with Claude Code",
       overview:
-        "As a Product Manager I spend my days capturing ideas, running sprints, and keeping stakeholders informed. I built three Claude Code skills - Idea Ledger, Agile Ledger, and Cartographer - to bring that work into the same place where the code lives. Beyond the productivity gain, the goal was to learn: designing skills end-to-end took me deep into how Claude works, how agent workflows are designed, and how AI can genuinely change a PM's toolkit.",
+        "As a Product Manager I spend my days capturing ideas, running sprints, and keeping stakeholders informed. I built five Claude Code skills - Idea Ledger, Agile Ledger, Agile Ledger Pro, Cartographer, and Fortify - to bring that work into the same place where the code lives, and to answer a question every product I ship now raises: how easily could someone copy it? Beyond the productivity gain, the goal was to learn: designing skills end-to-end took me deep into how Claude works, how agent workflows are designed, and how AI can genuinely change a PM's toolkit.",
       why: {
         kicker: "01 — Why build my own tools",
         title: "PM work lives in too many tabs",
-        body: "Product management is scattered across tools - a board here, docs there, the actual code somewhere else. Each skill attacks one piece of that fragmentation: capturing and versioning ideas, running a full agile process, and generating stakeholder documentation - all as plain Markdown that lives next to the code, with no external tools and no lock-in.",
+        body: "Product management is scattered across tools - a board here, docs there, the actual code somewhere else. Each skill attacks one piece of that fragmentation: capturing and versioning ideas, running a full agile process, generating stakeholder documentation, and assessing how exposed a product is to being cloned - all as plain Markdown that lives next to the code, with no external tools and no lock-in.",
       },
       items: {
         "idea-ledger": {
@@ -354,6 +354,16 @@ export default {
             workspace: "An optional orchestrator that discovers, syncs, and proposes changes across multiple repos.",
           },
         },
+        "agile-ledger-pro": {
+          name: "Agile Ledger Pro",
+          tagline: "The same ledger - now with a dashboard and the numbers",
+          body: "The next generation of Agile Ledger, shipped as its own plugin rather than a replacement. It reads and writes exactly the same plain-Markdown ledger, so switching is an install instead of a migration, and it adds what a team needs once more than one person works from the ledger: a local web dashboard to read and update it from the browser, the metrics a PM steers by, and a choice between Scrum and Kanban. The ledger can live inside a single project or in its own repository shared by a whole organization.",
+          highlights: {
+            dashboard: "/dashboard serves the whole ledger as a local page - board, backlog, bugs, velocity, and releases - and writes back under the same rules as the slash commands. Standard-library Python, bound to localhost only.",
+            insights: "/insights turns the ledger into velocity, reliability, forecast, bug, and flow metrics plus the ideas funnel - derived from the entries, never hand-typed.",
+            team: "/switch-methodology moves a project between Scrum and Kanban without losing history, and /whoami is each teammate's entire setup on a shared ledger.",
+          },
+        },
         cartographer: {
           name: "Cartographer",
           tagline: "Documentation stakeholders actually read",
@@ -364,15 +374,25 @@ export default {
             audiences: "Separate marketing and management outputs, with configurable scope and language.",
           },
         },
+        fortify: {
+          name: "Fortify",
+          tagline: "How easily could someone copy your product?",
+          body: "A defensive skill that assesses how easily a product can be reverse engineered, cracked, scraped, or cloned - then proposes and applies a protection plan in plain language. It came from a question I kept asking about my own projects: with AI tools, someone can rebuild a product in days just by reading the shipped code or watching how it behaves, so protection has to be decided while building, not after launch. Fortify rates the five ways products get copied, assesses the moat, and is honest about the limits - nothing that runs on an attacker's machine is uncrackable, so every measure is rated by how much it really helps.",
+          highlights: {
+            scan: "/fortify:scan - a quick read-only pass that detects the stack and flags published source maps, client-side secrets, on-device paywall checks, and missing rate limits, masking every secret it finds.",
+            plan: "/fortify:audit writes a tiered protection plan - quick wins, core protection, advanced - with what each item costs and how much it really helps, across 15 platforms.",
+            harden: "/fortify:harden applies the chosen items one small, explained change at a time, rebuilding and testing after each, then re-scans to show the before and after.",
+          },
+        },
       },
       learned: {
-        kicker: "05 — What it taught me",
+        kicker: "07 — What it taught me",
         statement:
           "Building my own tools turned AI from something I read about into something I engineer with - and these skills now run my day-to-day PM work.",
       },
       ctaTitle: "Explore the skills",
       ctaBody:
-        "All three are open source under MIT - install them in Claude Code and make them yours.",
+        "All five are open source under MIT - install them in Claude Code and make them yours.",
     },
   },
   about: {
@@ -542,7 +562,7 @@ export default {
     skillsKicker: "AI tooling",
     skillsTitle: "Claude Code skills",
     skillsIntro:
-      "Three custom skills I built to optimize my day-to-day work as a PM - and to learn how to engineer with AI, not just use it. Idea capture, a full agile process, and stakeholder documentation, all in plain Markdown inside Claude Code.",
+      "Five custom skills I built to optimize my day-to-day work as a PM - and to learn how to engineer with AI, not just use it. Idea capture, a full agile process with a team dashboard, stakeholder documentation, and product-protection audits, all inside Claude Code.",
     imageSoon: "Screenshots coming soon",
     builtWith: "Built with",
     playLive: "Play it live",
@@ -606,11 +626,23 @@ export default {
         description:
           "The successor to Idea Ledger: a complete product-management system for Claude Code, built to streamline how a PM runs projects and teams. Eight Markdown files and 31+ slash commands cover the whole lifecycle - capturing ideas and bugs, triaging into epics and user stories, planning and running sprints, and cutting releases - with user-story IDs that link across branches, commits, and PRs, plus an optional multi-repo workspace orchestrator.",
       },
+      "agile-ledger-pro": {
+        title: "Agile Ledger Pro",
+        tagline: "Agile Ledger plus a dashboard, insights, and Scrum or Kanban",
+        description:
+          "The next generation of Agile Ledger, shipped as its own plugin: the same plain-Markdown ledger format and 34 commands, so an existing ledger works with nothing to migrate. On top it adds a local web dashboard to read and update the ledger from the browser, an /insights command for velocity, forecast, and flow metrics, Scrum or Kanban with a lossless switch between them, and per-person identity for teams sharing one ledger repository.",
+      },
       cartographer: {
         title: "Cartographer",
         tagline: "Stakeholder docs generated from your repos",
         description:
           "A Claude Code skill that closes the communication gap between engineering and stakeholders. It scans repositories, proposes a product map, and generates audience-aware documentation - in Markdown and polished PDF - explaining what each product does and why it matters, not how it's built. Includes a read-only assessment pass, staleness checks, and separate marketing and management audiences.",
+      },
+      fortify: {
+        title: "Fortify",
+        tagline: "Protection assessment against copying, cracking & cloning",
+        description:
+          "A Claude Code skill that answers a question every product builder should ask: how easily can this be reverse engineered, cracked, scraped, or cloned? A read-only scan flags the obvious leaks, a full audit rates five clone vectors and the product's moat and writes a tiered protection plan in plain language, and a harden step applies the chosen fixes one reviewable change at a time. Defensive only, covering 15 platforms - from web and mobile to games and AI products.",
       },
       "web-platform": {
         title: "Movize Connect",

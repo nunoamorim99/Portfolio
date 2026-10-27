@@ -323,15 +323,15 @@ export default {
       label: 'Caso de Estudo',
       title: 'Skills de Claude Code',
       tagline:
-        'Três skills personalizadas que transformam o Claude Code no meu toolkit de gestão de produto - construídas para otimizar o meu dia-a-dia como PM.',
+        'Cinco skills personalizadas que transformam o Claude Code no meu toolkit de produto - construídas para otimizar o meu dia-a-dia como PM, da primeira ideia à proteção do que é entregue.',
       badgeContext: 'Projeto pessoal',
       badgeAi: 'Construído com Claude Code',
       overview:
-        'Como Product Manager, passo os dias a capturar ideias, gerir sprints e manter os stakeholders informados. Construí três skills de Claude Code - Idea Ledger, Agile Ledger e Cartographer - para trazer esse trabalho para o mesmo lugar onde vive o código. Para além do ganho de produtividade, o objetivo era aprender: desenhar skills de ponta a ponta levou-me a fundo em como o Claude funciona, como se desenham fluxos de agentes e como a IA pode realmente mudar o toolkit de um PM.',
+        'Como Product Manager, passo os dias a capturar ideias, gerir sprints e manter os stakeholders informados. Construí cinco skills de Claude Code - Idea Ledger, Agile Ledger, Agile Ledger Pro, Cartographer e Fortify - para trazer esse trabalho para o mesmo lugar onde vive o código, e para responder a uma pergunta que hoje todos os produtos que entrego levantam: com que facilidade alguém o poderia copiar? Para além do ganho de produtividade, o objetivo era aprender: desenhar skills de ponta a ponta levou-me a fundo em como o Claude funciona, como se desenham fluxos de agentes e como a IA pode realmente mudar o toolkit de um PM.',
       why: {
         kicker: '01 - Porquê construir as minhas ferramentas',
         title: 'O trabalho de PM vive em demasiadas abas',
-        body: 'A gestão de produto está espalhada por ferramentas - um board aqui, documentos ali, o código noutro lugar. Cada skill ataca uma parte dessa fragmentação: capturar e versionar ideias, gerir um processo ágil completo e gerar documentação para stakeholders - tudo em Markdown simples que vive ao lado do código, sem ferramentas externas e sem lock-in.',
+        body: 'A gestão de produto está espalhada por ferramentas - um board aqui, documentos ali, o código noutro lugar. Cada skill ataca uma parte dessa fragmentação: capturar e versionar ideias, gerir um processo ágil completo, gerar documentação para stakeholders e avaliar o quão exposto um produto está a ser clonado - tudo em Markdown simples que vive ao lado do código, sem ferramentas externas e sem lock-in.',
       },
       items: {
         'idea-ledger': {
@@ -354,6 +354,16 @@ export default {
             workspace: 'Um orquestrador opcional que descobre, sincroniza e propõe alterações em múltiplos repositórios.',
           },
         },
+        'agile-ledger-pro': {
+          name: 'Agile Ledger Pro',
+          tagline: 'O mesmo ledger - agora com dashboard e com os números',
+          body: 'A nova geração do Agile Ledger, lançada como um plugin próprio e não como substituto. Lê e escreve exatamente o mesmo ledger em Markdown simples, por isso mudar é uma instalação e não uma migração, e acrescenta o que uma equipa precisa quando mais do que uma pessoa trabalha a partir do ledger: um dashboard web local para o ler e atualizar no browser, as métricas pelas quais um PM se orienta e a escolha entre Scrum e Kanban. O ledger pode viver dentro de um único projeto ou num repositório próprio partilhado por toda a organização.',
+          highlights: {
+            dashboard: '/dashboard serve todo o ledger como uma página local - board, backlog, bugs, velocidade e releases - e grava as alterações com as mesmas regras dos slash commands. Python só com a biblioteca standard, ligado apenas ao localhost.',
+            insights: '/insights transforma o ledger em métricas de velocidade, fiabilidade, previsão, bugs e fluxo, mais o funil de ideias - derivadas das entradas, nunca escritas à mão.',
+            team: '/switch-methodology muda um projeto entre Scrum e Kanban sem perder histórico, e /whoami é toda a configuração de cada pessoa da equipa num ledger partilhado.',
+          },
+        },
         cartographer: {
           name: 'Cartographer',
           tagline: 'Documentação que os stakeholders realmente leem',
@@ -364,15 +374,25 @@ export default {
             audiences: 'Outputs separados para marketing e gestão, com âmbito e idioma configuráveis.',
           },
         },
+        fortify: {
+          name: 'Fortify',
+          tagline: 'Com que facilidade alguém copiaria o teu produto?',
+          body: 'Uma skill defensiva que avalia com que facilidade um produto pode ser alvo de engenharia reversa, crackeado, alvo de scraping ou clonado - e depois propõe e aplica um plano de proteção em linguagem simples. Nasceu de uma pergunta que fazia sobre os meus próprios projetos: com ferramentas de IA, alguém consegue reconstruir um produto em dias só a ler o código entregue ou a observar como se comporta, por isso a proteção tem de ser decidida enquanto se constrói, não depois do lançamento. O Fortify avalia as cinco formas como os produtos são copiados, analisa o que os protege da concorrência e é honesto quanto aos limites - nada que corra numa máquina controlada por um atacante é impossível de crackear, por isso cada medida é avaliada pelo quanto realmente ajuda.',
+          highlights: {
+            scan: '/fortify:scan - uma passagem rápida e read-only que deteta a stack e sinaliza source maps publicados, segredos no código do cliente, verificações de pagamento no dispositivo e falta de rate limits, mascarando todos os segredos que encontra.',
+            plan: '/fortify:audit escreve um plano de proteção por níveis - ganhos rápidos, proteção essencial, avançado - com o custo de cada item e o quanto realmente ajuda, em 15 plataformas.',
+            harden: '/fortify:harden aplica os itens escolhidos uma pequena alteração explicada de cada vez, recompilando e testando depois de cada uma, e volta a analisar para mostrar o antes e o depois.',
+          },
+        },
       },
       learned: {
-        kicker: '05 - O que me ensinou',
+        kicker: '07 - O que me ensinou',
         statement:
           'Construir as minhas próprias ferramentas transformou a IA de algo sobre o qual lia em algo com que faço engenharia - e estas skills gerem hoje o meu dia-a-dia como PM.',
       },
       ctaTitle: 'Explora as skills',
       ctaBody:
-        'As três são open source sob licença MIT - instala-as no Claude Code e torna-as tuas.',
+        'As cinco são open source sob licença MIT - instala-as no Claude Code e torna-as tuas.',
     },
   },
   about: {
@@ -542,7 +562,7 @@ export default {
     skillsKicker: 'Ferramentas de IA',
     skillsTitle: 'Skills de Claude Code',
     skillsIntro:
-      'Três skills personalizadas que construí para otimizar o meu dia-a-dia como PM - e para aprender a fazer engenharia com IA, não apenas a usá-la. Captura de ideias, um processo ágil completo e documentação para stakeholders, tudo em Markdown simples dentro do Claude Code.',
+      'Cinco skills personalizadas que construí para otimizar o meu dia-a-dia como PM - e para aprender a fazer engenharia com IA, não apenas a usá-la. Captura de ideias, um processo ágil completo com dashboard de equipa, documentação para stakeholders e auditorias de proteção de produto, tudo dentro do Claude Code.',
     imageSoon: 'Imagens brevemente',
     builtWith: 'Construído com',
     playLive: 'Jogar agora',
@@ -606,11 +626,23 @@ export default {
         description:
           'O sucessor do Idea Ledger: um sistema completo de gestão de produto para o Claude Code, feito para otimizar a forma como um PM gere projetos e equipas. Oito ficheiros Markdown e mais de 31 slash commands cobrem todo o ciclo de vida - capturar ideias e bugs, triar em épicos e user stories, planear e executar sprints, e fechar releases - com IDs de user stories que ligam branches, commits e PRs, mais um orquestrador opcional de workspace multi-repositório.',
       },
+      'agile-ledger-pro': {
+        title: 'Agile Ledger Pro',
+        tagline: 'Agile Ledger com dashboard, insights e Scrum ou Kanban',
+        description:
+          'A nova geração do Agile Ledger, lançada como um plugin próprio: o mesmo formato de ledger em Markdown simples e os mesmos 34 comandos, por isso um ledger existente funciona sem nada para migrar. Por cima acrescenta um dashboard web local para ler e atualizar o ledger no browser, um comando /insights com métricas de velocidade, previsão e fluxo, Scrum ou Kanban com uma mudança entre eles sem perdas, e identidade por pessoa para equipas que partilham um repositório de ledger.',
+      },
       cartographer: {
         title: 'Cartographer',
         tagline: 'Documentação para stakeholders gerada a partir dos repositórios',
         description:
           'Uma skill de Claude Code que fecha a lacuna de comunicação entre a engenharia e os stakeholders. Analisa repositórios, propõe um mapa de produtos e gera documentação adaptada à audiência - em Markdown e PDF polido - a explicar o que cada produto faz e porque importa, não como foi construído. Inclui uma fase de avaliação read-only, verificação de documentação desatualizada e audiências separadas de marketing e gestão.',
+      },
+      fortify: {
+        title: 'Fortify',
+        tagline: 'Avaliação de proteção contra cópia, cracking e clonagem',
+        description:
+          'Uma skill de Claude Code que responde a uma pergunta que quem constrói produtos devia fazer: com que facilidade isto pode ser alvo de engenharia reversa, crackeado, alvo de scraping ou clonado? Uma análise read-only sinaliza as fugas óbvias, uma auditoria completa avalia cinco vetores de clonagem e o que protege o produto da concorrência e escreve um plano de proteção por níveis em linguagem simples, e um passo de hardening aplica as correções escolhidas uma alteração revisível de cada vez. Apenas defensiva, cobre 15 plataformas - da web e mobile a jogos e produtos de IA.',
       },
       'web-platform': {
         title: 'Movize Connect',

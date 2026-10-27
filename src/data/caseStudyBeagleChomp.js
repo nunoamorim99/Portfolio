@@ -1,6 +1,6 @@
 import { sideProjects } from '@/data/sideProjects'
 import beagleHero from '@/assets/projects/beaglechomp/hero.png'
-import beagleCover from '@/assets/projects/beaglechomp/cover.png'
+import beagleIcon from '@/assets/projects/beaglechomp/icon.png'
 
 const base = sideProjects.find((p) => p.id === 'beagle-chomp')
 
@@ -11,8 +11,8 @@ export const beagleChompCase = {
   liveUrl: base.liveUrl,
   apiUrl: 'https://beaglechomp-api.nunoamorim.dev',
   tech: base.tech,
-  heroImage: beagleHero, // wide banner
-  artImage: beagleCover, // square key art, shown in the art-direction section
+  heroImage: beagleHero, // horizontal title lockup on the amber brand ground
+  artImage: beagleIcon, // app icon, shown in the art-direction section
   mobileImage: null, // real device shot still to come
   // Scope numbers, quoted verbatim from the project's own release log so they
   // stay auditable. Labels live in i18n under `caseStudy.beagleChomp.numbers`.
