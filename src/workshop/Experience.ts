@@ -22,12 +22,13 @@ import {
   SRGBColorSpace,
   Scene,
   Texture,
+  TextureLoader,
   Vector2,
   Vector3,
   WebGLRenderer,
 } from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import { BOOK_SKILLS, MODELS, PLANET_PRODUCTS, STOPS, STOP_BY_MODEL, type ModelKey, type Stop, type StopId } from './config'
+import { BAKED, BOOK_SKILLS, MODELS, PLANET_PRODUCTS, STOPS, STOP_BY_MODEL, type ModelKey, type Stop, type StopId } from './config'
 import { dashboardTexture, editorTexture, lcdTexture, robotTexture } from './screens'
 
 interface SceneData {
@@ -157,12 +158,21 @@ export class Experience {
     const manager = new LoadingManager()
     manager.onProgress = (_url, loaded, total) => this.opts.onProgress?.(loaded / total)
     const loader = new GLTFLoader(manager)
+    const textures = new TextureLoader(manager)
 
-    const gltfs = await Promise.all(
-      MODELS.map((key) => loader.loadAsync(`${this.opts.assetsUrl}models/${key}.glb`).then((g) => [key, g] as const)),
-    )
+    const [gltfs, baked] = await Promise.all([
+      Promise.all(MODELS.map((key) => loader.loadAsync(`${this.opts.assetsUrl}models/${key}.glb`).then((g) => [key, g] as const))),
+      Promise.all(
+        Object.entries(BAKED).map(([key, file]) =>
+          textures.loadAsync(`${this.opts.assetsUrl}${file}`).then((t) => [key as ModelKey, t] as const),
+        ),
+      ),
+    ])
+    const bakedByModel = new Map(baked)
 
     for (const [key, gltf] of gltfs) {
+      const map = bakedByModel.get(key)
+      if (map) this.applyBake(gltf.scene, map)
       if (key === 'room') {
         this.scene.add(gltf.scene)
         continue
@@ -194,6 +204,22 @@ export class Experience {
     this.setupBooks()
     this.resize()
     this.renderer.setAnimationLoop(this.tick)
+  }
+
+  /** Swap a model's materials for one unlit material showing its baked lighting. */
+  private applyBake(root: Object3D, map: Texture) {
+    map.flipY = false // glTF UV convention
+    map.colorSpace = SRGBColorSpace
+    map.anisotropy = Math.min(8, this.renderer.capabilities.getMaxAnisotropy())
+    this.ownedTextures.push(map)
+    const material = new MeshBasicMaterial({ map, toneMapped: false }) // tone mapping is baked in
+    root.traverse((o) => {
+      const mesh = o as Mesh
+      if (!mesh.isMesh) return
+      const old = mesh.material as Material
+      mesh.material = material
+      if (old !== material) old.dispose()
+    })
   }
 
   private setupCamera(data: SceneData) {

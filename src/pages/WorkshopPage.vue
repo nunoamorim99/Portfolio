@@ -137,7 +137,7 @@ onUnmounted(() => {
         <div v-if="!show3d" class="absolute inset-x-0 top-28 section-container">
           <p class="max-w-md text-sm text-charcoal-300">
             {{ t("workshop.unavailable") }}
-            <router-link to="/projects" class="text-turquoise underline-offset-4 hover:underline">
+            <router-link to="/projects/all" class="text-turquoise underline-offset-4 hover:underline">
               {{ t("workshop.listLink") }}
             </router-link>
           </p>
@@ -294,7 +294,7 @@ onUnmounted(() => {
                 <p class="card-body">{{ t("workshop.outro.body") }}</p>
                 <div class="card-links">
                   <router-link to="/#contact" class="card-link">{{ t("workshop.outro.contact") }} →</router-link>
-                  <router-link to="/projects" class="card-link">{{ t("workshop.listLink") }} →</router-link>
+                  <router-link to="/projects/all" class="card-link">{{ t("workshop.listLink") }} →</router-link>
                 </div>
               </template>
             </article>

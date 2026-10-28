@@ -67,6 +67,15 @@ export const STOPS: Stop[] = [
   { id: 'outro' },
 ]
 
+/**
+ * Baked lighting: models listed here are shown unlit with a texture baked in
+ * Blender (Cycles, AgX view transform applied on save). Anything not listed
+ * still uses the live lights, which is how the rough build works.
+ */
+export const BAKED: Partial<Record<ModelKey, string>> = {
+  room: 'textures/room.webp',
+}
+
 /** Which stop a clicked model belongs to. */
 export const STOP_BY_MODEL: Partial<Record<ModelKey, StopId>> = Object.fromEntries(
   STOPS.filter((s) => s.model).map((s) => [s.model, s.id]),

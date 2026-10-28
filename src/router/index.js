@@ -26,14 +26,20 @@ const routes = [
     component: HomePage,
   },
   {
+    // The Workshop: projects as objects in a 3D room. Case studies hold the detail.
     path: '/projects',
     name: 'projects',
+    component: WorkshopPage,
+  },
+  {
+    // Plain list of every project: the fallback for no-WebGL and quick scanning.
+    path: '/projects/all',
+    name: 'projects-all',
     component: ProjectsPage,
   },
   {
     path: '/workshop',
-    name: 'workshop',
-    component: WorkshopPage,
+    redirect: '/projects',
   },
   {
     path: '/projects/movize',
