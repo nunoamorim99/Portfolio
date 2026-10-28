@@ -674,7 +674,7 @@ export default {
     kicker: "Projects · The workshop",
     title: "Where I build things",
     intro:
-      "Everything here started at this desk. The two screens are my two roles, the shelf above them holds the day job, and the shelves and bookcase hold what I build on my own.",
+      "Everything here started at this desk. The screens and the laptop are my three roles, the shelf above them holds the day job, and the shelves and bookcase hold what I build on my own.",
     scrollHint: "Scroll to look around, or click any object",
     loading: "Setting up the workshop",
     unavailable:
@@ -695,9 +695,15 @@ export default {
       body: "I still write the code: front-end in Vue, games in three.js and Phaser, and Claude Code skills that speed up my own work.",
       cta: "GitHub profile",
     },
+    ai: {
+      kicker: "The desk · Laptop",
+      title: "AI application engineer",
+      body: "I build with foundation models rather than train them: LLM integrations, prompt engineering, tool use and MCP, and agent workflows, like the Claude Code skills on the AI shelf.",
+      cta: "See the skills",
+    },
     experimentKicker: "Shelf · Experiments",
     gameKicker: "Shelf · Games",
-    toolsKicker: "Bookcase · AI tooling",
+    toolsKicker: "AI shelf · Claude Code",
     future: {
       kicker: "Bookcase · Next",
       title: "Still in the box",

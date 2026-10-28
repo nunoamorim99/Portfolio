@@ -674,7 +674,7 @@ export default {
     kicker: 'Projetos · A oficina',
     title: 'Onde construo coisas',
     intro:
-      'Tudo o que está aqui começou nesta secretária. Os dois ecrãs são as minhas duas funções, a prateleira por cima guarda o trabalho do dia a dia, e as prateleiras e a estante guardam o que construo por conta própria.',
+      'Tudo o que está aqui começou nesta secretária. Os ecrãs e o portátil são as minhas três funções, a prateleira por cima guarda o trabalho do dia a dia, e as prateleiras e a estante guardam o que construo por conta própria.',
     scrollHint: 'Faz scroll para explorar ou clica num objeto',
     loading: 'A preparar a oficina',
     unavailable:
@@ -695,9 +695,15 @@ export default {
       body: 'Continuo a escrever código: front-end em Vue, jogos em three.js e Phaser, e skills de Claude Code para acelerar o meu próprio trabalho.',
       cta: 'Perfil no GitHub',
     },
+    ai: {
+      kicker: 'A secretária · Portátil',
+      title: 'Engenheiro de aplicações de IA',
+      body: 'Construo com modelos fundacionais em vez de os treinar: integrações com LLMs, prompt engineering, tool use e MCP, e fluxos com agentes, como as skills de Claude Code na prateleira de IA.',
+      cta: 'Ver as skills',
+    },
     experimentKicker: 'Prateleira · Experiências',
     gameKicker: 'Prateleira · Jogos',
-    toolsKicker: 'Estante · Ferramentas de IA',
+    toolsKicker: 'Prateleira de IA · Claude Code',
     future: {
       kicker: 'Estante · A seguir',
       title: 'Ainda na caixa',

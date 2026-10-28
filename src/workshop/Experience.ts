@@ -28,7 +28,7 @@ import {
 } from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { MODELS, PLANET_PRODUCTS, STOPS, STOP_BY_MODEL, type ModelKey, type Stop, type StopId } from './config'
-import { dashboardTexture, editorTexture, lcdTexture } from './screens'
+import { dashboardTexture, editorTexture, lcdTexture, robotTexture } from './screens'
 
 interface SceneData {
   camera: { position: number[]; target: number[]; orthoScale: number; renderAspect: number }
@@ -201,6 +201,7 @@ export class Experience {
       pm_display: dashboardTexture,
       dev_display: editorTexture,
       nibble_lcd: lcdTexture,
+      laptop_display: robotTexture,
     }
     for (const [name, make] of Object.entries(screens)) {
       const mesh = this.scene.getObjectByName(name) as Mesh | undefined
@@ -272,12 +273,16 @@ export class Experience {
     fill.position.set(6, 8, 6)
     this.scene.add(fill)
 
-    const lamp = new PointLight(0xffc27a, 2.2, 3, 2) // desk lamp
-    lamp.position.set(0.3, 1.05, -1.43)
-    this.scene.add(lamp)
+    // Monitor light bars: a warm wash down onto the desk from each bar.
+    for (const x of [0.86, 1.54]) {
+      const bar = new PointLight(0xffd6a0, 1.6, 1.6, 2)
+      bar.position.set(x, 1.3, -1.6)
+      this.scene.add(bar)
+    }
 
     // Turquoise LED strips: under the two personal shelves and the work shelf.
     for (const [x, y, z, len] of [
+      [-1.7, 0.96, -0.5, 1.2],
       [-1.7, 1.4, -0.5, 1.2],
       [-1.7, 1.85, -0.5, 1.2],
       [1.2, 1.77, -1.55, 1.4],

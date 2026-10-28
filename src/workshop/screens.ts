@@ -184,3 +184,77 @@ export function lcdTexture(): CanvasTexture {
   g.fillText('0042', 8, 26)
   return toTexture(c)
 }
+
+/** Laptop: a friendly robot chatting, for the AI engineering role. */
+export function robotTexture(): CanvasTexture {
+  const W = 768
+  const H = 512
+  const [c, g] = canvas(W, H)
+  g.fillStyle = '#0b1416'
+  g.fillRect(0, 0, W, H)
+
+  const round = (x: number, y: number, w: number, h: number, r: number) => {
+    g.beginPath()
+    g.roundRect(x, y, w, h, r)
+  }
+
+  // robot: antenna, head, eyes, smile, body
+  g.strokeStyle = TEAL
+  g.lineWidth = 8
+  g.beginPath()
+  g.moveTo(190, 120)
+  g.lineTo(190, 80)
+  g.stroke()
+  g.fillStyle = TEAL
+  g.beginPath()
+  g.arc(190, 70, 16, 0, Math.PI * 2)
+  g.fill()
+
+  g.fillStyle = '#16302d'
+  round(90, 120, 200, 160, 40)
+  g.fill()
+  g.stroke()
+  g.fillStyle = '#e8fffb'
+  for (const x of [150, 230]) {
+    g.beginPath()
+    g.arc(x, 190, 22, 0, Math.PI * 2)
+    g.fill()
+  }
+  g.fillStyle = '#0b1416'
+  for (const x of [156, 236]) {
+    g.beginPath()
+    g.arc(x, 194, 10, 0, Math.PI * 2)
+    g.fill()
+  }
+  g.strokeStyle = TEAL
+  g.lineWidth = 7
+  g.beginPath()
+  g.arc(190, 228, 30, 0.15 * Math.PI, 0.85 * Math.PI)
+  g.stroke()
+  g.fillStyle = '#16302d'
+  g.strokeStyle = TEAL
+  round(120, 300, 140, 120, 30)
+  g.fill()
+  g.stroke()
+  g.fillStyle = TEAL
+  g.beginPath()
+  g.arc(190, 360, 14, 0, Math.PI * 2)
+  g.fill()
+
+  // chat: a question and an answer bubble
+  g.fillStyle = '#1d2a33'
+  round(360, 110, 340, 90, 22)
+  g.fill()
+  g.fillStyle = TEAL_DIM
+  round(400, 240, 320, 150, 22)
+  g.fill()
+  g.fillStyle = '#7d8ca6'
+  g.fillRect(390, 140, 240, 12)
+  g.fillRect(390, 166, 160, 12)
+  g.fillStyle = '#d6f5ef'
+  g.fillRect(430, 272, 250, 12)
+  g.fillRect(430, 300, 210, 12)
+  g.fillRect(430, 328, 230, 12)
+  g.fillRect(430, 356, 120, 12)
+  return toTexture(c)
+}

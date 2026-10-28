@@ -39,7 +39,7 @@ let trigger = null;
 
 function stopTitle(id, product) {
   if (id === "movize") return product ? t(`projects.items.${product}.title`) : t("caseStudy.movize.title");
-  if (id === "pm" || id === "dev" || id === "future") return t(`workshop.${id}.title`);
+  if (id === "pm" || id === "dev" || id === "ai" || id === "future") return t(`workshop.${id}.title`);
   if (id === "claude-skills") return t("projects.skillsTitle");
   return t(`projects.items.${id}.title`);
 }
@@ -216,14 +216,15 @@ onUnmounted(() => {
                 </div>
               </template>
 
-              <!-- PM / Dev screens -->
-              <template v-else-if="stop.id === 'pm' || stop.id === 'dev'">
+              <!-- Roles: PM screen, dev screen, AI laptop -->
+              <template v-else-if="stop.id === 'pm' || stop.id === 'dev' || stop.id === 'ai'">
                 <p class="kicker">{{ t(`workshop.${stop.id}.kicker`) }}</p>
                 <h2 class="card-title">{{ t(`workshop.${stop.id}.title`) }}</h2>
                 <p class="card-body">{{ t(`workshop.${stop.id}.body`) }}</p>
                 <div class="card-links">
                   <router-link v-if="stop.id === 'pm'" to="/#experience" class="card-link">{{ t("workshop.pm.cta") }} →</router-link>
-                  <a v-else :href="profile.github" target="_blank" rel="noopener" class="card-link">{{ t("workshop.dev.cta") }} ↗</a>
+                  <a v-else-if="stop.id === 'dev'" :href="profile.github" target="_blank" rel="noopener" class="card-link">{{ t("workshop.dev.cta") }} ↗</a>
+                  <router-link v-else to="/projects/claude-skills" class="card-link">{{ t("workshop.ai.cta") }} →</router-link>
                 </div>
               </template>
 

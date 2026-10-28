@@ -9,6 +9,7 @@ export type StopId =
   | 'movize'
   | 'pm'
   | 'dev'
+  | 'ai'
   | 'astro-hop'
   | 'nibble'
   | 'beagle-chomp'
@@ -21,6 +22,7 @@ export type ModelKey =
   | 'obj_movize_orrery'
   | 'obj_screen_pm'
   | 'obj_screen_dev'
+  | 'obj_laptop'
   | 'obj_astrohop'
   | 'obj_nibble'
   | 'obj_beagle_chomp'
@@ -40,6 +42,7 @@ export const MODELS: ModelKey[] = [
   'obj_movize_orrery',
   'obj_screen_pm',
   'obj_screen_dev',
+  'obj_laptop',
   'obj_astrohop',
   'obj_nibble',
   'obj_beagle_chomp',
@@ -47,12 +50,14 @@ export const MODELS: ModelKey[] = [
   'obj_future',
 ]
 
-// Roles first (the two desk screens), then the day job on the work shelf above
-// the desk, then personal projects: wall shelves top to bottom, then the bookcase.
+// Roles first (the two desk screens and the laptop), then the day job on the work shelf above
+// the desk, then personal projects: wall shelves top to bottom (the lowest is the AI
+// shelf for the Claude Code skills), then the bookcase with room to grow.
 export const STOPS: Stop[] = [
   { id: 'intro' },
   { id: 'pm', model: 'obj_screen_pm', frame: 1.9 },
   { id: 'dev', model: 'obj_screen_dev', frame: 1.9 },
+  { id: 'ai', model: 'obj_laptop', frame: 2.2 },
   { id: 'movize', model: 'obj_movize_orrery', frame: 1.9 },
   { id: 'astro-hop', model: 'obj_astrohop', frame: 2.4 },
   { id: 'nibble', model: 'obj_nibble', frame: 2.6 },
