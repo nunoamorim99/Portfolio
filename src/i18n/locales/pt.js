@@ -670,6 +670,45 @@ export default {
       },
     },
   },
+  workshop: {
+    kicker: 'Projetos · A oficina',
+    title: 'Onde construo coisas',
+    intro:
+      'Tudo o que está aqui começou nesta secretária. Os dois ecrãs são as minhas duas funções, a prateleira por cima guarda o trabalho do dia a dia, e as prateleiras e a estante guardam o que construo por conta própria.',
+    scrollHint: 'Faz scroll para explorar ou clica num objeto',
+    loading: 'A preparar a oficina',
+    unavailable:
+      'A vista 3D não está disponível neste dispositivo, mas todos os projetos continuam aqui.',
+    listLink: 'Ver todos os projetos em lista',
+    stopsNav: 'Paragens da oficina',
+    deskKicker: 'Prateleira de trabalho · Dia a dia',
+    products: 'Produtos',
+    pm: {
+      kicker: 'A secretária · Ecrã da esquerda',
+      title: 'Product manager',
+      body: 'Roadmaps, backlogs, sprints e as decisões entre eles. A maior parte aconteceu no Movize, das apps para passageiros à plataforma de operadores.',
+      cta: 'Ver a minha experiência',
+    },
+    dev: {
+      kicker: 'A secretária · Ecrã da direita',
+      title: 'Developer',
+      body: 'Continuo a escrever código: front-end em Vue, jogos em three.js e Phaser, e skills de Claude Code para acelerar o meu próprio trabalho.',
+      cta: 'Perfil no GitHub',
+    },
+    experimentKicker: 'Prateleira · Experiências',
+    gameKicker: 'Prateleira · Jogos',
+    toolsKicker: 'Estante · Ferramentas de IA',
+    future: {
+      kicker: 'Estante · A seguir',
+      title: 'Ainda na caixa',
+      body: 'Há mais projetos a caminho, e a estante tem espaço para eles.',
+    },
+    outro: {
+      title: 'Esta é a oficina',
+      body: 'Cada projeto tem um caso de estudo completo. Queres falar sobre algum?',
+      contact: 'Entrar em contacto',
+    },
+  },
   courses: {
     title: 'Cursos & Certificações',
     subtitle: 'Aprendizagem contínua para me manter atualizado e relevante',

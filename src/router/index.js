@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const HomePage = () => import('@/pages/HomePage.vue')
 const ProjectsPage = () => import('@/pages/ProjectsPage.vue')
+const WorkshopPage = () => import('@/pages/WorkshopPage.vue')
 const CaseStudyMovize = () => import('@/pages/CaseStudyMovize.vue')
 const CaseStudyAstroHop = () => import('@/pages/CaseStudyAstroHop.vue')
 const CaseStudyNibble = () => import('@/pages/CaseStudyNibble.vue')
@@ -28,6 +29,11 @@ const routes = [
     path: '/projects',
     name: 'projects',
     component: ProjectsPage,
+  },
+  {
+    path: '/workshop',
+    name: 'workshop',
+    component: WorkshopPage,
   },
   {
     path: '/projects/movize',

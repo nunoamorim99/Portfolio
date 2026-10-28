@@ -1,0 +1,95 @@
+{
+  "objects": {
+    "obj_movize_orrery": {
+      "center": [
+        1.2,
+        2.0605,
+        -1.7
+      ],
+      "size": 0.8739
+    },
+    "obj_screen_pm": {
+      "center": [
+        0.86,
+        1.05,
+        -1.78
+      ],
+      "size": 0.8736
+    },
+    "obj_screen_dev": {
+      "center": [
+        1.54,
+        1.05,
+        -1.78
+      ],
+      "size": 0.8736
+    },
+    "obj_astrohop": {
+      "center": [
+        -1.82,
+        2.15,
+        -0.0
+      ],
+      "size": 0.4537
+    },
+    "obj_nibble": {
+      "center": [
+        -1.82,
+        2.1225,
+        -0.8
+      ],
+      "size": 0.3553
+    },
+    "obj_beagle_chomp": {
+      "center": [
+        -1.8038,
+        1.6575,
+        -0.2209
+      ],
+      "size": 0.6015
+    },
+    "obj_skills": {
+      "center": [
+        -1.78,
+        1.1128,
+        0.85
+      ],
+      "size": 0.6657
+    },
+    "obj_future": {
+      "center": [
+        -1.78,
+        0.601,
+        1.31
+      ],
+      "size": 0.3988
+    }
+  },
+  "camera": {
+    "position": [
+      7.25,
+      7.45,
+      6.85
+    ],
+    "target": [
+      0.25,
+      1.25,
+      -0.15
+    ],
+    "orthoScale": 7.900000095367432,
+    "renderAspect": 1.6
+  },
+  "orrery": {
+    "sun": [
+      1.2,
+      2.1766,
+      -1.7
+    ],
+    "planets": [
+      "planet_mobile_app",
+      "planet_web_app",
+      "planet_website",
+      "planet_connect_portal"
+    ]
+  }
+}
