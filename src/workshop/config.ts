@@ -80,6 +80,24 @@ export const PLANET_PRODUCTS: Record<string, string> = {
   planet_connect_portal: 'web-platform',
 }
 
+/** AI shelf book node (Blender object name) → skill id in src/data/claudeSkills.js. */
+export const BOOK_SKILLS: Record<string, string> = {
+  book_idea_ledger: 'idea-ledger',
+  book_agile_ledger: 'agile-ledger',
+  book_agile_ledger_pro: 'agile-ledger-pro',
+  book_cartographer: 'cartographer',
+  book_protect_product: 'fortify',
+}
+
+/** Spine colour of each skill's book, so the card's tabs match the shelf. */
+export const SKILL_COLORS: Record<string, string> = {
+  'agile-ledger': '#14b8a6',
+  'agile-ledger-pro': '#e85d4a',
+  'idea-ledger': '#f2b544',
+  cartographer: '#6fa8dc',
+  fortify: '#8b9e7c',
+}
+
 export const COLORS = {
   background: 0x0d0d0d, // charcoal-900, the page background
   turquoise: 0x14b8a6,

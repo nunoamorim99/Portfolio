@@ -7,7 +7,7 @@ import { useI18n } from "vue-i18n";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Experience } from "@/workshop/Experience";
-import { STOPS } from "@/workshop/config";
+import { STOPS, SKILL_COLORS } from "@/workshop/config";
 import { sideProjects } from "@/data/sideProjects";
 import { claudeSkills } from "@/data/claudeSkills";
 import { profile } from "@/data/profile";
@@ -30,6 +30,8 @@ const hover = ref(null);
 
 const movizeProducts = ["mobile-app", "web-app", "movize-website", "web-platform"];
 const movizeProduct = ref(movizeProducts[0]);
+const skillById = Object.fromEntries(claudeSkills.map((s) => [s.id, s]));
+const selectedSkill = ref(claudeSkills[0].id);
 
 const side = Object.fromEntries(sideProjects.map((p) => [p.id, p]));
 const show3d = computed(() => supported && !failed.value);
@@ -37,14 +39,14 @@ const show3d = computed(() => supported && !failed.value);
 let experience = null;
 let trigger = null;
 
-function stopTitle(id, product) {
-  if (id === "movize") return product ? t(`projects.items.${product}.title`) : t("caseStudy.movize.title");
+function stopTitle(id, item) {
+  if (id === "movize") return item ? t(`projects.items.${item}.title`) : t("caseStudy.movize.title");
   if (id === "pm" || id === "dev" || id === "ai" || id === "future") return t(`workshop.${id}.title`);
-  if (id === "claude-skills") return t("projects.skillsTitle");
+  if (id === "claude-skills") return item ? t(`projects.items.${item}.title`) : t("projects.skillsTitle");
   return t(`projects.items.${id}.title`);
 }
 
-const hoverLabel = computed(() => (hover.value ? stopTitle(hover.value.stop, hover.value.product) : ""));
+const hoverLabel = computed(() => (hover.value ? stopTitle(hover.value.stop, hover.value.item) : ""));
 
 function goToStop(id) {
   const el = document.getElementById(`stop-${id}`);
@@ -57,6 +59,11 @@ function goToStop(id) {
 function selectProduct(id) {
   movizeProduct.value = id;
   experience?.setMovizeProduct(id);
+}
+
+function selectSkill(id) {
+  selectedSkill.value = id;
+  experience?.setSkill(id);
 }
 
 onMounted(async () => {
@@ -78,8 +85,9 @@ onMounted(async () => {
     reducedMotion: reduced,
     onProgress: (v) => (loaded.value = v),
     onHover: (h) => (hover.value = h),
-    onPick: (stop, product) => {
-      if (product) selectProduct(product);
+    onPick: (stop, item) => {
+      if (item && stop === "movize") selectProduct(item);
+      if (item && stop === "claude-skills") selectSkill(item);
       goToStop(stop);
     },
   });
@@ -87,6 +95,7 @@ onMounted(async () => {
     await experience.load();
     experience.setProgress(trigger.progress * (STOPS.length - 1));
     experience.setMovizeProduct(movizeProduct.value);
+    experience.setSkill(selectedSkill.value);
   } catch (err) {
     console.error("[workshop] failed to load the 3D scene", err);
     failed.value = true;
@@ -242,18 +251,33 @@ onUnmounted(() => {
                 </div>
               </template>
 
-              <!-- Claude Code skills: the books -->
+              <!-- Claude Code skills: one book per skill, like the orrery's planets -->
               <template v-else-if="stop.id === 'claude-skills'">
                 <p class="kicker">{{ t("workshop.toolsKicker") }}</p>
                 <h2 class="card-title">{{ t("projects.skillsTitle") }}</h2>
-                <ul class="mt-4 space-y-2">
-                  <li v-for="skill in claudeSkills" :key="skill.id" class="text-sm">
-                    <span class="font-bold text-cream-100">{{ t(`projects.items.${skill.id}.title`) }}</span>
-                    <span class="text-charcoal-400"> · {{ t(`projects.items.${skill.id}.tagline`) }}</span>
-                  </li>
+                <div class="mt-4 flex flex-wrap gap-2" role="tablist">
+                  <button
+                    v-for="skill in claudeSkills"
+                    :key="skill.id"
+                    type="button"
+                    role="tab"
+                    :aria-selected="selectedSkill === skill.id"
+                    class="inline-flex items-center gap-1.5 border px-2.5 py-1 text-xs font-bold transition-colors"
+                    :class="selectedSkill === skill.id ? 'border-turquoise text-cream-100' : 'border-charcoal-600 text-charcoal-300 hover:border-charcoal-400'"
+                    @click="selectSkill(skill.id)"
+                  >
+                    <span class="h-2.5 w-1.5" :style="{ background: SKILL_COLORS[skill.id] }" aria-hidden="true" />
+                    {{ t(`projects.items.${skill.id}.title`) }}
+                  </button>
+                </div>
+                <p class="mt-4 text-sm font-bold text-cream-100">{{ t(`projects.items.${selectedSkill}.tagline`) }}</p>
+                <p class="mt-2 line-clamp-3 text-sm text-charcoal-300">{{ t(`projects.items.${selectedSkill}.description`) }}</p>
+                <ul class="mt-3 flex flex-wrap gap-1.5">
+                  <li v-for="tech in skillById[selectedSkill].tech.slice(0, 4)" :key="tech" class="badge !px-2 !py-0.5 !text-[10px]">{{ tech }}</li>
                 </ul>
                 <div class="card-links">
                   <router-link to="/projects/claude-skills" class="card-link">{{ t("projects.viewCaseStudy") }} →</router-link>
+                  <a :href="skillById[selectedSkill].repoUrl" target="_blank" rel="noopener" class="card-link">{{ t("projects.viewSource") }} ↗</a>
                 </div>
               </template>
 

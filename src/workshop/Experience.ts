@@ -27,7 +27,7 @@ import {
   WebGLRenderer,
 } from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import { MODELS, PLANET_PRODUCTS, STOPS, STOP_BY_MODEL, type ModelKey, type Stop, type StopId } from './config'
+import { BOOK_SKILLS, MODELS, PLANET_PRODUCTS, STOPS, STOP_BY_MODEL, type ModelKey, type Stop, type StopId } from './config'
 import { dashboardTexture, editorTexture, lcdTexture, robotTexture } from './screens'
 
 interface SceneData {
@@ -37,7 +37,8 @@ interface SceneData {
 
 export interface HoverInfo {
   stop: StopId
-  product?: string
+  /** Sub-item under the pointer: a Movize product (planet) or a skill (book). */
+  item?: string
   /** Pointer position in CSS pixels, relative to the canvas. */
   x: number
   y: number
@@ -49,13 +50,20 @@ export interface ExperienceOptions {
   assetsUrl: string
   reducedMotion: boolean
   onProgress?: (loaded: number) => void
-  onPick?: (stop: StopId, product?: string) => void
+  onPick?: (stop: StopId, item?: string) => void
   onHover?: (hit: HoverInfo | null) => void
 }
 
 interface Pose {
   look: Vector3
   zoom: number
+}
+
+interface Book {
+  node: Object3D
+  skill: string
+  baseX: number
+  out: number
 }
 
 interface Planet {
@@ -112,8 +120,10 @@ export class Experience {
   private pickables: Object3D[] = []
   private planets: Planet[] = []
   private sun = new Vector3()
-  private hovered: { model: ModelKey; product?: string } | null = null
+  private hovered: { model: ModelKey; item?: string } | null = null
   private selectedProduct: string | null = null
+  private selectedSkill: string | null = null
+  private books: Book[] = []
   private pointerDown: { x: number; y: number } | null = null
   private ownedTextures: Texture[] = []
 
@@ -181,6 +191,7 @@ export class Experience {
     this.setupScreens()
     this.setupWindow()
     this.setupOrrery(data)
+    this.setupBooks()
     this.resize()
     this.renderer.setAnimationLoop(this.tick)
   }
@@ -258,6 +269,15 @@ export class Experience {
         y: node.position.y,
       })
     })
+  }
+
+  private setupBooks() {
+    const pivot = this.pivots.get('obj_skills')
+    if (!pivot) return
+    for (const [name, skill] of Object.entries(BOOK_SKILLS)) {
+      const node = pivot.getObjectByName(name)
+      if (node) this.books.push({ node, skill, baseX: node.position.x, out: 0 })
+    }
   }
 
   private addLights() {
@@ -364,6 +384,10 @@ export class Experience {
     this.selectedProduct = product
   }
 
+  setSkill(skill: string | null) {
+    this.selectedSkill = skill
+  }
+
   // ───────────────────────── frame loop ─────────────────────────
 
   private tick = (time: number) => {
@@ -386,13 +410,22 @@ export class Experience {
     for (const pl of this.planets) {
       if (!this.opts.reducedMotion) pl.angle += pl.speed * dt
       pl.node.position.set(this.sun.x + Math.cos(pl.angle) * pl.radius, pl.y, this.sun.z + Math.sin(pl.angle) * pl.radius)
-      const s = pl.product === this.selectedProduct || pl.product === this.hovered?.product ? 1.6 : 1
+      const s = pl.product === this.selectedProduct || pl.product === this.hovered?.item ? 1.6 : 1
       pl.node.scale.setScalar(pl.node.scale.x + (s - pl.node.scale.x) * Math.min(1, dt * 10))
+    }
+
+    // AI shelf: the selected skill's book slides out towards the room. Hover only
+    // shows the label: sliding on hover would move the book out from under the
+    // pointer and flicker between neighbours.
+    for (const b of this.books) {
+      const goal = b.skill === this.selectedSkill ? 1 : 0
+      b.out = this.opts.reducedMotion ? goal : b.out + (goal - b.out) * Math.min(1, dt * 10)
+      b.node.position.x = b.baseX + b.out * 0.07
     }
 
     // Hover: the object under the pointer lifts slightly.
     for (const [key, pivot] of this.pivots) {
-      const goal = this.hovered?.model === key ? 1 : 0
+      const goal = this.hovered?.model === key && key !== 'obj_skills' ? 1 : 0
       const cur = this.hoverAmount.get(key)!
       const next = this.opts.reducedMotion ? goal : cur + (goal - cur) * Math.min(1, dt * 10)
       this.hoverAmount.set(key, next)
@@ -427,18 +460,18 @@ export class Experience {
 
   // ───────────────────────── picking ─────────────────────────
 
-  private pick(clientX: number, clientY: number): { model: ModelKey; product?: string } | null {
+  private pick(clientX: number, clientY: number): { model: ModelKey; item?: string } | null {
     const rect = this.opts.canvas.getBoundingClientRect()
     this.pointer.set(((clientX - rect.left) / rect.width) * 2 - 1, -((clientY - rect.top) / rect.height) * 2 + 1)
     this.raycaster.setFromCamera(this.pointer, this.camera)
     const hit = this.raycaster.intersectObjects(this.pickables, false)[0]
     if (!hit) return null
     const model = hit.object.userData.model as ModelKey
-    let product: string | undefined
-    for (let o: Object3D | null = hit.object; o; o = o.parent) {
-      if (PLANET_PRODUCTS[o.name]) product = PLANET_PRODUCTS[o.name]
+    let item: string | undefined
+    for (let o: Object3D | null = hit.object; o && !item; o = o.parent) {
+      item = PLANET_PRODUCTS[o.name] ?? BOOK_SKILLS[o.name]
     }
-    return { model, product }
+    return { model, item }
   }
 
   private onPointerMove = (e: PointerEvent) => {
@@ -448,7 +481,7 @@ export class Experience {
     this.opts.canvas.style.cursor = hit ? 'pointer' : ''
     const rect = this.opts.canvas.getBoundingClientRect()
     const stop = hit && STOP_BY_MODEL[hit.model]
-    this.opts.onHover?.(stop ? { stop, product: hit.product, x: e.clientX - rect.left, y: e.clientY - rect.top } : null)
+    this.opts.onHover?.(stop ? { stop, item: hit.item, x: e.clientX - rect.left, y: e.clientY - rect.top } : null)
   }
 
   private onPointerDown = (e: PointerEvent) => {
@@ -461,7 +494,7 @@ export class Experience {
     if (!down || Math.hypot(e.clientX - down.x, e.clientY - down.y) > 8) return // a drag/scroll, not a tap
     const hit = this.pick(e.clientX, e.clientY)
     const stop = hit && STOP_BY_MODEL[hit.model]
-    if (stop) this.opts.onPick?.(stop, hit.product)
+    if (stop) this.opts.onPick?.(stop, hit.item)
   }
 
   private onPointerLeave = () => {
