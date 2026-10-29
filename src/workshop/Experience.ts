@@ -25,7 +25,7 @@ import {
   WebGLRenderer,
 } from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import { BAKED, BOOK_SKILLS, MODELS, SCREEN_MESHES, PLANET_PRODUCTS, STOPS, STOP_BY_MODEL, type ModelKey, type Stop, type StopId } from './config'
+import { BAKED, BOOK_SKILLS, DECALS, MODELS, SCREEN_MESHES, PLANET_PRODUCTS, STOPS, STOP_BY_MODEL, type ModelKey, type Stop, type StopId } from './config'
 import { dashboardTexture, editorTexture, lcdTexture, robotTexture } from './screens'
 
 interface SceneData {
@@ -155,11 +155,16 @@ export class Experience {
     const loader = new GLTFLoader(manager)
     const textures = new TextureLoader(manager)
 
-    const [gltfs, baked] = await Promise.all([
+    const [gltfs, baked, decals] = await Promise.all([
       Promise.all(MODELS.map((key) => loader.loadAsync(`${this.opts.assetsUrl}models/${key}.glb`).then((g) => [key, g] as const))),
       Promise.all(
         Object.entries(BAKED).map(([key, file]) =>
           textures.loadAsync(`${this.opts.assetsUrl}${file}`).then((t) => [key as ModelKey, t] as const),
+        ),
+      ),
+      Promise.all(
+        Object.entries(DECALS).map(([name, d]) =>
+          textures.loadAsync(`${this.opts.assetsUrl}${d.texture}`).then((t) => [name, t] as const),
         ),
       ),
     ])
@@ -194,6 +199,7 @@ export class Experience {
     }
 
     this.setupScreens()
+    this.setupDecals(decals)
     this.setupWindow()
     this.setupOrrery(data)
     this.setupBooks()
@@ -210,7 +216,7 @@ export class Experience {
     const material = new MeshBasicMaterial({ map, toneMapped: false }) // tone mapping is baked in
     root.traverse((o) => {
       const mesh = o as Mesh
-      if (!mesh.isMesh || SCREEN_MESHES.includes(mesh.name)) return
+      if (!mesh.isMesh || SCREEN_MESHES.includes(mesh.name) || mesh.name in DECALS) return
       const old = mesh.material as Material
       mesh.material = material
       if (old !== material) old.dispose()
@@ -243,6 +249,28 @@ export class Experience {
       this.ownedTextures.push(map)
       const old = mesh.material as Material
       mesh.material = new MeshBasicMaterial({ map, toneMapped: false })
+      old.dispose()
+    }
+  }
+
+  /** Logos on the sun and the book spines: crisp textures on their own planes. */
+  private setupDecals(decals: ReadonlyArray<readonly [string, Texture]>) {
+    for (const [name, map] of decals) {
+      const mesh = this.scene.getObjectByName(name) as Mesh | undefined
+      const d = DECALS[name]
+      if (!mesh || !d) continue
+      map.flipY = false // glTF UV convention
+      map.colorSpace = SRGBColorSpace
+      map.anisotropy = Math.min(8, this.renderer.capabilities.getMaxAnisotropy())
+      this.ownedTextures.push(map)
+      const old = mesh.material as Material
+      mesh.material = new MeshBasicMaterial({
+        map,
+        color: d.tint ?? 0xffffff,
+        toneMapped: false,
+        transparent: !!d.alpha,
+        alphaTest: d.alpha ? 0.35 : 0,
+      })
       old.dispose()
     }
   }

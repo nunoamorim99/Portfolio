@@ -88,6 +88,20 @@ export const BAKED: Partial<Record<ModelKey, string>> = {
 /** Screen surfaces keep their own drawn-in-code content instead of a bake. */
 export const SCREEN_MESHES = ['pm_display', 'dev_display', 'laptop_display', 'nibble_lcd']
 
+/**
+ * Logo decals: flat planes from Blender that show a crisp image instead of the
+ * bake (logos are too fine for the baked atlas). `tint` dims a decal to sit in
+ * the room's lighting; `alpha` cuts out transparent pixels.
+ */
+export const DECALS: Record<string, { texture: string; tint?: number; alpha?: boolean }> = {
+  orrery_sun_logo: { texture: 'decals/movize-m.webp', alpha: true },
+  book_idea_ledger_logo: { texture: 'decals/idea-ledger.webp', tint: 0xcfcfcf },
+  book_agile_ledger_logo: { texture: 'decals/agile-ledger.webp', tint: 0xcfcfcf },
+  book_agile_ledger_pro_logo: { texture: 'decals/agile-ledger-pro.webp', tint: 0xcfcfcf },
+  book_cartographer_logo: { texture: 'decals/cartographer.webp', tint: 0xcfcfcf },
+  book_protect_product_logo: { texture: 'decals/fortify.webp', tint: 0xcfcfcf },
+}
+
 /** Which stop a clicked model belongs to. */
 export const STOP_BY_MODEL: Partial<Record<ModelKey, StopId>> = Object.fromEntries(
   STOPS.filter((s) => s.model).map((s) => [s.model, s.id]),
