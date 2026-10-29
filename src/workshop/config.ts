@@ -69,12 +69,24 @@ export const STOPS: Stop[] = [
 
 /**
  * Baked lighting: models listed here are shown unlit with a texture baked in
- * Blender (Cycles, AgX view transform applied on save). Anything not listed
- * still uses the live lights, which is how the rough build works.
+ * Blender (Cycles, AgX view transform applied on save). Every model is baked,
+ * so the scene has no live lights at all.
  */
 export const BAKED: Partial<Record<ModelKey, string>> = {
   room: 'textures/room.webp',
+  obj_movize_orrery: 'textures/obj_movize_orrery.webp',
+  obj_screen_pm: 'textures/obj_screen_pm.webp',
+  obj_screen_dev: 'textures/obj_screen_dev.webp',
+  obj_laptop: 'textures/obj_laptop.webp',
+  obj_astrohop: 'textures/obj_astrohop.webp',
+  obj_nibble: 'textures/obj_nibble.webp',
+  obj_beagle_chomp: 'textures/obj_beagle_chomp.webp',
+  obj_skills: 'textures/obj_skills.webp',
+  obj_future: 'textures/obj_future.webp',
 }
+
+/** Screen surfaces keep their own drawn-in-code content instead of a bake. */
+export const SCREEN_MESHES = ['pm_display', 'dev_display', 'laptop_display', 'nibble_lcd']
 
 /** Which stop a clicked model belongs to. */
 export const STOP_BY_MODEL: Partial<Record<ModelKey, StopId>> = Object.fromEntries(

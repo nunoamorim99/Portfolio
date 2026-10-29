@@ -8,16 +8,13 @@ import {
   BufferAttribute,
   CanvasTexture,
   Color,
-  DirectionalLight,
   Group,
-  HemisphereLight,
   LoadingManager,
   Material,
   Mesh,
   MeshBasicMaterial,
   Object3D,
   OrthographicCamera,
-  PointLight,
   Raycaster,
   SRGBColorSpace,
   Scene,
@@ -28,7 +25,7 @@ import {
   WebGLRenderer,
 } from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import { BAKED, BOOK_SKILLS, MODELS, PLANET_PRODUCTS, STOPS, STOP_BY_MODEL, type ModelKey, type Stop, type StopId } from './config'
+import { BAKED, BOOK_SKILLS, MODELS, SCREEN_MESHES, PLANET_PRODUCTS, STOPS, STOP_BY_MODEL, type ModelKey, type Stop, type StopId } from './config'
 import { dashboardTexture, editorTexture, lcdTexture, robotTexture } from './screens'
 
 interface SceneData {
@@ -136,8 +133,6 @@ export class Experience {
     this.renderer.toneMapping = AgXToneMapping
     this.renderer.toneMappingExposure = 1.1
 
-    this.addLights()
-
     const parent = opts.canvas.parentElement ?? opts.canvas
     this.resizeObserver = new ResizeObserver(() => this.resize())
     this.resizeObserver.observe(parent)
@@ -215,7 +210,7 @@ export class Experience {
     const material = new MeshBasicMaterial({ map, toneMapped: false }) // tone mapping is baked in
     root.traverse((o) => {
       const mesh = o as Mesh
-      if (!mesh.isMesh) return
+      if (!mesh.isMesh || SCREEN_MESHES.includes(mesh.name)) return
       const old = mesh.material as Material
       mesh.material = material
       if (old !== material) old.dispose()
@@ -303,39 +298,6 @@ export class Experience {
     for (const [name, skill] of Object.entries(BOOK_SKILLS)) {
       const node = pivot.getObjectByName(name)
       if (node) this.books.push({ node, skill, baseX: node.position.x, out: 0 })
-    }
-  }
-
-  private addLights() {
-    // Rough-build lighting only: the baked texture replaces all of this later.
-    this.scene.add(new HemisphereLight(0x8a96d0, 0x3a2633, 1.6))
-
-    const windowLight = new DirectionalLight(0xff9a76, 2.2) // dusk through the window
-    windowLight.position.set(-1.6, 3.2, -4)
-    windowLight.target.position.set(0.3, 0.6, 0.6)
-    this.scene.add(windowLight, windowLight.target)
-
-    const fill = new DirectionalLight(0x7d8cc4, 0.9)
-    fill.position.set(6, 8, 6)
-    this.scene.add(fill)
-
-    // Monitor light bars: a warm wash down onto the desk from each bar.
-    for (const x of [0.86, 1.54]) {
-      const bar = new PointLight(0xffd6a0, 1.6, 1.6, 2)
-      bar.position.set(x, 1.3, -1.6)
-      this.scene.add(bar)
-    }
-
-    // Turquoise LED strips: under the two personal shelves and the work shelf.
-    for (const [x, y, z, len] of [
-      [-1.7, 0.96, -0.5, 1.2],
-      [-1.7, 1.4, -0.5, 1.2],
-      [-1.7, 1.85, -0.5, 1.2],
-      [1.2, 1.77, -1.55, 1.4],
-    ]) {
-      const led = new PointLight(0x14b8a6, 1.1, len, 2)
-      led.position.set(x, y, z)
-      this.scene.add(led)
     }
   }
 
