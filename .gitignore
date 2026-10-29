@@ -13,3 +13,4 @@ skills-lock.json
 blender/renders/
 *.blend1
 blender/bake/
+blender/export/

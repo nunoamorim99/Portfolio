@@ -25,6 +25,7 @@ import {
   WebGLRenderer,
 } from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js'
 import { BAKED, BOOK_SKILLS, DECALS, MODELS, SCREEN_MESHES, PLANET_PRODUCTS, STOPS, STOP_BY_MODEL, type ModelKey, type Stop, type StopId } from './config'
 import { dashboardTexture, editorTexture, lcdTexture, robotTexture } from './screens'
 
@@ -52,6 +53,11 @@ export interface ExperienceOptions {
   onHover?: (hit: HoverInfo | null) => void
 }
 
+export interface TextInset {
+  top: number
+  bottom: number
+}
+
 interface Pose {
   look: Vector3
   zoom: number
@@ -71,10 +77,14 @@ interface Planet {
   angle: number
   speed: number
   y: number
+  /** Node scale as exported: compressed models carry their dequantisation scale here. */
+  baseScale: Vector3
 }
 
 const WORLD_UP = new Vector3(0, 1, 0)
 const CAMERA_DISTANCE = 20
+/** Height of the site header on narrow screens (px). */
+const HEADER_PX = 80
 
 const clamp01 = (v: number) => Math.min(1, Math.max(0, v))
 const smooth = (t: number) => t * t * (3 - 2 * t)
@@ -109,6 +119,7 @@ export class Experience {
   private height = 1
   private progress = 0
   private poses: Pose[] = []
+  private textInsets: TextInset[] = []
   private current: Pose = { look: new Vector3(), zoom: 1 }
   private settled = false
 
@@ -124,6 +135,9 @@ export class Experience {
   private books: Book[] = []
   private pointerDown: { x: number; y: number } | null = null
   private ownedTextures: Texture[] = []
+  private visibilityObserver: IntersectionObserver
+  private visible = true
+  private running = false
 
   constructor(opts: ExperienceOptions) {
     this.opts = opts
@@ -136,6 +150,12 @@ export class Experience {
     const parent = opts.canvas.parentElement ?? opts.canvas
     this.resizeObserver = new ResizeObserver(() => this.resize())
     this.resizeObserver.observe(parent)
+    // Don't spend frames on the room once it has scrolled out of view.
+    this.visibilityObserver = new IntersectionObserver(([entry]) => {
+      this.visible = entry.isIntersecting
+      this.updateLoop()
+    })
+    this.visibilityObserver.observe(parent)
 
     opts.canvas.addEventListener('pointermove', this.onPointerMove)
     opts.canvas.addEventListener('pointerdown', this.onPointerDown)
@@ -153,6 +173,7 @@ export class Experience {
     const manager = new LoadingManager()
     manager.onProgress = (_url, loaded, total) => this.opts.onProgress?.(loaded / total)
     const loader = new GLTFLoader(manager)
+    loader.setMeshoptDecoder(MeshoptDecoder) // models are meshopt-compressed (npm run optimize:3d)
     const textures = new TextureLoader(manager)
 
     const [gltfs, baked, decals] = await Promise.all([
@@ -204,7 +225,18 @@ export class Experience {
     this.setupOrrery(data)
     this.setupBooks()
     this.resize()
-    this.renderer.setAnimationLoop(this.tick)
+    // Compile every shader up front and draw the first frame, so the scene is
+    // complete the moment the loader fades out (no hitch on first scroll).
+    await this.renderer.compileAsync(this.scene, this.camera)
+    this.tick(performance.now())
+    this.running = true
+    this.updateLoop()
+  }
+
+  private updateLoop() {
+    const on = this.running && this.visible
+    this.renderer.setAnimationLoop(on ? this.tick : null)
+    if (!on) this.lastTime = -1 // no catch-up jump when it starts again
   }
 
   /** Swap a model's materials for one unlit material showing its baked lighting. */
@@ -316,6 +348,7 @@ export class Experience {
         angle: Math.atan2(dz, dx),
         speed: 0.42 - i * 0.08, // inner planets move faster
         y: node.position.y,
+        baseScale: node.scale.clone(),
       })
     })
   }
@@ -341,36 +374,50 @@ export class Experience {
     return { w: h * (this.width / this.height), h }
   }
 
-  private poseFor(stop: Stop): Pose {
+  private poseFor(stop: Stop, index: number): Pose {
     const wide = this.isWide()
     const aspect = this.width / this.height
+    // Narrow screens: frame the subject in the band the stop's text leaves
+    // free (below the intro text, or between the header and a card).
+    const inset = this.textInsets[index]
+    const band =
+      !wide && inset && (inset.top || inset.bottom)
+        ? { top: Math.max(inset.top, HEADER_PX), bottom: this.height - Math.max(inset.bottom, 16) }
+        : null
+    const share = band ? Math.max(0.22, (band.bottom - band.top) / this.height) : 1
     let center: Vector3
     let zoom: number
 
     if (!stop.model) {
       center = this.baseLook.clone()
       // Fit the whole room: on screen it spans ~7.4 units across and ~6.8 up.
-      const fitH = this.overviewHeight / 6.8
+      const fitH = (this.overviewHeight * share) / 6.8
       const fitW = (this.overviewHeight * aspect * (wide ? 0.6 : 1)) / 7.4
       zoom = Math.min(fitH, fitW)
     } else {
       const pivot = this.pivots.get(stop.model)!
       center = pivot.position.clone()
-      const span = this.sizes.get(stop.model)! * (stop.frame ?? 2.5)
+      // Phones get a slightly tighter crop: the screen is narrow.
+      const span = this.sizes.get(stop.model)! * (stop.frame ?? 2.5) * (wide ? 1 : 0.85)
       // On wide screens the object gets the right ~55% of the frame.
-      const zoomH = this.overviewHeight / span
+      const zoomH = (this.overviewHeight * share) / span
       const zoomW = (this.overviewHeight * aspect * (wide ? 0.55 : 1)) / span
       zoom = Math.min(zoomH, zoomW)
     }
 
     const v = this.view(zoom)
     const look = center.clone()
-    if (wide) {
+    if (band) {
+      // Put the subject at the middle of the band: move the look point by the
+      // band centre's distance from the screen centre.
+      const bandCenter = (band.top + Math.max(band.top + 1, band.bottom)) / 2
+      look.addScaledVector(this.up, -((this.height / 2 - bandCenter) / this.height) * v.h)
+    } else if (wide) {
       // Card on the left, object in the right part of the frame.
       look.addScaledVector(this.right, -(stop.model ? 0.2 : 0.21) * v.w)
     } else {
-      // Phones: the card sits at the bottom, so objects go in the top part.
-      // The intro is the exception: its text is at the top, the room below it.
+      // Not measured yet: cards sit at the bottom, so objects go in the top
+      // part; the intro's text is at the top, so the room goes below it.
       const shift = stop.id === 'intro' ? -0.23 : stop.model ? 0.23 : 0.2
       look.addScaledVector(this.up, -shift * v.h)
     }
@@ -389,6 +436,18 @@ export class Experience {
       look: a.look.clone().lerp(b.look, t),
       zoom: Math.exp(Math.log(a.zoom) + (Math.log(b.zoom) - Math.log(a.zoom)) * t),
     }
+  }
+
+  /**
+   * Narrow screens: how much of the view each stop's text covers, in px from
+   * the top (the intro) and from the bottom (the cards); one entry per stop.
+   * The camera frames the subject in the space that's left.
+   */
+  setTextInsets(insets: TextInset[]) {
+    const same = (a?: TextInset, b?: TextInset) => !!a && !!b && Math.abs(a.top - b.top) < 2 && Math.abs(a.bottom - b.bottom) < 2
+    if (insets.length === this.textInsets.length && insets.every((v, i) => same(v, this.textInsets[i]))) return
+    this.textInsets = insets
+    if (this.pivots.size) this.poses = STOPS.map((s, i) => this.poseFor(s, i))
   }
 
   /** Scroll position as a stop index, e.g. 1.5 = halfway from stop 1 to stop 2. */
@@ -426,8 +485,10 @@ export class Experience {
     for (const pl of this.planets) {
       if (!this.opts.reducedMotion) pl.angle += pl.speed * dt
       pl.node.position.set(this.sun.x + Math.cos(pl.angle) * pl.radius, pl.y, this.sun.z + Math.sin(pl.angle) * pl.radius)
-      const s = pl.product === this.selectedProduct || pl.product === this.hovered?.item ? 1.6 : 1
-      pl.node.scale.setScalar(pl.node.scale.x + (s - pl.node.scale.x) * Math.min(1, dt * 10))
+      const goal = pl.product === this.selectedProduct || pl.product === this.hovered?.item ? 1.6 : 1
+      const cur = pl.node.scale.x / pl.baseScale.x
+      const s = this.opts.reducedMotion ? goal : cur + (goal - cur) * Math.min(1, dt * 10)
+      pl.node.scale.copy(pl.baseScale).multiplyScalar(s)
     }
 
     // AI shelf: the selected skill's book slides out towards the room. Hover only
@@ -469,7 +530,7 @@ export class Experience {
     this.camera.updateProjectionMatrix()
 
     if (this.pivots.size) {
-      this.poses = STOPS.map((s) => this.poseFor(s))
+      this.poses = STOPS.map((s, i) => this.poseFor(s, i))
       this.settled = false // jump, don't glide, after a resize
     }
   }
@@ -522,8 +583,10 @@ export class Experience {
   // ───────────────────────── teardown ─────────────────────────
 
   dispose() {
+    this.running = false
     this.renderer.setAnimationLoop(null)
     this.resizeObserver.disconnect()
+    this.visibilityObserver.disconnect()
     const c = this.opts.canvas
     c.removeEventListener('pointermove', this.onPointerMove)
     c.removeEventListener('pointerdown', this.onPointerDown)

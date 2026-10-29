@@ -679,6 +679,9 @@ export default {
     loading: 'A preparar a oficina',
     unavailable:
       'A vista 3D não está disponível neste dispositivo, mas todos os projetos continuam aqui.',
+    posterAlt:
+      'A oficina: um quarto ao fim do dia com uma secretária, dois monitores e um portátil, prateleiras na parede e uma estante com os projetos.',
+    newTab: '(abre num novo separador)',
     listLink: 'Ver todos os projetos em lista',
     stopsNav: 'Paragens da oficina',
     deskKicker: 'Prateleira de trabalho · Dia a dia',

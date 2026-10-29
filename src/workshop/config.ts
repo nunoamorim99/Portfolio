@@ -63,7 +63,7 @@ export const STOPS: Stop[] = [
   { id: 'nibble', model: 'obj_nibble', frame: 2.6 },
   { id: 'beagle-chomp', model: 'obj_beagle_chomp', frame: 2.0 },
   { id: 'claude-skills', model: 'obj_skills', frame: 1.6 },
-  { id: 'future', model: 'obj_future', frame: 2.2 },
+  { id: 'future', model: 'obj_future', frame: 2.6 },
   { id: 'outro' },
 ]
 

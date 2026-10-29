@@ -679,6 +679,9 @@ export default {
     loading: "Setting up the workshop",
     unavailable:
       "The 3D view isn't available on this device, but every project is still here.",
+    posterAlt:
+      "The workshop: a dusk-lit room with a desk, two monitors and a laptop, wall shelves and a bookcase holding the projects.",
+    newTab: "(opens in a new tab)",
     listLink: "See all projects as a list",
     stopsNav: "Workshop stops",
     deskKicker: "Work shelf · Day job",
