@@ -670,6 +670,54 @@ export default {
       },
     },
   },
+  workshop: {
+    kicker: "Projects · The workshop",
+    title: "Where I build things",
+    intro:
+      "Everything here started at this desk. The screens and the laptop are my three roles, the shelf above them holds the day job, and the shelves and bookcase hold what I build on my own.",
+    scrollHint: "Scroll to look around, or click any object",
+    loading: "Setting up the workshop",
+    unavailable:
+      "The 3D view isn't available on this device, but every project is still here.",
+    posterAlt:
+      "The workshop: a dusk-lit room with a desk, two monitors and a laptop, wall shelves and a bookcase holding the projects.",
+    newTab: "(opens in a new tab)",
+    listLink: "See all projects as a list",
+    stopsNav: "Workshop stops",
+    deskKicker: "Work shelf · Day job",
+    products: "Products",
+    pm: {
+      kicker: "The desk · Left screen",
+      title: "Product manager",
+      body: "Roadmaps, backlogs, sprints and the decisions in between. Most of it happened on Movize, from the rider apps to the operator platform.",
+      cta: "See my experience",
+    },
+    dev: {
+      kicker: "The desk · Right screen",
+      title: "Developer",
+      body: "I still write the code: front-end in Vue, games in three.js and Phaser, and Claude Code skills that speed up my own work.",
+      cta: "GitHub profile",
+    },
+    ai: {
+      kicker: "The desk · Laptop",
+      title: "AI application engineer",
+      body: "I build with foundation models rather than train them: LLM integrations, prompt engineering, tool use and MCP, and agent workflows, like the Claude Code skills on the AI shelf.",
+      cta: "See the skills",
+    },
+    experimentKicker: "Shelf · Experiments",
+    gameKicker: "Shelf · Games",
+    toolsKicker: "AI shelf · Claude Code",
+    future: {
+      kicker: "Bookcase · Next",
+      title: "Still in the box",
+      body: "More projects are on the way, and the bookcase has room for them.",
+    },
+    outro: {
+      title: "That's the workshop",
+      body: "Every project has a full case study. Want to talk about one?",
+      contact: "Get in touch",
+    },
+  },
   courses: {
     title: "Courses & Certifications",
     subtitle: "Continuous learning to stay sharp and relevant",

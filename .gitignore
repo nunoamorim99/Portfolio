@@ -8,3 +8,9 @@ dist/
 .claude/
 .agents/
 skills-lock.json
+
+# Blender: keep the .blend, skip renders and autosave backups
+blender/renders/
+*.blend1
+blender/bake/
+blender/export/

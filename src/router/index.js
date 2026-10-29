@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const HomePage = () => import('@/pages/HomePage.vue')
 const ProjectsPage = () => import('@/pages/ProjectsPage.vue')
+const WorkshopPage = () => import('@/pages/WorkshopPage.vue')
 const CaseStudyMovize = () => import('@/pages/CaseStudyMovize.vue')
 const CaseStudyAstroHop = () => import('@/pages/CaseStudyAstroHop.vue')
 const CaseStudyNibble = () => import('@/pages/CaseStudyNibble.vue')
@@ -25,9 +26,20 @@ const routes = [
     component: HomePage,
   },
   {
+    // The Workshop: projects as objects in a 3D room. Case studies hold the detail.
     path: '/projects',
     name: 'projects',
+    component: WorkshopPage,
+  },
+  {
+    // Plain list of every project: the fallback for no-WebGL and quick scanning.
+    path: '/projects/all',
+    name: 'projects-all',
     component: ProjectsPage,
+  },
+  {
+    path: '/workshop',
+    redirect: '/projects',
   },
   {
     path: '/projects/movize',
