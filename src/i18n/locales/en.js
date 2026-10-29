@@ -107,6 +107,17 @@ export default {
         quote: "Exactly what Portugal needs.",
         body: "Movize is live and in active development, with strong qualitative validation from riders and operators as new modules roll out.",
       },
+      techTitle: "Built with",
+      stackIntro:
+        "A polyglot platform: Python microservices talking over gRPC, a Symfony API for the rider apps, OpenTripPlanner for routing, and Vue and React Native on the front - all running on Google Kubernetes Engine.",
+      stack: {
+        mobile: "Mobile",
+        web: "Web",
+        backend: "Backend & routing",
+        data: "Data & messaging",
+        infra: "Infrastructure",
+        services: "Services",
+      },
       ctaTitle: "See it live",
       ctaBody: "Movize is in active development and available now.",
     },

@@ -160,6 +160,14 @@ onUnmounted(() => ctx?.revert());
               {{ t(`projects.platforms.${p}`) }}
             </span>
           </div>
+          <div v-if="website.tech?.length" data-reveal class="mt-6">
+            <p class="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-charcoal-300 dark:text-charcoal-400">
+              {{ t("projects.builtWith") }}
+            </p>
+            <div class="flex flex-wrap gap-1.5">
+              <span v-for="tech in website.tech" :key="tech" class="badge text-[10px]">{{ tech }}</span>
+            </div>
+          </div>
           <a
             data-reveal
             :href="website.url"
@@ -244,6 +252,14 @@ onUnmounted(() => ctx?.revert());
                   {{ t(`projects.platforms.${p}`) }}
                 </span>
               </div>
+              <div v-if="proj.tech?.length" class="mt-5">
+                <p class="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-charcoal-300 dark:text-charcoal-400">
+                  {{ t("projects.builtWith") }}
+                </p>
+                <div class="flex flex-wrap gap-1.5">
+                  <span v-for="tech in proj.tech" :key="tech" class="badge text-[10px]">{{ tech }}</span>
+                </div>
+              </div>
               <a
                 v-if="proj.url"
                 :href="proj.url"
@@ -289,6 +305,14 @@ onUnmounted(() => ctx?.revert());
             >
               {{ isExpanded(connect.id) ? t("projects.readLess") : t("projects.readMore") }}
             </button>
+            <div v-if="connect.tech?.length" data-reveal class="mt-6">
+              <p class="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-charcoal-300 dark:text-charcoal-400">
+                {{ t("projects.builtWith") }}
+              </p>
+              <div class="flex flex-wrap gap-1.5">
+                <span v-for="tech in connect.tech" :key="tech" class="badge text-[10px]">{{ tech }}</span>
+              </div>
+            </div>
             <router-link
               data-reveal
               to="/projects/movize"
@@ -381,6 +405,9 @@ onUnmounted(() => ctx?.revert());
               >
                 {{ isExpanded(mod.id) ? t("projects.readLess") : t("projects.readMore") }}
               </button>
+              <div v-if="mod.tech?.length" class="mt-auto flex flex-wrap gap-1.5 pt-5">
+                <span v-for="tech in mod.tech" :key="tech" class="badge text-[10px]">{{ tech }}</span>
+              </div>
             </div>
           </article>
         </div>

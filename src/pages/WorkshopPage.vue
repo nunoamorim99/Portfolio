@@ -8,6 +8,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Experience } from "@/workshop/Experience";
 import { STOPS, SKILL_COLORS } from "@/workshop/config";
+import { projects } from "@/data/projects";
 import { sideProjects } from "@/data/sideProjects";
 import { claudeSkills } from "@/data/claudeSkills";
 import { profile } from "@/data/profile";
@@ -56,6 +57,7 @@ const hover = ref(null);
 
 const movizeProducts = ["mobile-app", "web-app", "movize-website", "web-platform"];
 const movizeProduct = ref(movizeProducts[0]);
+const productById = Object.fromEntries(projects.map((p) => [p.id, p]));
 const skillById = Object.fromEntries(claudeSkills.map((s) => [s.id, s]));
 const selectedSkill = ref(claudeSkills[0].id);
 
@@ -336,6 +338,9 @@ onUnmounted(() => {
                     </button>
                   </div>
                   <p class="card-extra mt-4 line-clamp-3 text-sm text-charcoal-300">{{ t(`projects.items.${movizeProduct}.description`) }}</p>
+                  <ul class="card-extra chips">
+                    <li v-for="tech in productById[movizeProduct].tech.slice(0, 4)" :key="tech" class="chip">{{ tech }}</li>
+                  </ul>
                   <div class="card-actions">
                     <CardAction to="/projects/movize" primary>{{ t("projects.viewCaseStudy") }}</CardAction>
                   </div>

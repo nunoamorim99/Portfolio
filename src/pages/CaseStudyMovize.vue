@@ -238,6 +238,9 @@ onUnmounted(() => ctx?.revert())
               <p class="mt-3 leading-relaxed text-charcoal-500 dark:text-charcoal-300">
                 {{ t(`caseStudy.movize.modules.${mod.id}.body`) }}
               </p>
+              <div v-if="mod.tech?.length" class="mt-4 flex flex-wrap gap-1.5">
+                <span v-for="tech in mod.tech" :key="tech" class="badge text-[10px]">{{ tech }}</span>
+              </div>
             </div>
             <div class="lg:col-span-7">
               <div
@@ -302,6 +305,38 @@ onUnmounted(() => ctx?.revert())
       <p data-reveal class="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-charcoal-500 dark:text-charcoal-300">
         {{ t('caseStudy.movize.validation.body') }}
       </p>
+    </section>
+
+    <!-- ───────── TECH — the whole platform, by layer ───────── -->
+    <section class="bg-cream-100 dark:bg-charcoal-800 py-20 lg:py-28">
+      <div class="section-container">
+        <p
+          data-reveal
+          class="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-charcoal-300 dark:text-charcoal-400"
+        >
+          {{ t('caseStudy.movize.techTitle') }}
+        </p>
+        <p data-reveal class="max-w-2xl text-lg leading-relaxed text-charcoal-500 dark:text-charcoal-300">
+          {{ t('caseStudy.movize.stackIntro') }}
+        </p>
+        <div
+          class="mt-12 grid gap-px border border-charcoal-100 bg-charcoal-100 dark:border-charcoal-700 dark:bg-charcoal-700 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          <div
+            v-for="group in movizeCase.stack"
+            :key="group.id"
+            data-reveal
+            class="bg-cream-50 p-6 dark:bg-charcoal-900 lg:p-8"
+          >
+            <h3 class="font-serif text-xl text-charcoal dark:text-cream-100">
+              {{ t(`caseStudy.movize.stack.${group.id}`) }}
+            </h3>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span v-for="tech in group.tech" :key="tech" class="badge text-[10px]">{{ tech }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ───────── CTA ───────── -->

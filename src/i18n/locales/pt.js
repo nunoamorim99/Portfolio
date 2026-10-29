@@ -107,6 +107,17 @@ export default {
         quote: 'Exatamente o que Portugal precisa.',
         body: 'O Movize está no ar e em desenvolvimento ativo, com forte validação qualitativa de passageiros e operadores à medida que novos módulos são lançados.',
       },
+      techTitle: 'Construído com',
+      stackIntro:
+        'Uma plataforma poliglota: microsserviços em Python que comunicam por gRPC, uma API Symfony para as apps dos passageiros, OpenTripPlanner para o cálculo de rotas, e Vue e React Native no front-end - tudo a correr no Google Kubernetes Engine.',
+      stack: {
+        mobile: 'Mobile',
+        web: 'Web',
+        backend: 'Backend e rotas',
+        data: 'Dados e mensagens',
+        infra: 'Infraestrutura',
+        services: 'Serviços',
+      },
       ctaTitle: 'Ver ao vivo',
       ctaBody: 'O Movize está em desenvolvimento ativo e já disponível.',
     },
